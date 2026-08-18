@@ -49,7 +49,7 @@ export const CONFIG = {
   /* ── Deck ───────────────────────────────────────────────── */
   DECK_PDF:      'assets/docs/everkind-investor-deck.pdf',
   DECK_MANIFEST: 'assets/data/deck.json',
-  DECK_VERSION:  '{{DECK_VERSION}}',         // e.g. "August 2026"
+  DECK_VERSION:  'June 2026',
 
   /* ── Data feeds ─────────────────────────────────────────── */
   NEWS_JSON: 'assets/data/news.json',

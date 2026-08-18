@@ -225,7 +225,8 @@ export async function initDeck() {
       const meta = document.querySelector('[data-deck-meta]');
       if (meta) {
         const version = isSet(CONFIG.DECK_VERSION) ? CONFIG.DECK_VERSION : null;
-        const kb = size ? `${Math.max(1, Math.round(size / 1024))} KB` : null;
+        const bytes = size ? parseInt(size, 10) : 0;
+        const kb = bytes ? (bytes >= 1048576 ? `${(bytes / 1048576).toFixed(1)} MB` : `${Math.max(1, Math.round(bytes / 1024))} KB`) : null;
         meta.textContent = ['PDF', kb, version].filter(Boolean).join(' · ');
       }
     }).catch(() => {
