@@ -13,15 +13,20 @@ export const CONFIG = {
   ACCESSIBILITY_URL: '{{ACCESSIBILITY_URL}}',
 
   /* ── Market data ────────────────────────────────────────── */
-  // TradingView symbol format is EXCHANGE:TICKER.
-  TRADINGVIEW_SYMBOL: 'TSXV:EK.V',      // per the company, 2026-08-18
+  // TradingView symbol format is EXCHANGE:TICKER. Note: TradingView's
+  // TSXV symbols carry no '.V' suffix — Everkind will be 'TSXV:EK'.
+  // As of 2026-08-18 TradingView does not carry the symbol yet (its
+  // TSXV feed still lists the shell as TSXV:AF.P), so TRADING_LIVE
+  // stays false. Flip it the day 'TSXV:EK' resolves on tradingview.com.
+  TRADINGVIEW_SYMBOL: 'TSXV:EK',
   EXCHANGE_LABEL:     'TSX Venture Exchange',
-  TICKER_LABEL:       'EK.V',
+  TICKER_LABEL:       'EK.V',            // display ticker, per the company
 
-  // MASTER SWITCH. false => the market-data module renders a
-  // "Listing pending" card instead of a chart. Only true while the
-  // resulting issuer is actually trading under its own symbol.
-  TRADING_LIVE: true,
+  // MASTER SWITCH. false => the market-data module renders a designed
+  // "chart coming soon" card instead of a chart. Only true once
+  // TradingView actually resolves TRADINGVIEW_SYMBOL — otherwise the
+  // embed renders "This symbol doesn't exist".
+  TRADING_LIVE: false,
 
   /* ── Pipedrive ──────────────────────────────────────────── */
   // Pipedrive > Leads > Web forms > Share > Embed. Public URL only:

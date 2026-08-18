@@ -34,19 +34,20 @@ function initTradingView() {
   if (!mount) return;
 
   if (!CONFIG.TRADING_LIVE) {
-    /* "Listing pending" card — the correct default, designed not broken. */
+    /* Guarded card — designed, not broken. Shown while the chart
+       provider does not yet carry the symbol. */
     mount.innerHTML = `
       <div class="listing-pending">
         <p class="eyebrow">Market information</p>
-        <h3>Listing pending</h3>
+        <h3>Chart coming soon</h3>
         <dl class="listing-pending__row">
           <div><dt>Exchange</dt><dd>${CONFIG.EXCHANGE_LABEL}</dd></div>
           <div><dt>Ticker</dt><dd>${CONFIG.TICKER_LABEL}</dd></div>
         </dl>
-        <p class="muted">Trading has not commenced under the resulting issuer's own symbol.
-        The proposed transaction with AF2 Capital Corp. remains subject to exchange approval
-        and customary conditions. A live chart will appear here on the first day of trading.</p>
-        <p style="margin-top:1rem"><a class="link-arrow" href="news.html#transaction">Read the transaction releases <span class="arr" aria-hidden="true">→</span></a></p>
+        <p class="muted">Everkind trades on the ${CONFIG.EXCHANGE_LABEL} under the symbol
+        ${CONFIG.TICKER_LABEL}. Delayed market data from our chart provider is not yet
+        available for this symbol — a live chart will appear here as soon as it is.</p>
+        <p style="margin-top:1rem"><a class="link-arrow" href="news.html">Read the company's news releases <span class="arr" aria-hidden="true">→</span></a></p>
       </div>`;
     return;
   }
