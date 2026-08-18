@@ -29,7 +29,7 @@
   display: inline-flex; align-items: center; gap: .6rem;
   text-decoration: none; margin-right: auto;
 }
-.site-logo svg { height: 40px; width: auto; }
+.site-logo svg, .site-logo img { height: 46px; width: auto; }
 
 .site-nav { display: none; }
 @media (min-width: 900px) {
@@ -462,7 +462,7 @@ html.curtain-covering .curtain { transform: translateY(0); }
   display: grid; place-items: center;
   background: var(--ek-lav-1);
 }
-.intro svg { width: min(180px, 40vw); height: auto; }
+.intro svg, .intro img { width: min(160px, 38vw); height: auto; }
 .intro.is-done { display: none; }
 
 /* ═══ Custom cursor (§6.7) ═══════════════════════════════════ */
