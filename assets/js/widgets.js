@@ -59,7 +59,11 @@ function initTradingView() {
   }
 
   onIntersect(mount, () => {
+    const context = isSet(CONFIG.CHART_CONTEXT)
+      ? `<p class="notice" style="margin-bottom:1.25rem">${CONFIG.CHART_CONTEXT}</p>`
+      : '';
     mount.innerHTML = `
+      ${context}
       <!-- Advanced Real-Time Chart. Container needs explicit height —
            "autosize" fills the parent, and a parent with no height
            collapses to zero. No transformed/filtered/pinned ancestor. -->

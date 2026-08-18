@@ -105,6 +105,23 @@
 .mobile-menu.is-open .mobile-menu__link { opacity: 1; transform: none; }
 .mobile-menu__ctas { margin-top: var(--sp-6); display: flex; gap: var(--sp-3); flex-wrap: wrap; }
 
+/* ═══ Header social icons ════════════════════════════════════ */
+.header-social { display: none; }
+@media (min-width: 900px) {
+  .header-social { display: flex; align-items: center; gap: 2px; margin-right: var(--sp-2); }
+}
+.social-link {
+  display: grid; place-items: center;
+  width: 38px; height: 38px; border-radius: 50%;
+  color: var(--ek-plum);
+  transition: color var(--dur-xs), background var(--dur-xs);
+}
+.social-link:hover { color: var(--ek-purple); background: rgba(123, 44, 191, .08); }
+.social-link svg { width: 17px; height: 17px; }
+.mobile-menu__social { display: flex; gap: var(--sp-2); margin-top: var(--sp-5); }
+.mobile-menu__social .social-link { width: 44px; height: 44px; }
+.mobile-menu__social .social-link svg { width: 20px; height: 20px; }
+
 /* ═══ Buttons ════════════════════════════════════════════════ */
 .btn {
   --glow-x: 50%; --glow-y: 50%;

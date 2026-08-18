@@ -59,7 +59,7 @@ export function initNav() {
   const menu = document.querySelector('.mobile-menu');
   if (!toggle || !menu) return;
 
-  const links = [...menu.querySelectorAll('.mobile-menu__link, .mobile-menu .btn')];
+  const links = [...menu.querySelectorAll('.mobile-menu__link, .mobile-menu .btn, .mobile-menu .social-link')];
   let open = false;
 
   const setOpen = (next) => {

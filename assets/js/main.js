@@ -96,7 +96,7 @@ function corpInfo() {
   const rows = [
     ['Legal name', '<span class="ph">{{LEGAL_NAME — resulting issuer name is filing-specific}}</span>'],
     ['Exchange', CONFIG.EXCHANGE_LABEL],
-    ['Ticker', CONFIG.TICKER_LABEL],
+    ['Ticker', `${CONFIG.TICKER_LABEL} (expected — currently completing a going-public transaction via TSXV: AF.P)`],
     ['Transfer agent', '<span class="ph">{{TRANSFER_AGENT}}</span>'],
     ['Auditor', '<span class="ph">{{AUDITOR}}</span>'],
     ['Fiscal year end', '<span class="ph">{{FISCAL_YEAR_END}}</span>'],

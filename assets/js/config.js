@@ -18,15 +18,20 @@ export const CONFIG = {
   // As of 2026-08-18 TradingView does not carry the symbol yet (its
   // TSXV feed still lists the shell as TSXV:AF.P), so TRADING_LIVE
   // stays false. Flip it the day 'TSXV:EK' resolves on tradingview.com.
-  TRADINGVIEW_SYMBOL: 'TSXV:EK',
+  TRADINGVIEW_SYMBOL: 'TSXV:AF.P',      // the CPC vehicle — swap to 'TSXV:EK' on listing day
   EXCHANGE_LABEL:     'TSX Venture Exchange',
-  TICKER_LABEL:       'EK.V',            // display ticker, per the company
+  TICKER_LABEL:       'EK.V',            // Everkind's expected ticker, per the company
+
+  // Shown as a notice above the chart. REQUIRED while the chart shows
+  // the CPC vehicle rather than Everkind's own shares — presenting
+  // AF.P as "Everkind stock" without this would be misleading.
+  CHART_CONTEXT: "This chart shows AF2 Capital Corp. (TSXV: AF.P), the capital pool company through which Everkind's going-public transaction is being completed. It is not a quotation for Everkind shares. Everkind's common shares are expected to begin trading under TSXV: EK.V, and this chart will be replaced when trading commences.",
 
   // MASTER SWITCH. false => the market-data module renders a designed
   // "chart coming soon" card instead of a chart. Only true once
   // TradingView actually resolves TRADINGVIEW_SYMBOL — otherwise the
   // embed renders "This symbol doesn't exist".
-  TRADING_LIVE: false,
+  TRADING_LIVE: true,
 
   /* ── Pipedrive ──────────────────────────────────────────── */
   // Pipedrive > Leads > Web forms > Share > Embed. Public URL only:
@@ -64,7 +69,9 @@ export const CONFIG = {
   /* ── App store & social ─────────────────────────────────── */
   APP_STORE_URL:  'https://apps.apple.com/ca/app/everkind-wellness-journal-app/id6748688830',
   PLAY_STORE_URL: '{{PLAY_STORE_URL}}',
-  LINKEDIN_URL:   '{{LINKEDIN_URL}}',
+  LINKEDIN_URL:   'https://www.linkedin.com/company/everkindinc/',
+  INSTAGRAM_URL:  'https://www.instagram.com/everkind/',
+  TWITTER_URL:    'https://x.com/everkindinc',
 
   /* ── Motion ─────────────────────────────────────────────── */
   MOTION: {
