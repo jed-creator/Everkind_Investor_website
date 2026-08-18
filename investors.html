@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Investors — Everkind</title>
+  <meta name="description" content="Investor information for Everkind: the latest news releases, investor deck, market information, corporate information, and investor relations contact.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Everkind">
+  <meta property="og:title" content="Investors — Everkind">
+  <meta property="og:description" content="An AI-powered wellbeing platform. Journaling, reflection, and meditation — private by design.">
+  <meta property="og:image" content="assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Investors — Everkind">
+  <meta name="twitter:description" content="An AI-powered wellbeing platform. Journaling, reflection, and meditation — private by design.">
+  <meta name="twitter:image" content="assets/img/og-default.png">
+  <meta name="theme-color" content="#0C0710">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon-180.png">
+
+  <!-- js flag + curtain flag: must run before first paint -->
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      if (sessionStorage.getItem('ek-curtain') === '1') {
+        document.documentElement.classList.add('curtain-covering');
+        sessionStorage.removeItem('ek-curtain');
+      }
+    } catch (_) {}
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://s3.tradingview.com" crossorigin>
+  <link rel="preconnect" href="https://webforms.pipedrive.com" crossorigin>
+  <link rel="preconnect" href="https://assets.calendly.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=Figtree:wght@300..800&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js" } }
+  </script>
+  <script type="module" src="assets/js/main.js"></script>
+
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div id="bg-fallback" aria-hidden="true"></div>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div id="bg-veil" aria-hidden="true"></div>
+
+  <div id="page">
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="site-logo" href="index.html" aria-label="Everkind — home">
+          <!-- PLACEHOLDER logo lockup — inline so the intro can stroke-draw it.
+               Swap for the real reverse lockup (see assets/img/SOURCE-MAP.md). -->
+          <svg viewBox="0 0 340 120" role="img" aria-label="Everkind">
+            <defs><linearGradient id="hd-g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#5E1AA3"/><stop offset="1" stop-color="#A96BAD"/>
+            </linearGradient></defs>
+            <g transform="translate(10,8) scale(.96)">
+              <path d="M50 4 L88 25 Q94 28 94 35 L94 73 Q94 80 88 83 L50 104 L12 83 Q6 80 6 73 L6 35 Q6 28 12 25 Z" fill="url(#hd-g)"/>
+              <path d="M62 22 L92 39 Q97 42 97 48 L97 78 Q97 84 92 87 L62 104 L32 87 Q27 84 27 78 L27 48 Q27 42 32 39 Z" fill="#F2C6DC" opacity=".78"/>
+            </g>
+            <text x="122" y="76" font-family="Crimson Pro, Georgia, serif" font-weight="500" font-size="46" letter-spacing="1" fill="#F6F1F7">everkind</text>
+          </svg>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="company.html">Company</a>
+          <a class="nav-link" href="product.html">Product</a>
+          <a class="nav-link" href="investors.html">Investors</a>
+          <a class="nav-link" href="news.html">News Room</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+        <div class="header-ctas">
+          <span data-config-block="APP_STORE_URL">
+            <a class="btn btn--secondary" data-config-link="APP_STORE_URL" target="_blank" rel="noopener"><span class="btn__bg" aria-hidden="true"></span><span class="btn__label">Get the app</span></a>
+          </span>
+          <a class="btn btn--primary btn--magnetic btn--particles" href="investors.html#deck"><span class="btn__bg" aria-hidden="true"></span><span class="btn__label">Investor deck</span></a>
+        </div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <nav aria-label="Mobile">
+        <a class="mobile-menu__link" href="index.html">Home</a>
+        <a class="mobile-menu__link" href="company.html">Company</a>
+        <a class="mobile-menu__link" href="product.html">Product</a>
+        <a class="mobile-menu__link" href="investors.html">Investors</a>
+        <a class="mobile-menu__link" href="news.html">News Room</a>
+        <a class="mobile-menu__link" href="contact.html">Contact</a>
+      </nav>
+      <div class="mobile-menu__ctas">
+        <a class="btn btn--primary" href="investors.html#deck"><span class="btn__bg" aria-hidden="true"></span><span class="btn__label">Investor deck</span></a>
+      </div>
+    </div>
+
+    <main id="main">
+
+      <!-- ═══ Page header ═══ [DRAFT — PENDING SIGN-OFF] -->
+      <section class="section page-header inv-header" data-bg-mood="1.0">
+        <div class="wrap">
+          <p class="eyebrow" data-reveal="fade">Everkind</p>
+          <h1 class="page-title" data-reveal="chars">Investors</h1>
+          <p class="muted" data-reveal="lines">An AI-powered wellbeing platform pursuing a public listing — information for institutional and retail investors.</p>
+          <div class="meta-strip">
+            <span>Exchange: <b>TSX Venture Exchange</b></span>
+            <span>Proposed ticker: <b>AF.P</b> <span class="setup-card__field" style="display:inline">{{VERIFY}}</span></span>
+            <span>Deck: <b data-config-text="DECK_VERSION">{{DECK_VERSION}}</b></span>
+            <span>Last updated: <b>August 17, 2026</b></span>
+          </div>
+        </div>
+      </section>
+
+      <div class="wrap investors-layout">
+        <div class="investors-main">
+
+          <!-- 1. Latest news — FIRST below the header. No marketing hero. -->
+          <section class="inv-news" aria-label="Latest news releases">
+            <div class="section-head section-head--row">
+              <h2 data-reveal="lines">Latest news.</h2>
+              <a class="link-arrow" href="news.html">View all releases <span class="arr" aria-hidden="true">→</span></a>
+            </div>
+            <div class="news-grid news-grid--three" data-news="recent"></div>
+          </section>
+
+          <!-- 2. Investor deck (deliberately NOT pinned — §6.4) -->
+          <section class="inv-deck" id="deck" aria-label="Investor deck">
+            <div class="section-head">
+              <h2 data-reveal="lines">Investor deck.</h2>
+            </div>
+            <div data-deck></div>
+            <div class="deck-download-row">
+              <a class="btn btn--primary" data-deck-download download><span class="btn__bg" aria-hidden="true"></span><span class="btn__label">Download the deck (PDF)</span></a>
+              <span class="deck__meta" data-deck-meta>PDF · <span data-config-text="DECK_VERSION">{{DECK_VERSION}}</span></span>
+            </div>
+          </section>
+
+          <!-- 3. Market data — guarded by CONFIG.TRADING_LIVE -->
+          <section class="inv-market" id="market" aria-label="Market information">
+            <div class="section-head">
+              <h2 data-reveal="lines">Market information.</h2>
+            </div>
+            <div data-widget="tradingview"></div>
+            <p class="notice" style="margin-top:1.25rem">Market data is provided by TradingView and may be delayed. It is provided for information only, is not the Company's official record, and should not be relied upon for trading purposes.</p>
+          </section>
+
+          <!-- 4. The investment case — facts only, each linked to its source release.
+               [DRAFT — PENDING SIGN-OFF] Release URLs are pending in news.json, so
+               blocks link to the News Room where each release card lives. -->
+          <section class="inv-case" aria-label="The investment case">
+            <div class="section-head">
+              <h2 data-reveal="lines">The investment case.</h2>
+            </div>
+            <div class="case-blocks" data-reveal="stagger">
+              <div class="card card--flat">
+                <h4>A platform, and a listing path</h4>
+                <p>Everkind is an AI-powered wellbeing platform pursuing a public listing through a proposed transaction with AF2 Capital Corp., as disclosed by news release.</p>
+                <a class="link-arrow" href="news.html#transaction">Transaction releases <span class="arr" aria-hidden="true">→</span></a>
+              </div>
+              <div class="card card--flat">
+                <h4>Financing closed</h4>
+                <p>Everkind announced the closing of a private placement of subscription receipts on August 17, 2026, and the closing of a $3,000,000 financing on January 6, 2026 — figures as stated in each release.</p>
+                <a class="link-arrow" href="news.html">Financing releases <span class="arr" aria-hidden="true">→</span></a>
+              </div>
+              <div class="card card--flat">
+                <h4>Partnerships</h4>
+                <p>Strategic agreements with Brampton Fire and Emergency Services (May 21, 2026) and Connected Care (March 11, 2026), each described in the release's own wording.</p>
+                <a class="link-arrow" href="news.html">Partnership releases <span class="arr" aria-hidden="true">→</span></a>
+              </div>
+              <div class="card card--flat">
+                <h4>Governance and oversight</h4>
+                <p>A board including former Toronto Police Chief Mark Saunders (July 16, 2025) and Nagar Rahmani (August 13, 2025); Conformance AI engaged to strengthen independent AI safety and quality oversight (January 14, 2026).</p>
+                <a class="link-arrow" href="news.html">Corporate releases <span class="arr" aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </section>
+
+          <!-- 5. Corporate information — same shared partial as Company -->
+          <section class="inv-corp" aria-label="Corporate information">
+            <div class="section-head">
+              <h2 data-reveal="lines">Corporate information.</h2>
+            </div>
+            <div data-corp-info></div>
+          </section>
+
+          <!-- 6. Cautionary statement — always expanded on this page -->
+          <section class="inv-caution" aria-label="Cautionary statement">
+            <div class="notice notice--expanded">
+              <p><strong>Forward-looking information.</strong> This website contains forward-looking statements and forward-looking information within the meaning of applicable securities laws. Forward-looking statements are frequently characterized by words such as "plan," "expect," "project," "intend," "believe," "anticipate," "estimate" and other similar words, or statements that certain events or conditions "may" or "will" occur. Forward-looking statements are based on the opinions and estimates of management at the date the statements are made and are subject to a variety of risks and uncertainties and other factors that could cause actual events or results to differ materially from those anticipated. There can be no assurance that such statements will prove to be accurate, and actual results and future events could differ materially. Everkind disclaims any intention or obligation to update or revise any forward-looking statements, whether as a result of new information, future events or otherwise, except as required by law.</p>
+              <p style="margin-top:1rem">Nothing on this website constitutes an offer to sell or a solicitation of an offer to buy any securities, nor shall there be any sale of securities in any jurisdiction in which such offer, solicitation or sale would be unlawful. Information on this website is provided for general information purposes only and is not investment, financial, legal or tax advice.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Sidebar: ONLY the top block is sticky (§8.1) -->
+        <aside class="investors-sidebar" aria-label="Investor relations contact">
+          <div class="sidebar-sticky embed-card" style="position:relative">
+            <div class="blob-wrap" aria-hidden="true" style="z-index:0;inset:-20% -30%">
+              <svg viewBox="0 0 480 480">
+                <defs><linearGradient id="blob-form" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#7430A1"/><stop offset="1" stop-color="#F2C6DC"/>
+                </linearGradient></defs>
+                <path class="blob" d="M396,270Q389,310,362,341Q335,372,296,388Q257,404,215,397Q173,390,140,366Q107,342,88,306Q69,270,73,228Q77,186,99,150Q121,114,158,95Q195,76,238,78Q281,80,318,99Q355,118,379,152Q403,186,403,228Q403,270,396,270Z" fill="url(#blob-form)" opacity=".12"/>
+              </svg>
+            </div>
+            <div style="position:relative;z-index:2" class="stack-sm">
+              <h3>Join the investor list.</h3>
+              <!-- [DRAFT — PENDING SIGN-OFF] — exact §8.5 wording; never "material updates". -->
+              <p class="muted" style="font-size:var(--fs-sm)">We'll send news releases and company updates. All material information is disclosed by news release first. No sales calls, and you can unsubscribe from any email.</p>
+              <div data-widget="pipedrive"></div>
+              <p style="font-size:var(--fs-xs)" class="muted">Your details are handled per our <a data-config-link="PRIVACY_URL">privacy policy</a>.</p>
+              <button class="btn btn--secondary" type="button" data-widget="calendly-popup" style="width:100%"><span class="btn__bg" aria-hidden="true"></span><span class="btn__label">Book a meeting</span></button>
+            </div>
+          </div>
+
+          <div class="card card--flat stack-sm">
+            <h4>Investor relations</h4>
+            <p class="muted" style="font-size:var(--fs-sm)">Speak with Investor Relations — a 30-minute conversation with our IR team.</p>
+            <p><a data-config-email="IR_EMAIL" data-config-email-text></a></p>
+            <p data-config-block="IR_PHONE"><span data-config-text="IR_PHONE">{{IR_PHONE}}</span></p>
+            <p data-config-block="HQ_ADDRESS" class="muted" style="font-size:var(--fs-sm)"><span data-config-text="HQ_ADDRESS">{{HQ_ADDRESS}}</span></p>
+          </div>
+
+          <div class="card card--flat stack-sm">
+            <h4>The deck, to keep</h4>
+            <p class="muted" style="font-size:var(--fs-sm)">The same presentation as above, as a PDF.</p>
+            <a class="link-arrow" data-deck-download href="assets/docs/everkind-investor-deck.pdf" download>Download the deck <span class="arr" aria-hidden="true">→</span></a>
+          </div>
+        </aside>
+      </div>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__cols">
+          <div>
+            <img src="assets/logo/everkind-logo-reverse.svg" alt="Everkind" width="200" height="70">
+            <img class="footer-tag-lockup" src="assets/logo/everkind-tag.svg" alt="Take your moment." width="220" height="53">
+            <!-- [DRAFT — PENDING SIGN-OFF] -->
+            <p class="footer-tagline">An AI-powered wellbeing platform. Journaling, reflection, and meditation — private by design.</p>
+          </div>
+          <nav aria-label="Site">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="company.html">Company</a></li>
+              <li><a href="product.html">Product</a></li>
+              <li><a href="news.html">News Room</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Investors">
+            <h4>Investors</h4>
+            <ul>
+              <li><a href="investors.html#deck">Investor deck</a></li>
+              <li><a href="investors.html#market">Market information</a></li>
+              <li><a href="news.html">News releases</a></li>
+              <li><a data-config-email="IR_EMAIL">IR contact</a></li>
+              <li><a href="contact.html#book">Book a meeting</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Legal">
+            <h4>Legal</h4>
+            <ul>
+              <li><a data-config-link="PRIVACY_URL">Privacy Policy</a></li>
+              <li><a data-config-link="TERMS_URL">Terms of Service</a></li>
+              <li><a data-config-link="ACCESSIBILITY_URL">Accessibility</a></li>
+            </ul>
+            <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false">
+              <svg width="14" height="15" viewBox="0 0 100 108" aria-hidden="true"><path d="M50 4 L88 25 Q94 28 94 35 L94 73 Q94 80 88 83 L50 104 L12 83 Q6 80 6 73 L6 35 Q6 28 12 25 Z" fill="currentColor"/></svg>
+              <span class="motion-toggle__label">Motion: full</span>
+            </button>
+          </nav>
+        </div>
+
+        <div class="site-footer__legal">
+          <p class="crisis-line">Everkind is not a crisis service. If you are in crisis, call or text <strong>988</strong> (U.S. and Canada) to reach the Suicide &amp; Crisis Lifeline. <strong>If you are in immediate danger, call 911</strong> or your local emergency number.</p>
+          <p><strong>Forward-looking information.</strong> This website contains forward-looking statements and forward-looking information within the meaning of applicable securities laws. Forward-looking statements are frequently characterized by words such as "plan," "expect," "project," "intend," "believe," "anticipate," "estimate" and other similar words, or statements that certain events or conditions "may" or "will" occur. Forward-looking statements are based on the opinions and estimates of management at the date the statements are made and are subject to a variety of risks and uncertainties and other factors that could cause actual events or results to differ materially from those anticipated. There can be no assurance that such statements will prove to be accurate, and actual results and future events could differ materially. Everkind disclaims any intention or obligation to update or revise any forward-looking statements, whether as a result of new information, future events or otherwise, except as required by law.</p>
+          <p>Nothing on this website constitutes an offer to sell or a solicitation of an offer to buy any securities, nor shall there be any sale of securities in any jurisdiction in which such offer, solicitation or sale would be unlawful. Information on this website is provided for general information purposes only and is not investment, financial, legal or tax advice.</p>
+          <p>© 2026 Everkind. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

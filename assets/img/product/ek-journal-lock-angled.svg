@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" role="img"
+  aria-label="Placeholder product render: Lock your journal (angled)">
+  <!-- PLACEHOLDER — replace with the client's supplied render 'ek-journal-lock-angled.png'
+       (plus 1x/2x WebP derivatives). See assets/img/SOURCE-MAP.md. -->
+  <defs>
+    <linearGradient id="screenek-journal-lock-angled" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5E1AA3"/>
+      <stop offset=".38" stop-color="#3A1560"/>
+      <stop offset="1" stop-color="#0C0710"/>
+    </linearGradient>
+    <radialGradient id="orbek-journal-lock-angled" cx=".5" cy=".4" r=".7">
+      <stop offset="0" stop-color="#F2C6DC"/>
+      <stop offset=".6" stop-color="#A96BAD"/>
+      <stop offset="1" stop-color="#5E1AA3" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g transform="scale(1.9)" transform-origin="0 0">
+  <g transform="translate(119.21052631578948,90) rotate(-6)">
+    <rect x="0" y="0" width="330" height="700" rx="52" fill="#17101F" stroke="#241A2E" stroke-width="3"/>
+    <rect x="12" y="12" width="306" height="676" rx="42" fill="url(#screenek-journal-lock-angled)"/>
+    <circle cx="165" cy="238" r="86" fill="url(#orbek-journal-lock-angled)" opacity=".85"/>
+    <circle cx="165" cy="238" r="56" fill="#F2C6DC" opacity=".25"/>
+    <rect x="46" y="380" width="238" height="46" rx="14" fill="#FDF6F4" opacity=".08"/>
+    <rect x="46" y="440" width="238" height="46" rx="14" fill="#FDF6F4" opacity=".06"/>
+    <rect x="46" y="500" width="164" height="46" rx="14" fill="#FDF6F4" opacity=".05"/>
+    <rect x="120" y="30" width="90" height="20" rx="10" fill="#0C0710"/>
+  </g></g>
+  <g font-family="Figtree, -apple-system, Helvetica, sans-serif" text-anchor="middle">
+    <text x="540" y="1210" font-size="34" fill="#B9AEC4" letter-spacing="6" font-weight="700">PLACEHOLDER RENDER</text>
+    <text x="540" y="1262" font-size="40" fill="#F6F1F7" font-weight="600">Lock your journal (angled)</text>
+    <text x="540" y="1310" font-size="28" fill="#B9AEC4">Angled render of the journal lock screen</text>
+  </g>
+</svg>

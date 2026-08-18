@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found — Everkind</title>
+  <meta name="description" content="That page doesn't exist. Take your moment, then head back home.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Everkind">
+  <meta property="og:title" content="Page not found — Everkind">
+  <meta property="og:description" content="An AI-powered wellbeing platform. Journaling, reflection, and meditation — private by design.">
+  <meta property="og:image" content="assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Page not found — Everkind">
+  <meta name="twitter:description" content="An AI-powered wellbeing platform. Journaling, reflection, and meditation — private by design.">
+  <meta name="twitter:image" content="assets/img/og-default.png">
+  <meta name="theme-color" content="#0C0710">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon-180.png">
+
+  <!-- js flag + curtain flag: must run before first paint -->
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      if (sessionStorage.getItem('ek-curtain') === '1') {
+        document.documentElement.classList.add('curtain-covering');
+        sessionStorage.removeItem('ek-curtain');
+      }
+    } catch (_) {}
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=Figtree:wght@300..800&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js" } }
+  </script>
+  <script type="module" src="assets/js/main.js"></script>
+
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div id="bg-fallback" aria-hidden="true"></div>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div id="bg-veil" aria-hidden="true"></div>
+
+  <div id="page">
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="site-logo" href="index.html" aria-label="Everkind — home">
+          <!-- PLACEHOLDER logo lockup — inline so the intro can stroke-draw it.
+               Swap for the real reverse lockup (see assets/img/SOURCE-MAP.md). -->
+          <svg viewBox="0 0 340 120" role="img" aria-label="Everkind">
+            <defs><linearGradient id="hd-g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#5E1AA3"/><stop offset="1" stop-color="#A96BAD"/>
+            </linearGradient></defs>
+            <g transform="translate(10,8) scale(.96)">
+              <path d="M50 4 L88 25 Q94 28 94 35 L94 73 Q94 80 88 83 L50 104 L12 83 Q6 80 6 73 L6 35 Q6 28 12 25 Z" fill="url(#hd-g)"/>
+              <path d="M62 22 L92 39 Q97 42 97 48 L97 78 Q97 84 92 87 L62 104 L32 87 Q27 84 27 78 L27 48 Q27 42 32 39 Z" fill="#F2C6DC" opacity=".78"/>
+            </g>
+            <text x="122" y="76" font-family="Crimson Pro, Georgia, serif" font-weight="500" font-size="46" letter-spacing="1" fill="#F6F1F7">everkind</text>
+          </svg>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="company.html">Company</a>
+          <a class="nav-link" href="product.html">Product</a>
+          <a class="nav-link" href="investors.html">Investors</a>
+          <a class="nav-link" href="news.html">News Room</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+        <div class="header-ctas">
+          <span data-config-block="APP_STORE_URL">
+            <a class="btn btn--secondary" data-config-link="APP_STORE_URL" target="_blank" rel="noopener"><span class="btn__bg" aria-hidden="true"></span><span class="btn__label">Get the app</span></a>
+          </span>
+          <a class="btn btn--primary btn--magnetic btn--particles" href="investors.html#deck"><span class="btn__bg" aria-hidden="true"></span><span class="btn__label">Investor deck</span></a>
+        </div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <nav aria-label="Mobile">
+        <a class="mobile-menu__link" href="index.html">Home</a>
+        <a class="mobile-menu__link" href="company.html">Company</a>
+        <a class="mobile-menu__link" href="product.html">Product</a>
+        <a class="mobile-menu__link" href="investors.html">Investors</a>
+        <a class="mobile-menu__link" href="news.html">News Room</a>
+        <a class="mobile-menu__link" href="contact.html">Contact</a>
+      </nav>
+      <div class="mobile-menu__ctas">
+        <a class="btn btn--primary" href="investors.html#deck"><span class="btn__bg" aria-hidden="true"></span><span class="btn__label">Investor deck</span></a>
+      </div>
+    </div>
+
+    <main id="main">
+
+      <section class="section notfound" data-bg-mood="0.5">
+        <div class="wrap stack">
+          <p class="eyebrow" data-reveal="fade">404</p>
+          <h1 class="page-title" data-reveal="lines">This page took its moment.</h1>
+          <p class="muted" data-reveal="lines" style="margin-inline:auto">The page you're looking for doesn't exist or has moved.</p>
+          <div class="closing__ctas">
+            <a class="btn btn--primary btn--magnetic" href="index.html"><span class="btn__bg" aria-hidden="true"></span><span class="btn__label">Back to home</span></a>
+            <a class="btn btn--secondary" href="news.html"><span class="btn__bg" aria-hidden="true"></span><span class="btn__label">News Room</span></a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__cols">
+          <div>
+            <img src="assets/logo/everkind-logo-reverse.svg" alt="Everkind" width="200" height="70">
+            <img class="footer-tag-lockup" src="assets/logo/everkind-tag.svg" alt="Take your moment." width="220" height="53">
+            <!-- [DRAFT — PENDING SIGN-OFF] -->
+            <p class="footer-tagline">An AI-powered wellbeing platform. Journaling, reflection, and meditation — private by design.</p>
+          </div>
+          <nav aria-label="Site">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="company.html">Company</a></li>
+              <li><a href="product.html">Product</a></li>
+              <li><a href="news.html">News Room</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Investors">
+            <h4>Investors</h4>
+            <ul>
+              <li><a href="investors.html#deck">Investor deck</a></li>
+              <li><a href="investors.html#market">Market information</a></li>
+              <li><a href="news.html">News releases</a></li>
+              <li><a data-config-email="IR_EMAIL">IR contact</a></li>
+              <li><a href="contact.html#book">Book a meeting</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Legal">
+            <h4>Legal</h4>
+            <ul>
+              <li><a data-config-link="PRIVACY_URL">Privacy Policy</a></li>
+              <li><a data-config-link="TERMS_URL">Terms of Service</a></li>
+              <li><a data-config-link="ACCESSIBILITY_URL">Accessibility</a></li>
+            </ul>
+            <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false">
+              <svg width="14" height="15" viewBox="0 0 100 108" aria-hidden="true"><path d="M50 4 L88 25 Q94 28 94 35 L94 73 Q94 80 88 83 L50 104 L12 83 Q6 80 6 73 L6 35 Q6 28 12 25 Z" fill="currentColor"/></svg>
+              <span class="motion-toggle__label">Motion: full</span>
+            </button>
+          </nav>
+        </div>
+
+        <div class="site-footer__legal">
+          <p class="crisis-line">Everkind is not a crisis service. If you are in crisis, call or text <strong>988</strong> (U.S. and Canada) to reach the Suicide &amp; Crisis Lifeline. <strong>If you are in immediate danger, call 911</strong> or your local emergency number.</p>
+          <p><strong>Forward-looking information.</strong> This website contains forward-looking statements and forward-looking information within the meaning of applicable securities laws. Forward-looking statements are frequently characterized by words such as "plan," "expect," "project," "intend," "believe," "anticipate," "estimate" and other similar words, or statements that certain events or conditions "may" or "will" occur. Forward-looking statements are based on the opinions and estimates of management at the date the statements are made and are subject to a variety of risks and uncertainties and other factors that could cause actual events or results to differ materially from those anticipated. There can be no assurance that such statements will prove to be accurate, and actual results and future events could differ materially. Everkind disclaims any intention or obligation to update or revise any forward-looking statements, whether as a result of new information, future events or otherwise, except as required by law.</p>
+          <p>Nothing on this website constitutes an offer to sell or a solicitation of an offer to buy any securities, nor shall there be any sale of securities in any jurisdiction in which such offer, solicitation or sale would be unlawful. Information on this website is provided for general information purposes only and is not investment, financial, legal or tax advice.</p>
+          <p>© 2026 Everkind. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

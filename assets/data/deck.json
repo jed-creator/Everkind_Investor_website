@@ -1,0 +1,129 @@
+{
+  "_readme": [
+    "The on-page investor deck (§8.4). Slides render as LIVE HTML —",
+    "edit this JSON to change a slide; no design tool needed.",
+    "Slide 2 is the cautionary statement. NEVER reorder it.",
+    "Every factual claim must trace to a dated public release;",
+    "everything else stays {{}} and [DRAFT — PENDING SIGN-OFF].",
+    "ALL COPY IN THIS FILE IS [DRAFT — PENDING SIGN-OFF]."
+  ],
+  "slides": [
+    {
+      "variant": "title",
+      "kicker": "Everkind",
+      "title": "Investor Presentation",
+      "body": "{{DECK_VERSION}} · TSX Venture Exchange · AF.P {{VERIFY}}",
+      "fine": "This presentation contains forward-looking information. See the notice on the next slide."
+    },
+    {
+      "kicker": "Disclaimer",
+      "title": "Forward-looking information",
+      "body": "This presentation contains forward-looking statements and forward-looking information within the meaning of applicable securities laws. Forward-looking statements are based on the opinions and estimates of management at the date the statements are made and are subject to a variety of risks and uncertainties and other factors that could cause actual events or results to differ materially from those anticipated. There can be no assurance that such statements will prove to be accurate. Everkind disclaims any intention or obligation to update or revise any forward-looking statements except as required by law. Nothing in this presentation constitutes an offer to sell or a solicitation of an offer to buy any securities."
+    },
+    {
+      "kicker": "The opportunity",
+      "title": "The gap between support offered and support used",
+      "body": "Most people are offered some form of wellbeing support. Far fewer reach for it on an ordinary day. Everkind is built for the days in between — the days that never justify an appointment.",
+      "fine": "[DRAFT — PENDING SIGN-OFF]"
+    },
+    {
+      "kicker": "What Everkind is",
+      "title": "An AI-powered wellbeing platform",
+      "bullets": [
+        "Journaling, voice reflection, and personalised meditation in one private space",
+        "Shaped with input from clinicians who advise the company",
+        "Explicitly not therapy and not clinical care — complementary to existing benefits"
+      ],
+      "fine": "[DRAFT — PENDING SIGN-OFF]"
+    },
+    {
+      "kicker": "The product",
+      "title": "One quiet place",
+      "bullets": [
+        "Journal — write an entry, get a reflection back",
+        "Voice — speak instead, on the days writing is too much",
+        "Meditation — generated from your own entry, in your words"
+      ],
+      "fine": "Product renders appear on the Product page. [DRAFT — PENDING SIGN-OFF]"
+    },
+    {
+      "kicker": "Privacy architecture",
+      "title": "Insights Without Identities",
+      "body": "Everything on the individual side is private. Organizations see anonymized, aggregate engagement across the group — never an individual, and never an entry. Aggregate reporting is available only where at least {{MIN_COHORT}} people are enrolled.",
+      "fine": "[DRAFT — PENDING SIGN-OFF]"
+    },
+    {
+      "kicker": "How people use it",
+      "title": "A daily rhythm, not a program",
+      "bullets": [
+        "A daily check-in",
+        "Written or spoken reflection",
+        "A meditation generated from the entry"
+      ],
+      "fine": "[DRAFT — PENDING SIGN-OFF]"
+    },
+    {
+      "kicker": "Two markets",
+      "title": "Direct to people, and through organizations",
+      "bullets": [
+        "A direct-to-consumer app for daily reflection and rest",
+        "Organizations buying an always-available wellbeing layer for their workforce"
+      ],
+      "fine": "[DRAFT — PENDING SIGN-OFF]"
+    },
+    {
+      "kicker": "Traction",
+      "title": "Platform figures",
+      "body": "{{TRACTION FIGURES — every number on this slide must be quoted verbatim from a filed release and linked to it. No projections. If a figure is not in a filed release, it does not go on this slide.}}",
+      "fine": "Platform figures as at {{DATE}}. Numbers vary by organization. [DRAFT — PENDING SIGN-OFF]"
+    },
+    {
+      "kicker": "Partnerships",
+      "title": "Working with organizations that carry weight",
+      "bullets": [
+        "Brampton Fire and Emergency Services — strategic agreement (May 21, 2026)",
+        "Connected Care — strategic partnership for Canadian youth and athletes (March 11, 2026)",
+        "Conformance AI — engaged to strengthen independent AI safety and quality oversight (January 14, 2026)"
+      ],
+      "fine": "Each described in its release's own wording. See the News Room for the releases. [DRAFT — PENDING SIGN-OFF]"
+    },
+    {
+      "kicker": "Clinical advisors",
+      "title": "Advisors who shape the product",
+      "bullets": [
+        "Dr. Hamilton Jeyaraj, MD — Family Medicine; also a director",
+        "David Drapkin, LCSW — Clinical Psychotherapist {{VERIFY designation & jurisdiction}}",
+        "Dr. Niki Fitzgerald, PhD, C.Psych. — Clinical Psychologist {{VERIFY registration}}"
+      ],
+      "fine": "Clinicians advise the product. Care is never delivered through it. [DRAFT — PENDING SIGN-OFF]"
+    },
+    {
+      "kicker": "Leadership and board",
+      "title": "Who is accountable",
+      "bullets": [
+        "Harrison Newlands — Chief Executive Officer",
+        "Supreet Pal Singh — Chief Technology Officer",
+        "Brien Stelzer — Chief Operating Officer",
+        "Jonathan Held — Chief Financial Officer & Director",
+        "Board: Mark Saunders · Nagar Rahmani · Dr. Hamilton Jeyaraj · Jonathan Held"
+      ],
+      "fine": "Titles from the definitive-agreement release — verify against the latest filing. [DRAFT — PENDING SIGN-OFF]"
+    },
+    {
+      "kicker": "The transaction",
+      "title": "Proposed listing on the TSX Venture Exchange",
+      "body": "Reverse takeover with AF2 Capital Corp.; the resulting issuer is expected to list on the TSXV. Financing as disclosed by news release. {{Every figure on this slide must be quoted verbatim from its release and linked. The resulting issuer's name and tier classification are filing-specific and exchange-determined.}}",
+      "fine": "[DRAFT — PENDING SIGN-OFF]"
+    },
+    {
+      "kicker": "Contact",
+      "title": "Speak with Investor Relations",
+      "bullets": [
+        "investors@everkind.com {{VERIFY it resolves}}",
+        "Book a 30-minute conversation via the Investors page",
+        "Download the deck: assets/docs/everkind-investor-deck.pdf"
+      ],
+      "fine": "[DRAFT — PENDING SIGN-OFF]"
+    }
+  ]
+}

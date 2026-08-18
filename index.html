@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Everkind — A private space to feel understood, every day</title>
+  <meta name="description" content="Everkind is an AI-powered wellbeing platform — journaling, reflection, and guided meditation, shaped with input from clinicians. Private by design.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Everkind">
+  <meta property="og:title" content="Everkind — A private space to feel understood, every day">
+  <meta property="og:description" content="An AI-powered wellbeing platform. Journaling, reflection, and meditation — private by design.">
+  <meta property="og:image" content="assets/img/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Everkind — A private space to feel understood, every day">
+  <meta name="twitter:description" content="An AI-powered wellbeing platform. Journaling, reflection, and meditation — private by design.">
+  <meta name="twitter:image" content="assets/img/og-default.png">
+  <meta name="theme-color" content="#0C0710">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon-180.png">
+
+  <!-- js flag + curtain flag: must run before first paint -->
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      if (sessionStorage.getItem('ek-curtain') === '1') {
+        document.documentElement.classList.add('curtain-covering');
+        sessionStorage.removeItem('ek-curtain');
+      }
+    } catch (_) {}
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=Figtree:wght@300..800&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+
+  <link rel="preload" as="image" href="assets/img/product/ek-home-and-player.svg" fetchpriority="high">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js" } }
+  </script>
+  <script type="module" src="assets/js/main.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Everkind",
+    "description": "An AI-powered wellbeing platform. Journaling, reflection, and meditation — private by design.",
+    "email": "investors@everkind.com",
+    "logo": "assets/logo/everkind-logo-reverse.svg"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div id="bg-fallback" aria-hidden="true"></div>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div id="bg-veil" aria-hidden="true"></div>
+
+  <!-- First-visit intro (once per session, any key/click skips) -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <svg viewBox="0 0 100 108" fill="none">
+      <defs>
+        <linearGradient id="intro-g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#5E1AA3"/><stop offset="1" stop-color="#A96BAD"/>
+        </linearGradient>
+      </defs>
+      <path class="draw-path" d="M50 4 L88 25 Q94 28 94 35 L94 73 Q94 80 88 83 L50 104 L12 83 Q6 80 6 73 L6 35 Q6 28 12 25 Z" stroke="url(#intro-g)" stroke-width="2.5"/>
+      <path class="draw-path" d="M62 22 L92 39 Q97 42 97 48 L97 78 Q97 84 92 87 L62 104 L32 87 Q27 84 27 78 L27 48 Q27 42 32 39 Z" stroke="#F2C6DC" stroke-width="2" style="animation-delay:.25s"/>
+      <path class="intro-fade" d="M50 4 L88 25 Q94 28 94 35 L94 73 Q94 80 88 83 L50 104 L12 83 Q6 80 6 73 L6 35 Q6 28 12 25 Z" fill="url(#intro-g)" opacity=".9"/>
+    </svg>
+  </div>
+
+  <div id="page">
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="site-logo" href="index.html" aria-label="Everkind — home">
+          <!-- PLACEHOLDER logo lockup — inline so the intro can stroke-draw it.
+               Swap for the real reverse lockup (see assets/img/SOURCE-MAP.md). -->
+          <svg viewBox="0 0 340 120" role="img" aria-label="Everkind">
+            <defs><linearGradient id="hd-g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#5E1AA3"/><stop offset="1" stop-color="#A96BAD"/>
+            </linearGradient></defs>
+            <g transform="translate(10,8) scale(.96)">
+              <path d="M50 4 L88 25 Q94 28 94 35 L94 73 Q94 80 88 83 L50 104 L12 83 Q6 80 6 73 L6 35 Q6 28 12 25 Z" fill="url(#hd-g)"/>
+              <path d="M62 22 L92 39 Q97 42 97 48 L97 78 Q97 84 92 87 L62 104 L32 87 Q27 84 27 78 L27 48 Q27 42 32 39 Z" fill="#F2C6DC" opacity=".78"/>
+            </g>
+            <text x="122" y="76" font-family="Crimson Pro, Georgia, serif" font-weight="500" font-size="46" letter-spacing="1" fill="#F6F1F7">everkind</text>
+          </svg>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="company.html">Company</a>
+          <a class="nav-link" href="product.html">Product</a>
+          <a class="nav-link" href="investors.html">Investors</a>
+          <a class="nav-link" href="news.html">News Room</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+        <div class="header-ctas">
+          <span data-config-block="APP_STORE_URL">
+            <a class="btn btn--secondary" data-config-link="APP_STORE_URL" target="_blank" rel="noopener"><span class="btn__bg" aria-hidden="true"></span><span class="btn__label">Get the app</span></a>
+          </span>
+          <a class="btn btn--primary btn--magnetic btn--particles" href="investors.html#deck"><span class="btn__bg" aria-hidden="true"></span><span class="btn__label">Investor deck</span></a>
+        </div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <nav aria-label="Mobile">
+        <a class="mobile-menu__link" href="index.html">Home</a>
+        <a class="mobile-menu__link" href="company.html">Company</a>
+        <a class="mobile-menu__link" href="product.html">Product</a>
+        <a class="mobile-menu__link" href="investors.html">Investors</a>
+        <a class="mobile-menu__link" href="news.html">News Room</a>
+        <a class="mobile-menu__link" href="contact.html">Contact</a>
+      </nav>
+      <div class="mobile-menu__ctas">
+        <a class="btn btn--primary" href="investors.html#deck"><span class="btn__bg" aria-hidden="true"></span><span class="btn__label">Investor deck</span></a>
+      </div>
+    </div>
+
+    <main id="main">
+
+      <!-- ═══ Hero ═══ [DRAFT — PENDING SIGN-OFF] -->
+      <section class="section section--hero hero" data-bg-mood="0.0">
+        <div class="wrap hero__grid">
+          <div class="hero__copy">
+            <p class="eyebrow" data-reveal="fade">Everkind</p>
+            <h1 class="page-title" data-reveal="chars">A private space to feel understood, every day.</h1>
+            <p class="muted" data-reveal="lines">Everkind is an AI-powered wellbeing platform — journaling, reflection, and guided meditation, shaped with input from clinicians. Yours alone, whenever you reach for it.</p>
+            <div class="hero__ctas" data-reveal="fade" data-reveal-delay="0.25">
+              <a class="btn btn--primary btn--magnetic btn--particles" data-config-link="APP_STORE_URL" target="_blank" rel="noopener"><span class="btn__bg" aria-hidden="true"></span><span class="btn__label">Get the app</span></a>
+              <a class="btn btn--secondary" href="investors.html"><span class="btn__bg" aria-hidden="true"></span><span class="btn__label">For investors</span></a>
+            </div>
+            <div class="hero__cue scroll-cue" aria-hidden="true">
+              <svg viewBox="0 0 100 108"><path d="M50 4 L88 25 Q94 28 94 35 L94 73 Q94 80 88 83 L50 104 L12 83 Q6 80 6 73 L6 35 Q6 28 12 25 Z" fill="#A96BAD"/></svg>
+            </div>
+          </div>
+          <div class="hero__visual">
+            <div class="blob-wrap" aria-hidden="true">
+              <svg viewBox="0 0 480 480">
+                <defs><linearGradient id="blob-hero" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#7430A1"/><stop offset="1" stop-color="#F2C6DC"/>
+                </linearGradient></defs>
+                <path class="blob" d="M389,285Q371,320,345,349Q319,378,281,391Q243,404,203,396Q163,388,131,363Q99,338,84,301Q69,264,77,225Q85,186,106,152Q127,118,163,99Q199,80,240,79Q281,78,317,97Q353,116,376,150Q399,184,403,222Q407,260,389,285Z" fill="url(#blob-hero)" opacity=".18"/>
+              </svg>
+            </div>
+            <div class="card card--flat phone-shot phone-shot--wide float-slow" data-tilt="4" style="background:transparent;border:0;padding:0">
+              <img src="assets/img/product/ek-home-and-player.svg" alt="Everkind app home screen showing the daily check-in prompt and personalised meditations, beside the Intentional Breathing player" width="1350" height="1350" fetchpriority="high">
+              <span class="card__sheen" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ The idea ═══ [DRAFT — PENDING SIGN-OFF] -->
+      <section class="section" data-bg-mood="0.0">
+        <div class="wrap">
+          <p class="pull-quote" data-reveal="words">Most people don't need a program. They need somewhere to put the day.</p>
+        </div>
+      </section>
+
+      <!-- ═══ How it works — pinned, 3 beats ═══ [DRAFT — PENDING SIGN-OFF] -->
+      <section class="section hiw" data-bg-mood="0.0" aria-label="How Everkind works">
+        <div class="wrap hiw__stage">
+          <div class="hiw__copy">
+            <div class="hiw__beat">
+              <p class="beat-index">01</p>
+              <h2>Write it down, or say it out loud.</h2>
+              <p class="muted">Type an entry or speak it. Everkind meets you in whichever way is easier that day.</p>
+            </div>
+            <div class="hiw__beat">
+              <p class="beat-index">02</p>
+              <h2>Get something back.</h2>
+              <p class="muted">A reflection that may notice a pattern you keep returning to — not advice, not a diagnosis. A question worth sitting with.</p>
+            </div>
+            <div class="hiw__beat">
+              <p class="beat-index">03</p>
+              <h2>Then let it settle.</h2>
+              <p class="muted">A meditation generated from what you wrote, in your words, about your day.</p>
+            </div>
+          </div>
+          <div class="hiw__visual">
+            <figure class="hiw__shot phone-shot">
+              <img src="assets/img/product/ek-journal-reflection.svg" alt="Everkind journal conversation showing a written entry and the app's reflective response" width="1080" height="1350" loading="lazy">
+              <figcaption class="img-caption">Illustrative. Journal entries are private to the person who writes them.</figcaption>
+            </figure>
+            <figure class="hiw__shot phone-shot">
+              <img src="assets/img/product/ek-player-rest.svg" alt="Everkind Drift Into Rest meditation player with a deep purple bloom" width="1080" height="1350" loading="lazy">
+            </figure>
+            <figure class="hiw__shot phone-shot">
+              <img src="assets/img/product/ek-player-breathing.svg" alt="Everkind Intentional Breathing player with a pink-purple bloom fading into black" width="1080" height="1350" loading="lazy">
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ Privacy — light section, signature transition ═══ [DRAFT — PENDING SIGN-OFF] -->
+      <section class="section section--light" data-bg-mood="0.5">
+        <div class="light-scrim" aria-hidden="true"></div>
+        <div class="wrap grid-2">
+          <div class="stack">
+            <h2 data-reveal="lines">Your journal is yours.</h2>
+            <p data-reveal="lines">Entries are private to the person who writes them. You can lock your journal behind a PIN. Where an organization offers Everkind to its team, leaders see anonymized, aggregate engagement across the group — never an individual, and never an entry. Aggregate reporting is available only where at least <span data-config-text="MIN_COHORT">{{MIN_COHORT}}</span> people are enrolled.</p>
+            <p class="serif-italic" style="font-size:var(--fs-lg)" data-reveal="fade">Insights Without Identities.</p>
+            <a class="link-arrow" data-config-link="PRIVACY_URL">Read our privacy policy <span class="arr" aria-hidden="true">→</span></a>
+          </div>
+          <div data-reveal="image">
+            <img class="phone-shot" src="assets/img/product/ek-journal-lock.svg" alt="Everkind journal lock screen: write freely, knowing your entries stay private" width="1080" height="1350" loading="lazy">
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ Two ways in ═══ [DRAFT — PENDING SIGN-OFF] -->
+      <section class="section" data-bg-mood="0.0">
+        <div class="wrap">
+          <div class="two-ways" data-reveal="stagger">
+            <div class="card" data-tilt="6">
+              <p class="eyebrow">For people</p>
+              <h3>A daily companion for reflection and rest.</h3>
+              <p class="muted">Free to start.</p>
+              <a class="link-arrow" data-config-link="APP_STORE_URL" target="_blank">Get the app <span class="arr" aria-hidden="true">→</span></a>
+              <span class="card__sheen" aria-hidden="true"></span>
+            </div>
+            <div class="card" data-tilt="6">
+              <p class="eyebrow">For organizations</p>
+              <h3>An always-available wellbeing layer for your whole team.</h3>
+              <p class="muted">Private, year-round, and quick to roll out.</p>
+              <a class="link-arrow" href="product.html">Explore the product <span class="arr" aria-hidden="true">→</span></a>
+              <span class="card__sheen" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ Guided by clinicians ═══ [DRAFT — PENDING SIGN-OFF] -->
+      <section class="section" data-bg-mood="0.5">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 data-reveal="lines">Guided by clinicians.</h2>
+            <p class="muted" data-reveal="fade">Everkind is shaped with input from clinicians who advise the company. It is not therapy, not treatment, and not a substitute for professional care.</p>
+          </div>
+          <div class="advisor-strip team-grid" data-team="advisors" data-reveal="stagger"></div>
+        </div>
+      </section>
+
+      <!-- ═══ Investors teaser ═══ -->
+      <section class="section" data-bg-mood="1.0">
+        <div class="wrap">
+          <div class="section-head section-head--row">
+            <h2 data-reveal="lines">Latest news.</h2>
+            <a class="link-arrow" href="investors.html">Investor information <span class="arr" aria-hidden="true">→</span></a>
+          </div>
+          <div class="news-grid news-grid--three" data-news="recent" data-reveal="stagger"></div>
+        </div>
+      </section>
+
+      <!-- ═══ Closing ═══ [DRAFT — PENDING SIGN-OFF] -->
+      <section class="section closing" data-bg-mood="0.5">
+        <div class="wrap">
+          <img class="footer-tag-lockup" src="assets/logo/everkind-tag.svg" alt="" width="300" height="72" style="margin-inline:auto" aria-hidden="true">
+          <h2 data-reveal="chars">Take your moment.</h2>
+          <div class="closing__ctas">
+            <a class="btn btn--primary btn--magnetic" data-config-link="APP_STORE_URL" target="_blank" rel="noopener"><span class="btn__bg" aria-hidden="true"></span><span class="btn__label">Get the app</span></a>
+            <a class="btn btn--secondary" href="investors.html#deck"><span class="btn__bg" aria-hidden="true"></span><span class="btn__label">Investor deck</span></a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="site-footer__cols">
+          <div>
+            <img src="assets/logo/everkind-logo-reverse.svg" alt="Everkind" width="200" height="70">
+            <img class="footer-tag-lockup" src="assets/logo/everkind-tag.svg" alt="Take your moment." width="220" height="53">
+            <!-- [DRAFT — PENDING SIGN-OFF] -->
+            <p class="footer-tagline">An AI-powered wellbeing platform. Journaling, reflection, and meditation — private by design.</p>
+          </div>
+          <nav aria-label="Site">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="company.html">Company</a></li>
+              <li><a href="product.html">Product</a></li>
+              <li><a href="news.html">News Room</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Investors">
+            <h4>Investors</h4>
+            <ul>
+              <li><a href="investors.html#deck">Investor deck</a></li>
+              <li><a href="investors.html#market">Market information</a></li>
+              <li><a href="news.html">News releases</a></li>
+              <li><a data-config-email="IR_EMAIL">IR contact</a></li>
+              <li><a href="contact.html#book">Book a meeting</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Legal">
+            <h4>Legal</h4>
+            <ul>
+              <li><a data-config-link="PRIVACY_URL">Privacy Policy</a></li>
+              <li><a data-config-link="TERMS_URL">Terms of Service</a></li>
+              <li><a data-config-link="ACCESSIBILITY_URL">Accessibility</a></li>
+            </ul>
+            <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false">
+              <svg width="14" height="15" viewBox="0 0 100 108" aria-hidden="true"><path d="M50 4 L88 25 Q94 28 94 35 L94 73 Q94 80 88 83 L50 104 L12 83 Q6 80 6 73 L6 35 Q6 28 12 25 Z" fill="currentColor"/></svg>
+              <span class="motion-toggle__label">Motion: full</span>
+            </button>
+          </nav>
+        </div>
+
+        <div class="site-footer__legal">
+          <p class="crisis-line">Everkind is not a crisis service. If you are in crisis, call or text <strong>988</strong> (U.S. and Canada) to reach the Suicide &amp; Crisis Lifeline. <strong>If you are in immediate danger, call 911</strong> or your local emergency number.</p>
+          <p><strong>Forward-looking information.</strong> This website contains forward-looking statements and forward-looking information within the meaning of applicable securities laws. Forward-looking statements are frequently characterized by words such as "plan," "expect," "project," "intend," "believe," "anticipate," "estimate" and other similar words, or statements that certain events or conditions "may" or "will" occur. Forward-looking statements are based on the opinions and estimates of management at the date the statements are made and are subject to a variety of risks and uncertainties and other factors that could cause actual events or results to differ materially from those anticipated. There can be no assurance that such statements will prove to be accurate, and actual results and future events could differ materially. Everkind disclaims any intention or obligation to update or revise any forward-looking statements, whether as a result of new information, future events or otherwise, except as required by law.</p>
+          <p>Nothing on this website constitutes an offer to sell or a solicitation of an offer to buy any securities, nor shall there be any sale of securities in any jurisdiction in which such offer, solicitation or sale would be unlawful. Information on this website is provided for general information purposes only and is not investment, financial, legal or tax advice.</p>
+          <p>© 2026 Everkind. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

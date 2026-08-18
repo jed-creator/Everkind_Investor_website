@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Replace {{SITE_URL}} with the production origin before launch.
+Sitemap: {{SITE_URL}}/sitemap.xml

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 120" role="img" aria-label="Everkind">
+  <!-- PLACEHOLDER recreation of the reverse (on-dark) lockup.
+       Replace with SVG/everkind_stacked_reverse_logo_preferred_lockup_colour.svg
+       from the client's logo pack. See assets/img/SOURCE-MAP.md. -->
+  <defs>
+    <linearGradient id="lr-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5E1AA3"/>
+      <stop offset="1" stop-color="#A96BAD"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(10,8) scale(.96)">
+    <path d="M50 4 L88 25 Q94 28 94 35 L94 73 Q94 80 88 83 L50 104 L12 83 Q6 80 6 73 L6 35 Q6 28 12 25 Z" fill="url(#lr-g)"/>
+    <path d="M62 22 L92 39 Q97 42 97 48 L97 78 Q97 84 92 87 L62 104 L32 87 Q27 84 27 78 L27 48 Q27 42 32 39 Z" fill="#F2C6DC" opacity=".78"/>
+  </g>
+  <text x="122" y="76" font-family="Crimson Pro, Georgia, serif" font-weight="500" font-size="46" letter-spacing="1" fill="#F6F1F7">everkind</text>
+</svg>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Replace {{SITE_URL}} with CONFIG.SITE_URL (no trailing slash) before
+     submitting to search engines. Generated from the page list; add news
+     release URLs only if the releases are hosted on this domain. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>{{SITE_URL}}/</loc><lastmod>2026-08-17</lastmod></url>
+  <url><loc>{{SITE_URL}}/company.html</loc><lastmod>2026-08-17</lastmod></url>
+  <url><loc>{{SITE_URL}}/product.html</loc><lastmod>2026-08-17</lastmod></url>
+  <url><loc>{{SITE_URL}}/investors.html</loc><lastmod>2026-08-17</lastmod></url>
+  <url><loc>{{SITE_URL}}/news.html</loc><lastmod>2026-08-17</lastmod></url>
+  <url><loc>{{SITE_URL}}/contact.html</loc><lastmod>2026-08-17</lastmod></url>
+</urlset>

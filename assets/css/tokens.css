@@ -1,0 +1,84 @@
+/* tokens.css
+ * ─────────────────────────────────────────────────────────────
+ * DESIGN TOKENS ONLY. Colour, type, space, motion. No selectors
+ * beyond :root and the reduced-motion override. Components read
+ * the semantic aliases, never the raw --ek-* colours.
+ * ───────────────────────────────────────────────────────────── */
+:root {
+  /* ── Brand palette — extracted from the real logo files ──── */
+  --ek-plum:        #4D3864;  /* wordmark; primary text on light surfaces */
+  --ek-violet-deep: #5E1AA3;  /* logo mark gradient, dark end */
+  --ek-violet:      #7430A1;  /* logo mark gradient, mid — primary accent (GLOW ONLY on dark; 2.4:1) */
+  --ek-orchid:      #A96BAD;  /* logo mark gradient, light end — meaningful borders (≈4.4:1) */
+  --ek-lilac:       #C9A7E6;  /* in-app light purple */
+  --ek-blush:       #F2C6DC;  /* in-app pink; the bloom colour */
+  --ek-cream:       #FDF6F4;  /* in-app warm off-white; light sections */
+  --ek-ink:         #0C0710;  /* near-black plum; the site's ground */
+  --ek-ink-2:       #17101F;  /* raised dark surface */
+  --ek-ink-3:       #241A2E;  /* hairlines on dark */
+  --ek-text:        #F6F1F7;
+  --ek-text-dim:    #B9AEC4;
+
+  /* ── Semantic aliases — components use ONLY these ────────── */
+  --surface:        var(--ek-ink);
+  --surface-raised: var(--ek-ink-2);
+  --surface-line:   var(--ek-ink-3);
+  --text:           var(--ek-text);
+  --text-muted:     var(--ek-text-dim);
+  --accent:         var(--ek-violet);   /* decoration + glow only */
+  --accent-soft:    var(--ek-lilac);
+  --accent-strong:  var(--ek-orchid);   /* meaningful borders, chips, focus */
+  --border:         var(--ek-ink-3);
+  --border-meaning: var(--ek-orchid);   /* WCAG 1.4.11 — never --ek-violet */
+  --focus-ring:     var(--ek-blush);
+
+  /* Light-section aliases (applied by .section--light) */
+  --light-surface:  var(--ek-cream);
+  --light-text:     #2A1E38;
+  --light-muted:    #5C4A6E;
+
+  /* ── Type ─────────────────────────────────────────────────── */
+  --font-serif: "Crimson Pro", Georgia, "Times New Roman", serif;
+  --font-sans:  "Figtree", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  /* Fluid type scale. Floor is 14px sitewide (§9). */
+  --fs-xs:  clamp(0.875rem, 0.85rem + 0.15vw, 0.9375rem); /* 14–15px */
+  --fs-sm:  clamp(0.9375rem, 0.9rem + 0.2vw,  1.0625rem);
+  --fs-md:  clamp(1.0625rem, 1rem + 0.35vw,   1.25rem);
+  --fs-lg:  clamp(1.25rem,  1.1rem + 0.8vw,   1.75rem);
+  --fs-xl:  clamp(1.75rem,  1.4rem + 1.8vw,   2.75rem);
+  --fs-2xl: clamp(2.25rem,  1.7rem + 3vw,     4rem);
+  --fs-hero:clamp(2.6rem,   1.9rem + 4.2vw,   5.25rem);
+
+  /* ── Space ────────────────────────────────────────────────── */
+  --sp-1: .25rem;  --sp-2: .5rem;  --sp-3: .75rem; --sp-4: 1rem;
+  --sp-5: 1.5rem;  --sp-6: 2rem;   --sp-7: 3rem;   --sp-8: 4.5rem;
+  --sp-9: 7rem;    --sp-10: 10rem;
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --content-max: 76rem;
+  --radius-sm: 10px; --radius-md: 18px; --radius-lg: 28px;
+
+  /* ── Motion (§6.1) ────────────────────────────────────────── */
+  --dur-xs: .18s;  --dur-sm: .32s;  --dur-md: .6s;
+  --dur-lg: .9s;   --dur-xl: 1.4s;
+  --ease-out:  cubic-bezier(.16,1,.3,1);      /* the workhorse */
+  --ease-io:   cubic-bezier(.65,0,.35,1);
+  --ease-soft: cubic-bezier(.25,.46,.45,.94);
+  --stagger:   .07s;
+
+  /* ── Header ───────────────────────────────────────────────── */
+  --header-h: 76px;
+}
+
+/* Cross-document view transitions (§6.6). Same rule in every page. */
+@view-transition { navigation: auto; }
+
+@media (prefers-reduced-motion: reduce) {
+  /* Browsers do NOT auto-suppress view transitions — disable explicitly. */
+  @view-transition { navigation: none; }
+
+  :root {
+    --dur-xs: 0s; --dur-sm: 0s; --dur-md: .2s;
+    --dur-lg: .2s; --dur-xl: .2s; --stagger: 0s;
+  }
+}

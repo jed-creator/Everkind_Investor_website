@@ -1,0 +1,162 @@
+/* pages.css
+ * ─────────────────────────────────────────────────────────────
+ * Page-specific layout. Sections appear in source order per page:
+ * Home → Company → Product → Investors → News → Contact → 404.
+ * ───────────────────────────────────────────────────────────── */
+
+/* ═══ Home ═══════════════════════════════════════════════════ */
+.hero { min-height: calc(100svh - var(--header-h)); display: grid; align-items: center; }
+.hero__grid { display: grid; gap: var(--sp-7); align-items: center; }
+@media (min-width: 980px) { .hero__grid { grid-template-columns: 1.05fr .95fr; } }
+.hero__copy { display: grid; gap: var(--sp-5); justify-items: start; }
+.hero__ctas { display: flex; gap: var(--sp-4); flex-wrap: wrap; }
+.hero__visual { position: relative; }
+.hero__cue { margin-top: var(--sp-7); }
+
+.pull-quote {
+  font-family: var(--font-serif); font-weight: 380;
+  font-size: var(--fs-2xl); line-height: 1.25; text-align: center;
+  max-width: 24ch; margin-inline: auto; text-wrap: balance;
+}
+
+/* Pinned "How it works" (§6.4 #1) */
+.hiw { position: relative; }
+.hiw__stage { display: grid; gap: var(--sp-7); align-items: center; min-height: 80svh; }
+@media (min-width: 980px) { .hiw__stage { grid-template-columns: 1fr 1fr; } }
+.hiw__copy { position: relative; min-height: 16rem; }
+.hiw__beat { position: absolute; inset: 0; opacity: 0; visibility: hidden; display: grid; gap: var(--sp-3); align-content: center; }
+.hiw__beat.is-active { opacity: 1; visibility: visible; }
+.hiw__beat .beat-index { font-size: var(--fs-xs); letter-spacing: .2em; color: var(--accent-soft); }
+.hiw__visual { position: relative; min-height: 420px; }
+.hiw__shot { position: absolute; inset: 0; margin: auto; opacity: 0; visibility: hidden; }
+.hiw__shot.is-active { opacity: 1; visibility: visible; }
+/* Static (reduced-motion / mobile) layout */
+html.no-pin .hiw__copy, html.no-pin .hiw__visual { min-height: 0; }
+html.no-pin .hiw__beat, html.no-pin .hiw__shot { position: static; opacity: 1; visibility: visible; margin-bottom: var(--sp-7); }
+
+.two-ways { display: grid; gap: var(--sp-5); }
+@media (min-width: 820px) { .two-ways { grid-template-columns: 1fr 1fr; } }
+.two-ways .card { display: flex; flex-direction: column; gap: var(--sp-3); }
+.two-ways .card .link-arrow { margin-top: auto; padding-top: var(--sp-4); }
+
+.advisor-strip { display: grid; gap: var(--sp-5); }
+@media (min-width: 820px) { .advisor-strip { grid-template-columns: repeat(3, 1fr); } }
+
+.closing { text-align: center; padding-block: clamp(6rem, 16vw, 12rem); }
+.closing h2 { font-size: var(--fs-hero); }
+.closing .footer-tag-lockup { margin: 0 0 var(--sp-4); }
+.closing__ctas { display: flex; gap: var(--sp-4); justify-content: center; flex-wrap: wrap; margin-top: var(--sp-6); }
+
+/* ═══ Company ════════════════════════════════════════════════ */
+.mission-block p { font-family: var(--font-serif); font-size: var(--fs-xl); line-height: 1.35; max-width: 30ch; }
+.company-paras { display: grid; gap: var(--sp-5); max-width: 68ch; }
+
+/* Pinned dots→aggregate (§6.4 #3) */
+.iwi { text-align: center; }
+.iwi__canvas-wrap { position: relative; margin-inline: auto; max-width: 720px; aspect-ratio: 16/10; }
+.iwi__canvas-wrap canvas { width: 100%; height: 100%; }
+.iwi-compare { display: grid; gap: var(--sp-5); text-align: left; margin-top: var(--sp-7); }
+@media (min-width: 820px) { .iwi-compare { grid-template-columns: 1fr 1fr; } }
+.iwi-compare ul { list-style: none; padding: 0; display: grid; gap: var(--sp-2); margin-top: var(--sp-3); }
+.iwi-compare li { display: flex; gap: .6em; align-items: baseline; font-size: var(--fs-sm); color: var(--text-muted); }
+
+/* ═══ Product ════════════════════════════════════════════════ */
+.pillars { position: relative; }
+.pillars__stage { display: grid; gap: var(--sp-7); align-items: center; min-height: 80svh; }
+@media (min-width: 980px) { .pillars__stage { grid-template-columns: .9fr 1.1fr; } }
+.pillars__visual { position: relative; min-height: 420px; }
+.pillars__shot { position: absolute; inset: 0; margin: auto; opacity: 0; visibility: hidden; }
+.pillars__shot.is-active { opacity: 1; visibility: visible; }
+.pillars__copy { position: relative; min-height: 18rem; }
+.pillars__pillar { position: absolute; inset: 0; opacity: 0; visibility: hidden; display: grid; gap: var(--sp-3); align-content: center; }
+.pillars__pillar.is-active { opacity: 1; visibility: visible; }
+html.no-pin .pillars__copy, html.no-pin .pillars__visual { min-height: 0; }
+html.no-pin .pillars__pillar, html.no-pin .pillars__shot { position: static; opacity: 1; visibility: visible; margin-bottom: var(--sp-7); }
+
+.waveform-visual {
+  aspect-ratio: 4/5; max-width: min(420px, 80vw); margin-inline: auto;
+  display: grid; place-items: center;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, rgba(94,26,163,.35), rgba(242,198,220,.12));
+  border: 1px solid var(--border);
+}
+.waveform-visual svg { width: 70%; height: auto; }
+
+.org-benefits { display: grid; gap: var(--sp-5); }
+@media (min-width: 820px) { .org-benefits { grid-template-columns: 1fr 1fr; } }
+
+.proof-strip { display: grid; gap: var(--sp-6); text-align: center; }
+@media (min-width: 720px) { .proof-strip { grid-template-columns: repeat(3, 1fr); } }
+.proof-strip .figure { font-family: var(--font-serif); font-size: var(--fs-hero); line-height: 1; color: var(--ek-blush); font-variant-numeric: tabular-nums; }
+.proof-strip .label { color: var(--text-muted); margin-top: var(--sp-2); }
+.proof-footnote { text-align: center; font-size: var(--fs-sm); color: var(--text-muted); margin-top: var(--sp-5); }
+
+/* ═══ Investors ══════════════════════════════════════════════ */
+.investors-layout { display: grid; gap: var(--sp-7); }
+@media (min-width: 1024px) {
+  .investors-layout { grid-template-columns: 62% 34%; column-gap: 4%; align-items: start; }
+}
+.investors-main { display: grid; gap: var(--sp-8); min-width: 0; }
+.investors-sidebar { display: grid; gap: var(--sp-5); align-content: start; min-width: 0; }
+/* ONLY the top block is sticky (§8.1) */
+@media (min-width: 1024px) {
+  .sidebar-sticky { position: sticky; top: calc(var(--header-h) + 16px); }
+}
+/* Mobile: sidebar (form first) directly after news — handled by DOM order + CSS order */
+@media (max-width: 1023px) {
+  .investors-layout { display: flex; flex-direction: column; }
+  .investors-main { display: contents; }
+  .inv-news { order: 1; }
+  .investors-sidebar { order: 2; }
+  .inv-header { order: 0; }
+  .inv-deck { order: 3; } .inv-market { order: 4; } .inv-case { order: 5; }
+  .inv-corp { order: 6; } .inv-caution { order: 7; }
+  .investors-main > section { margin-bottom: var(--sp-8); }
+}
+
+.page-header { padding-block: calc(var(--header-h) + clamp(2.5rem, 7vw, 5rem)) clamp(2rem, 5vw, 3.5rem); }
+.page-header .meta-strip {
+  display: flex; gap: var(--sp-5) var(--sp-6); flex-wrap: wrap;
+  margin-top: var(--sp-5); font-size: var(--fs-xs); color: var(--text-muted);
+}
+.meta-strip b { color: var(--text); font-weight: 550; }
+
+.case-blocks { display: grid; gap: var(--sp-5); }
+@media (min-width: 760px) { .case-blocks { grid-template-columns: 1fr 1fr; } }
+.case-blocks .card p { font-size: var(--fs-sm); color: var(--text-muted); }
+.case-blocks .card .link-arrow { margin-top: var(--sp-3); }
+
+.deck-download-row { display: flex; align-items: center; gap: var(--sp-4); flex-wrap: wrap; margin-top: var(--sp-4); }
+
+/* ═══ News Room ══════════════════════════════════════════════ */
+.news-layout { display: grid; gap: var(--sp-7); align-items: start; }
+@media (min-width: 1024px) { .news-layout { grid-template-columns: 1fr 320px; } }
+.news-filters { display: flex; gap: var(--sp-2); flex-wrap: wrap; margin-bottom: var(--sp-6); }
+.news-rail { display: grid; gap: var(--sp-5); }
+@media (min-width: 1024px) { .news-rail { position: sticky; top: calc(var(--header-h) + 16px); } }
+
+.pending-release {
+  border-style: dashed; border-color: var(--border-meaning);
+}
+
+/* ═══ Contact ════════════════════════════════════════════════ */
+.contact-routes { display: grid; gap: var(--sp-5); }
+@media (min-width: 900px) { .contact-routes { grid-template-columns: repeat(3, 1fr); } }
+.contact-embeds { display: grid; gap: var(--sp-7); margin-top: var(--sp-8); }
+@media (min-width: 1024px) { .contact-embeds { grid-template-columns: 1fr 1fr; } }
+
+/* ═══ 404 ════════════════════════════════════════════════════ */
+.notfound { min-height: 80svh; display: grid; place-items: center; text-align: center; }
+.notfound h1 { font-size: var(--fs-hero); }
+
+/* ═══ Shared small bits ══════════════════════════════════════ */
+.section-head { display: grid; gap: var(--sp-3); margin-bottom: var(--sp-7); }
+.section-head--row { display: flex; align-items: end; justify-content: space-between; gap: var(--sp-5); flex-wrap: wrap; }
+
+/* Calendly popup button on mobile; inline on desktop (§8.6) */
+.calendly-mobile-btn { display: inline-flex; }
+.calendly-inline-holder { display: none; }
+@media (min-width: 760px) {
+  .calendly-mobile-btn { display: none; }
+  .calendly-inline-holder { display: block; }
+}
