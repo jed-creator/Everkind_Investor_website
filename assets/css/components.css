@@ -53,7 +53,7 @@
 }
 .nav-link:hover, .nav-link[aria-current="page"] { color: var(--ek-purple); }
 
-/* Two-copy character stack (§6.7) — built by nav.js */
+/* Two-copy character stack (§6.7) - built by nav.js */
 .nav-link__stack { display: inline-block; position: relative; }
 .nav-link__copy { display: inline-block; transition: transform var(--dur-sm) var(--ease-out); }
 .nav-link__copy--ghost { position: absolute; inset: 0; transform: translateY(110%); }
@@ -235,7 +235,7 @@
 .news-grid--three { align-items: stretch; }
 @media (min-width: 900px) { .news-grid--three { grid-template-columns: repeat(3, 1fr); } }
 
-/* Hexagon bullet — the logo geometry recurring (§7.1) */
+/* Hexagon bullet - the logo geometry recurring (§7.1) */
 .hex-bullet { width: 14px; height: 14px; flex: none; }
 
 /* ═══ Team cards ═════════════════════════════════════════════ */
@@ -262,7 +262,7 @@
   display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
   gap: var(--sp-2); padding: var(--sp-6);
   background: var(--surface-raised);
-  border: 2px dashed var(--border-meaning); /* orchid, not violet — §5.3 */
+  border: 2px dashed var(--border-meaning); /* orchid, not violet - §5.3 */
   border-radius: var(--radius-md);
   min-height: 160px;
 }
@@ -293,7 +293,7 @@
   border-radius: var(--radius-md); padding: var(--sp-5);
 }
 .embed-card--light-safe {
-  /* Calendly free tier renders light — which now matches the site */
+  /* Calendly free tier renders light - which now matches the site */
   background: var(--ek-white);
   border: 1px solid var(--border);
 }

@@ -28,16 +28,16 @@
         "Financial information is preliminary and subject to change. Past performance does not guarantee future results.",
         "No investment advice: this presentation does not constitute investment advice, a recommendation to buy or sell securities, or a solicitation of an offer to invest."
       ],
-      "fine": "Condensed from the deck's full disclaimer (effective June 2025) — see page 2 of the PDF for the complete text.",
+      "fine": "Condensed from the deck's full disclaimer (effective June 2025) - see page 2 of the PDF for the complete text.",
       "image": "assets/img/deck/deck-02.jpg"
     },
     {
       "kicker": "Who we are",
-      "title": "Our mission, our vision — and it's personal",
+      "title": "Our mission, our vision - and it's personal",
       "bullets": [
-        "Mission: Everkind is your trusted guide. Always on, never judging — helping you take your moment through personalized, AI-powered experiences.",
+        "Mission: Everkind is your trusted guide. Always on, never judging - helping you take your moment through personalized, AI-powered experiences.",
         "Vision: a world where emotional well-being is woven into everyday life, with calm, compassionate technology that meets people where they are.",
-        "\"I built this to be the support system I couldn't find: one that's here for you when you need it, understands your reality, and doesn't price you out of healing.\" — Harrison, Founder"
+        "\"I built this to be the support system I couldn't find: one that's here for you when you need it, understands your reality, and doesn't price you out of healing.\" - Harrison, Founder"
       ],
       "image": "assets/img/deck/deck-03.jpg"
     },
@@ -45,10 +45,10 @@
       "kicker": "The problem",
       "title": "Mental health is the leading cause of the disability burden worldwide",
       "bullets": [
-        "Global impact: nearly 1 billion people live with mental disorders — the largest disability market by population.",
+        "Global impact: nearly 1 billion people live with mental disorders - the largest disability market by population.",
         "Care gap: 30–50% of people who need mental-health care do not seek it due to stigma, awareness, and inaccessibility.",
         "Economic cost: mental disorders drive ~$5 trillion/year in global economic losses, mainly from lost productivity.",
-        "U.S. & Canada: mental disorders drive ~20% of all non-fatal disability — more than any other condition."
+        "U.S. & Canada: mental disorders drive ~20% of all non-fatal disability - more than any other condition."
       ],
       "fine": "everkind promotes mental wellness through a self-directed process of building resilience, fostering positive emotions, and improving coping skills.",
       "image": "assets/img/deck/deck-04.jpg"
@@ -73,18 +73,18 @@
         "22.2% of U.S. adults ages 18–21 rely on AI for primary mental health support.",
         "The \"Always-On\" companion market is valued at $34B in 2024.",
         "TAM: global $160B by 2030; North America $61B by 2030.",
-        "\"As of July 2025, AI companion apps across the Apple App Store and Google Play have been downloaded 220 million times globally.\" — Tech Crunch"
+        "\"As of July 2025, AI companion apps across the Apple App Store and Google Play have been downloaded 220 million times globally.\" - Tech Crunch"
       ],
       "image": "assets/img/deck/deck-06.jpg"
     },
     {
       "kicker": "Traction",
-      "title": "Early indicators — since January 2026",
+      "title": "Early indicators - since January 2026",
       "bullets": [
         "Installs: 161K+ (growth +774% vs. ~150–400% typical early-app benchmark)",
         "Sign-ups: 90K+ (+800% vs. ~150–350%)",
         "Activated users: 52K+ (+537% vs. ~120–300%)",
-        "Tokens processed: 15B+ — demonstrating strong adoption and repeat usage."
+        "Tokens processed: 15B+ - demonstrating strong adoption and repeat usage."
       ],
       "fine": "Benchmarked vs. typical early-stage consumer health apps, per the deck.",
       "image": "assets/img/deck/deck-07.jpg"
@@ -94,9 +94,9 @@
       "title": "Our AI products are deeply technical and proudly human",
       "body": "In a saturated market with session-based services like Calm and BetterHelp, everkind's Knowledge Graph offers a unique, personalized advantage by continuously building upon itself over time.",
       "bullets": [
-        "Empowerment through AI — emotional understanding and resilience that supports balanced decisions.",
-        "A unified ecosystem — one multi-model platform across AI journaling and meditation.",
-        "Continuous integration & development — proprietary architecture enabling rapid, safe feature development."
+        "Empowerment through AI - emotional understanding and resilience that supports balanced decisions.",
+        "A unified ecosystem - one multi-model platform across AI journaling and meditation.",
+        "Continuous integration & development - proprietary architecture enabling rapid, safe feature development."
       ],
       "image": "assets/img/deck/deck-08.jpg"
     },
@@ -104,7 +104,7 @@
       "kicker": "Core products",
       "title": "AI journaling",
       "bullets": [
-        "Makes reflection interactive and insightful — journaling supports emotional regulation by helping people process and organize thoughts.",
+        "Makes reflection interactive and insightful - journaling supports emotional regulation by helping people process and organize thoughts.",
         "Captures patterns and emotional states to uncover personal themes, strengths and growth areas.",
         "Long-term memory supports personal evolution.",
         "AI journaling market is expected to grow 20–25% CAGR through 2033."
@@ -115,8 +115,8 @@
       "kicker": "Core products",
       "title": "Personalized meditation",
       "bullets": [
-        "Turns insight to action — meditation strengthens emotional regulation by calming the nervous system.",
-        "Hyper-personalized content generation: meditations are AI-generated from interactions with Journal — 100% unique to you. (Patent pending)",
+        "Turns insight to action - meditation strengthens emotional regulation by calming the nervous system.",
+        "Hyper-personalized content generation: meditations are AI-generated from interactions with Journal - 100% unique to you. (Patent pending)",
         "Empathetic delivery: personalized to your mood using specific tone and pace of speech.",
         "New meditations are generated upon request in real time."
       ],
@@ -130,14 +130,14 @@
         "LLM agnostic: no vendor lock-in, optimized for cost and latency.",
         "Cloud-agnostic infrastructure: deployable on any cloud.",
         "Dynamic knowledge graph: updates with every interaction.",
-        "Automated CI/CD pipelines and multi-product AI coherence — the core engine is a platform, not a single app."
+        "Automated CI/CD pipelines and multi-product AI coherence - the core engine is a platform, not a single app."
       ],
       "image": "assets/img/deck/deck-11.jpg"
     },
     {
       "kicker": "Core technology",
       "title": "Dynamic knowledge graph",
-      "body": "To provide truly personalized coaching, an AI must understand the user's world — the people, goals, challenges, and values that define their life. Our proprietary Relational Knowledge Graph is designed for exactly this purpose. (Patent pending)",
+      "body": "To provide truly personalized coaching, an AI must understand the user's world - the people, goals, challenges, and values that define their life. Our proprietary Relational Knowledge Graph is designed for exactly this purpose. (Patent pending)",
       "bullets": [
         "Proprietary graph-based architecture: maps a user's life as an interconnected network of \"objects\" (e.g., 'Mom', 'New Job', 'Marathon Goal').",
         "Real-time relevance engine: instantly pulls all related objects and their histories from months or even years prior."
@@ -161,13 +161,13 @@
       "body": "Our Narrative Genome Mapping Engine moves beyond daily interactions to provide powerful, hierarchical insights over extended periods. (Patent pending)",
       "bullets": [
         "Temporal pattern extraction: analyzes messages over calendar-based intervals, extracting themes and sentiment markers.",
-        "Hierarchical insights: organizes patterns — e.g., a weekly 'Sunday anxiety' pattern feeding a monthly 'procrastination on major goals' pattern."
+        "Hierarchical insights: organizes patterns - e.g., a weekly 'Sunday anxiety' pattern feeding a monthly 'procrastination on major goals' pattern."
       ],
       "image": "assets/img/deck/deck-14.jpg"
     },
     {
       "kicker": "Business model",
-      "title": "Our business models are simple and scalable — B2C",
+      "title": "Our business models are simple and scalable - B2C",
       "bullets": [
         "AI journaling–first product capturing high-intent, low-competition search.",
         "Freemium → subscription model driven by habit formation, trust, and contextual feature unlocks.",
@@ -178,7 +178,7 @@
     },
     {
       "kicker": "Business model",
-      "title": "…and recurring — B2B",
+      "title": "…and recurring - B2B",
       "bullets": [
         "Bulk access licensing for employers, insurers, and partners offering scalable mental wellness benefits.",
         "Co-branded deployments integrated into existing wellness, HR, or benefits ecosystems.",
@@ -191,14 +191,14 @@
       "kicker": "Behind everkind",
       "title": "Our team is proven",
       "bullets": [
-        "Harrison Newlands — Chief Executive Officer (Hypercharge, Fire & Flower)",
-        "Supreet Pal Singh — Chief Technology Officer (PSL)",
-        "Jonathan Held — Chief Financial Officer (Aloe Finance)",
-        "Matt Brudzynski — Chief Strategy Officer (Google)",
-        "Brien Stelzer — Chief Operating Officer (Expedia, Amazon)",
-        "Amy Monier — Chief Marketing Officer (Zynga)",
-        "Lee Clissett — Head of Product",
-        "George Plytas — Chief Information Security Officer (Moneris, Toronto Star)"
+        "Harrison Newlands - Chief Executive Officer (Hypercharge, Fire & Flower)",
+        "Supreet Pal Singh - Chief Technology Officer (PSL)",
+        "Jonathan Held - Chief Financial Officer (Aloe Finance)",
+        "Matt Brudzynski - Chief Strategy Officer (Google)",
+        "Brien Stelzer - Chief Operating Officer (Expedia, Amazon)",
+        "Amy Monier - Chief Marketing Officer (Zynga)",
+        "Lee Clissett - Head of Product",
+        "George Plytas - Chief Information Security Officer (Moneris, Toronto Star)"
       ],
       "image": "assets/img/deck/deck-17.jpg"
     },
@@ -238,7 +238,7 @@
       "title": "Partnerships",
       "bullets": [
         "Connected Care: combines Everkind's 24/7 mental wellness platform with Connected Care's mental health practitioner booking; a proving ground for serving a consented youth population.",
-        "CanPR: Everkind is visible and available to the over 1,000,000 users where CanPR is installed — resources tailored for newcomers to Canada.",
+        "CanPR: Everkind is visible and available to the over 1,000,000 users where CanPR is installed - resources tailored for newcomers to Canada.",
         "Brampton Fire & Emergency Services: extends Everkind's 24/7 wellness platform to all BFES personnel and eligible family members as a formal employee benefit."
       ],
       "image": "assets/img/deck/deck-21.jpg"
@@ -253,14 +253,14 @@
         "Apr–May: user journey v2, dashboard v1, home experience",
         "June: guest meditations, journal locking, streaks, daily goals"
       ],
-      "fine": "Rapid iteration across core product, onboarding, and infrastructure — while scaling marketing, user acquisition, and business development.",
+      "fine": "Rapid iteration across core product, onboarding, and infrastructure - while scaling marketing, user acquisition, and business development.",
       "image": "assets/img/deck/deck-22.jpg"
     },
     {
       "kicker": "Roadmap",
       "title": "What's next?",
       "bullets": [
-        "Ready to launch: paywall & re-design — monetization, improved UX and home screen, engagement & retention.",
+        "Ready to launch: paywall & re-design - monetization, improved UX and home screen, engagement & retention.",
         "Insights v1: user analytics, dashboard & key stats, sentiment and mood trends.",
         "Insights v2: smart recommendations, personalized actions, suggested habits & support tools.",
         "Proactive check-ins: engagement layer, timely nudges, ongoing user support.",

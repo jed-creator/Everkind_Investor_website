@@ -45,9 +45,9 @@ function releaseCard(r) {
   card.dataset.category = r.category || 'Corporate';
 
   const bullet = `<svg class="hex-bullet" viewBox="0 0 100 108" aria-hidden="true"><path d="${HEX_PATH}" fill="#7B2CBF"/></svg>`;
-  const dateText = pending ? 'Date pending — add release' : formatDate(r.date);
+  const dateText = pending ? 'Date pending - add release' : formatDate(r.date);
   const summary = isSet(r.summary) ? r.summary
-    : 'Summary pending sign-off — quote figures verbatim from the release. See assets/data/news.json.';
+    : 'Summary pending sign-off. Quote figures verbatim from the release. See assets/data/news.json.';
 
   card.innerHTML = `
     <div class="news-card__meta">${bullet}
@@ -58,7 +58,7 @@ function releaseCard(r) {
     <p class="news-card__summary">${escapeHTML(summary)}</p>
     ${hasUrl
       ? '<span class="link-arrow">Read release <span class="arr" aria-hidden="true">→</span></span>'
-      : '<span class="link-arrow muted" style="color:var(--text-muted)">Release URL pending — {{URL}} in news.json</span>'}
+      : '<span class="link-arrow muted" style="color:var(--text-muted)">Release URL pending: {{URL}} in news.json</span>'}
     <span class="card__sheen" aria-hidden="true"></span>`;
   return card;
 }
@@ -80,7 +80,7 @@ export async function initNews() {
     const mode = mount.dataset.news;
 
     if (mode === 'recent') {
-      /* Compact vertical list — date + title only, newest first. */
+      /* Compact vertical list - date + title only, newest first. */
       const top = dated(releases).slice(0, RECENT_COUNT);
       top.forEach((r) => {
         const hasUrl = isSet(r.url);
@@ -97,7 +97,7 @@ export async function initNews() {
       return;
     }
 
-    /* mode === 'all': CollectionPage + ItemList structured data —
+    /* mode === 'all': CollectionPage + ItemList structured data -
        references only, pointing at each canonical release. NOT
        NewsArticle: the bodies live elsewhere (§11.4). Only releases
        with real URLs are included. */

@@ -1,7 +1,7 @@
 /* deck.js
  * ─────────────────────────────────────────────────────────────
  * The investor deck widget (§8.2). Slides come from deck.json and
- * render as LIVE HTML — selectable, searchable, translatable,
+ * render as LIVE HTML - selectable, searchable, translatable,
  * screen-reader accessible. Deliberately NOT pinned (§6.4).
  *
  * Navigation: prev/next, hexagon dots, ←/→, Home/End, touch swipe,
@@ -12,9 +12,9 @@
  * Exports: initDeck()
  *
  * TUNE:
- *   TRANS_MS   620 — slide transition
- *   OVERLAP_MS 180 — in/out overlap
- *   SWIPE_PX    48 — touch threshold
+ *   TRANS_MS   620 - slide transition
+ *   OVERLAP_MS 180 - in/out overlap
+ *   SWIPE_PX    48 - touch threshold
  * ───────────────────────────────────────────────────────────── */
 import { CONFIG, isSet } from './config.js';
 import { el, escapeHTML, prefersReducedMotion, HEX_PATH } from './utils.js';
@@ -57,7 +57,7 @@ export async function initDeck() {
   const slideEls = slides.map((s, i) => {
     const node = el('div', { class: 'deck__slide' + (s.image ? ' deck__slide--image' : '') + (s.variant === 'title' ? ' deck__slide--title' : ''), role: 'group', 'aria-roledescription': 'slide', 'aria-label': `Slide ${i + 1} of ${slides.length}: ${s.title}` });
     // The transcription of each page. When the slide has an `image`
-    // (the exact rendered PDF page — what the download serves), the
+    // (the exact rendered PDF page - what the download serves), the
     // image is what's shown and the transcription becomes visually-
     // hidden screen-reader content, so the deck stays accessible.
     let html = '';
@@ -242,7 +242,7 @@ export async function initDeck() {
       const row = dl.closest('.deck-download-row');
       if (row) {
         row.innerHTML = '';
-        row.append(el('p', { class: 'muted', html: `Deck available on request — <a href="mailto:${CONFIG.IR_EMAIL}">${CONFIG.IR_EMAIL}</a>` }));
+        row.append(el('p', { class: 'muted', html: `Deck available on request: <a href="mailto:${CONFIG.IR_EMAIL}">${CONFIG.IR_EMAIL}</a>` }));
       }
     });
   }

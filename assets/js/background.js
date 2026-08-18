@@ -8,11 +8,11 @@
  * Exports: initBackground(), bloom(strength)
  *
  * TUNE:
- *   TIME_SPEED   0.06  — shader drift, units/sec. A breath, not a lava lamp.
- *   MOUSE_LERP   0.045 — pointer easing per frame
- *   MOUSE_WARP   0.06  — max field warp as fraction of screen width
+ *   TIME_SPEED   0.06  - shader drift, units/sec. A breath, not a lava lamp.
+ *   MOUSE_LERP   0.045 - pointer easing per frame
+ *   MOUSE_WARP   0.06  - max field warp as fraction of screen width
  *   DPR_CAP      1.5
- *   GOVERNOR_MS  20    — median frame time that triggers a downgrade
+ *   GOVERNOR_MS  20    - median frame time that triggers a downgrade
  * ───────────────────────────────────────────────────────────── */
 import { CONFIG } from './config.js';
 import { clamp, lerp, prefersReducedMotion } from './utils.js';
@@ -62,7 +62,7 @@ const FRAG = /* glsl */`
   in vec2 vUv;
   out vec4 outColor;
 
-  uniform float uTime;        // slow — ~0.06 u/s
+  uniform float uTime;        // slow - ~0.06 u/s
   uniform vec2  uResolution;
   uniform vec2  uMouse;       // NDC, lerped
   uniform float uScroll;      // 0→1 document progress
@@ -71,7 +71,7 @@ const FRAG = /* glsl */`
   uniform float uBloom;       // pulse, decays outside
   uniform float uOctaves;     // 3.0 → governor may drop to 2.0
 
-  /* Everkind ramp — matched to everkind.com's pink-sky hero */
+  /* Everkind ramp - matched to everkind.com's pink-sky hero */
   const vec3 PALE   = vec3(0.984, 0.969, 0.984);  // #FBF7FB page ground
   const vec3 LAV    = vec3(0.910, 0.835, 0.961);  // #E8D5F5
   const vec3 LAV2   = vec3(0.851, 0.737, 0.941);  // deeper lavender
@@ -115,7 +115,7 @@ const FRAG = /* glsl */`
     return v;
   }
 
-  /* 4x4 ordered dither — kills banding in the long dark falloff */
+  /* 4x4 ordered dither - kills banding in the long dark falloff */
   float dither(vec2 frag) {
     int x = int(mod(frag.x, 4.0));
     int y = int(mod(frag.y, 4.0));
@@ -130,7 +130,7 @@ const FRAG = /* glsl */`
     vec2 p = vec2(uv.x * aspect, uv.y);
     float t = uTime;
 
-    /* pointer warp — ≤6% of screen width, never a spotlight */
+    /* pointer warp - ≤6% of screen width, never a spotlight */
     vec2 mouse = uMouse * 0.5 + 0.5;
     vec2 toMouse = p - vec2(mouse.x * aspect, mouse.y);
     p += normalize(toMouse + 1e-4) * exp(-dot(toMouse, toMouse) * 3.0) * -${MOUSE_WARP.toFixed(3)} * uIntensity;
@@ -156,15 +156,15 @@ const FRAG = /* glsl */`
 
     vec3 col = PALE;
 
-    /* depth haze — a broad lavender wash */
+    /* depth haze - a broad lavender wash */
     float haze = fbm(p * 0.7 - t * 0.1 + 11.3, uOctaves) * 0.5 + 0.5;
     col = mix(col, LAV, haze * 0.4 * (1.0 - deep * 0.4));
 
-    /* the sky band — soft sunset colour, never loud */
+    /* the sky band - soft sunset colour, never loud */
     col = mix(col, mid, band * (0.55 + n * 0.2) * (1.0 - deep * 0.35));
     col = mix(col, hi,  band * band * (0.45 + q.x * 0.2) * (1.0 - deep * 0.35));
 
-    /* bloom core — warm pink glow at the band's brightest point */
+    /* bloom core - warm pink glow at the band's brightest point */
     vec2 bloomPos = vec2(0.5 * aspect + q.y * 0.2, bandCentre + 0.02);
     float d = distance(vec2(uv.x * aspect, uv.y), bloomPos);
     float core = exp(-d * d * 6.0);
@@ -187,7 +187,7 @@ export async function initBackground() {
   try {
     THREE = await import('three');
   } catch (err) {
-    console.info('[everkind] Three.js unavailable — CSS aurora stays on duty.');
+    console.info('[everkind] Three.js unavailable - CSS aurora stays on duty.');
     return;
   }
 
@@ -267,7 +267,7 @@ export async function initBackground() {
     setTimeout(() => {
       renderer.dispose(); geo.dispose(); material.dispose();
     }, 450);
-    console.info('[everkind] Aurora: WebGL retired for this device — CSS fallback active.');
+    console.info('[everkind] Aurora: WebGL retired for this device - CSS fallback active.');
   };
 
   const governor = (now) => {

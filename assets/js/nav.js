@@ -11,9 +11,9 @@
  * Exports: initNav()
  *
  * TUNE:
- *   HAIRLINE_AT   80  — px scrolled before the bottom line shows
- *   HIDE_AFTER   400  — px scrolled before hide-on-down kicks in
- *   MENU_STAGGER  60  — ms between mobile links
+ *   HAIRLINE_AT   80  - px scrolled before the bottom line shows
+ *   HIDE_AFTER   400  - px scrolled before hide-on-down kicks in
+ *   MENU_STAGGER  60  - ms between mobile links
  * ───────────────────────────────────────────────────────────── */
 import { prefersReducedMotion } from './utils.js';
 

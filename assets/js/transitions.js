@@ -1,19 +1,19 @@
 /* transitions.js
  * ─────────────────────────────────────────────────────────────
  * Page transitions (§6.6). Two mutually exclusive mechanisms:
- *   1. Cross-document View Transitions — pure CSS
+ *   1. Cross-document View Transitions - pure CSS
  *      (`@view-transition { navigation: auto }` lives in tokens.css
  *      in every document). If the browser supports it, this module
  *      does nothing except the first-visit intro.
- *   2. The curtain — click-intercepted SVG sweep for browsers
+ *   2. The curtain - click-intercepted SVG sweep for browsers
  *      without cross-document view transitions.
  *
  * Exports: initTransitions()
  *
  * TUNE:
- *   CURTAIN_UP_MS    620  — cover sweep
- *   CURTAIN_DOWN_MS  720  — reveal sweep on the next page
- *   FAILSAFE_MS      1200 — unconditional curtain removal
+ *   CURTAIN_UP_MS    620  - cover sweep
+ *   CURTAIN_DOWN_MS  720  - reveal sweep on the next page
+ *   FAILSAFE_MS      1200 - unconditional curtain removal
  * ───────────────────────────────────────────────────────────── */
 import { prefersReducedMotion } from './utils.js';
 import { bloom } from './background.js';
@@ -27,7 +27,7 @@ const supportsCrossDocVT = () =>
   (window.matchMedia && CSS.supports('view-transition-name: x') && 'onpagereveal' in window);
 
 /* The curtain: full-screen ink panel whose top edge is a curved
-   SVG path — the curve is the whole trick. */
+   SVG path - the curve is the whole trick. */
 function buildCurtain() {
   const wrap = document.createElement('div');
   wrap.className = 'curtain';
@@ -98,7 +98,7 @@ export function initTransitions() {
   setTimeout(() => document.documentElement.classList.remove('curtain-covering'), FAILSAFE_MS);
 
   /* FAILSAFE 2: Back/forward from bfcache restores frozen mid-
-     animation — clear the curtain on pageshow. */
+     animation - clear the curtain on pageshow. */
   window.addEventListener('pageshow', (e) => {
     if (e.persisted) {
       document.documentElement.classList.remove('curtain-covering');
@@ -106,7 +106,7 @@ export function initTransitions() {
     }
   });
 
-  if (supportsCrossDocVT() || prefersReducedMotion()) return; // CSS handles it — or nothing does
+  if (supportsCrossDocVT() || prefersReducedMotion()) return; // CSS handles it - or nothing does
 
   /* ── Curtain fallback path ── */
   const curtain = buildCurtain();

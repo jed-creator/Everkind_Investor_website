@@ -37,7 +37,7 @@
   transition: opacity .55s var(--ease-soft), transform .55s var(--ease-soft), visibility 0s .55s; }
 .hiw__shot.is-active { opacity: 1; visibility: visible; transform: none;
   transition: opacity .55s var(--ease-soft), transform .55s var(--ease-soft), visibility 0s; }
-/* Static (reduced-motion / mobile) layout — beats interleave with their
+/* Static (reduced-motion / mobile) layout - beats interleave with their
    image (text 01, phone 1, text 02, phone 2 …) instead of all-text-then-
    all-phones. display:contents lifts them into the stage grid; order
    weaves them together. */
@@ -120,7 +120,7 @@ html.no-pin .pillars__visual > :nth-child(4) { order: 6; }
 .proof-strip .label { color: var(--text-muted); margin-top: var(--sp-2); }
 .proof-footnote { text-align: center; font-size: var(--fs-sm); color: var(--text-muted); margin-top: var(--sp-5); }
 
-/* ═══ Reviews (Home) — mirrors everkind.com's review cards ═══ */
+/* ═══ Reviews (Home) - mirrors everkind.com's review cards ═══ */
 .reviews-grid { display: grid; gap: var(--sp-4); grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); align-items: stretch; }
 .review-card { text-align: center; padding: var(--sp-5); display: flex; flex-direction: column; gap: var(--sp-3); margin: 0; }
 .review-card__title { font-weight: 600; font-size: var(--fs-sm); color: var(--ek-plum); }
@@ -130,7 +130,7 @@ html.no-pin .pillars__visual > :nth-child(4) { order: 6; }
 /* ═══ Investors ══════════════════════════════════════════════ */
 .investors-layout { display: grid; gap: var(--sp-7); }
 @media (min-width: 1024px) {
-  /* No align-items:start — the sidebar must stretch to the row height
+  /* No align-items:start - the sidebar must stretch to the row height
      so its sticky block can travel the full length of the main column. */
   .investors-layout { grid-template-columns: 62% 34%; column-gap: 4%; }
 }
@@ -138,12 +138,12 @@ html.no-pin .pillars__visual > :nth-child(4) { order: 6; }
 /* Flex, not grid: sticky children of a flex column get the whole parent
    as their containing block in every browser. */
 .investors-sidebar { display: flex; flex-direction: column; gap: var(--sp-5); min-width: 0; align-items: stretch; }
-/* ONLY the form block is sticky, and it is the LAST sidebar child — a
+/* ONLY the form block is sticky, and it is the LAST sidebar child - a
    top-sticky element travels over any siblings after it (§8.1). */
 @media (min-width: 1024px) {
   .sidebar-sticky { position: sticky; top: calc(var(--header-h) + 16px); }
 }
-/* Mobile: sidebar (form first) directly after news — handled by DOM order + CSS order */
+/* Mobile: sidebar (form first) directly after news - handled by DOM order + CSS order */
 @media (max-width: 1023px) {
   .investors-layout { display: flex; flex-direction: column; }
   .investors-main { display: contents; }
@@ -190,7 +190,7 @@ html.no-pin .pillars__visual > :nth-child(4) { order: 6; }
 .notfound { min-height: 80svh; display: grid; place-items: center; text-align: center; }
 .notfound h1 { font-size: var(--fs-hero); }
 
-/* ═══ Recent-news list — date + title rows, newest first ═════ */
+/* ═══ Recent-news list - date + title rows, newest first ═════ */
 .news-list { display: flex; flex-direction: column; }
 .news-row {
   display: flex; align-items: baseline; gap: var(--sp-3) var(--sp-5);

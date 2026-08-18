@@ -2,7 +2,7 @@
  * ─────────────────────────────────────────────────────────────
  * The data-reveal system (§6.3), pinned sections (§6.4), parallax,
  * and the light-section scrim (§5.5). The client animates any new
- * element by adding an attribute — no JS required:
+ * element by adding an attribute - no JS required:
  *
  *   data-reveal="fade|lines|words|chars|image|stagger"
  *   data-reveal-delay="0.2"   data-reveal-from="left|right|scale"
@@ -10,9 +10,9 @@
  * Exports: initReveals()
  *
  * TUNE:
- *   START        "top 82%" — when reveals fire
- *   STAGGER_MS   90        — ScrollTrigger.batch children
- *   RISE_PX      24        — fade rise distance
+ *   START        "top 82%" - when reveals fire
+ *   STAGGER_MS   90        - ScrollTrigger.batch children
+ *   RISE_PX      24        - fade rise distance
  * ───────────────────────────────────────────────────────────── */
 import { prefersReducedMotion, onWidthResize } from './utils.js';
 
@@ -56,7 +56,7 @@ function revealAllInstantly() {
  * fragments animate: a transformed descendant stops the parent's
  * background-clip:text from painting, leaving transparent glyphs
  * over nothing. So on split, the parent's gradient is removed and
- * repainted PER FRAGMENT with a measured offset — each piece
+ * repainted PER FRAGMENT with a measured offset - each piece
  * carries its own slice of the same 92deg plum→purple sweep. */
 function paintGradientFragments(elm, fragments) {
   if (!/^h[12]$/i.test(elm.tagName)) return;
@@ -144,7 +144,7 @@ function pinnedBeats(rootSel, beatSel, shotSel) {
     start: 'top top',
     end: `+=${beats.length * 85}%`,   // ~250vh for three beats
     pin: true,
-    scrub: 0.5,          // smoothed progress — beat switches never feel snapped
+    scrub: 0.5,          // smoothed progress - beat switches never feel snapped
     anticipatePin: 1,    // pre-locks the pin so there is no jump on entry
     onUpdate(self) {
       const i = Math.min(beats.length - 1, Math.floor(self.progress * beats.length));
@@ -265,7 +265,7 @@ export function initReveals() {
 
   lightSections();
 
-  /* Pinned moments — desktop only; small screens read stacked. */
+  /* Pinned moments - desktop only; small screens read stacked. */
   const canPin = window.matchMedia('(min-width: 980px)').matches;
   if (canPin) {
     pinnedBeats('.hiw', '.hiw__beat', '.hiw__shot');

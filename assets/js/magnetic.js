@@ -9,11 +9,11 @@
  * Exports: initMagnetic()
  *
  * TUNE:
- *   MAG_RADIUS   90  — px, magnetic capture distance
- *   MAG_PULL     12  — px, max button travel
- *   LABEL_LAG     6  — px, inner label travel (the lag sells it)
- *   TILT_MAX      6  — deg, card tilt ceiling
- *   PARTICLES    48  — pooled per CTA canvas, never allocated in-loop
+ *   MAG_RADIUS   90  - px, magnetic capture distance
+ *   MAG_PULL     12  - px, max button travel
+ *   LABEL_LAG     6  - px, inner label travel (the lag sells it)
+ *   TILT_MAX      6  - deg, card tilt ceiling
+ *   PARTICLES    48  - pooled per CTA canvas, never allocated in-loop
  * ───────────────────────────────────────────────────────────── */
 import { prefersReducedMotion, clamp, throttle } from './utils.js';
 import { bloom } from './background.js';
@@ -121,7 +121,7 @@ function ctaParticles() {
     btn.appendChild(canvas);
     const ctx = canvas.getContext('2d');
 
-    // Pool — never allocate in the loop.
+    // Pool - never allocate in the loop.
     const pool = Array.from({ length: PARTICLES }, () => ({ alive: false, x: 0, y: 0, vx: 0, vy: 0, born: 0, r: 0 }));
     let raf = null, lastSpawn = 0;
 

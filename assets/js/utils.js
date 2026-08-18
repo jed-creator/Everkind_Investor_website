@@ -5,7 +5,7 @@
  * setupCard, hexSVG, formatDate, escapeHTML.
  *
  * TUNE:
- *   RESIZE_DEBOUNCE_MS  — width-resize debounce (default 220)
+ *   RESIZE_DEBOUNCE_MS  - width-resize debounce (default 220)
  * ───────────────────────────────────────────────────────────── */
 export { isSet } from './config.js';
 
@@ -33,7 +33,7 @@ export const throttle = (fn, ms = 32) => {
   };
 };
 
-/* Width-ONLY debounced resize — mobile URL-bar height thrash must
+/* Width-ONLY debounced resize - mobile URL-bar height thrash must
    not retrigger split-text or ScrollTrigger work (§6.3). */
 export const onWidthResize = (fn) => {
   let lastW = window.innerWidth;
@@ -81,7 +81,7 @@ export const hexSVG = (cls = '', gradientId = 'ek-hex-grad') => `
     <path d="${HEX_PATH}" fill="url(#${gradientId})"/>
   </svg>`;
 
-/* Setup card (§11.1) — rendered wherever a CONFIG value is unset. */
+/* Setup card (§11.1) - rendered wherever a CONFIG value is unset. */
 export const setupCard = (field, minHeight = null) => {
   const card = el('div', { class: 'setup-card', role: 'note' });
   if (minHeight) card.style.minHeight = minHeight;
@@ -100,7 +100,7 @@ export const formatDate = (iso) => {
   return d.toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
 };
 
-/* Inject a third-party script correctly — createElement, never
+/* Inject a third-party script correctly - createElement, never
    innerHTML (an innerHTML <script> will not execute). */
 export const injectScript = (src, { onload, onerror, textContent } = {}) => {
   const s = document.createElement('script');
@@ -113,7 +113,7 @@ export const injectScript = (src, { onload, onerror, textContent } = {}) => {
   return s;
 };
 
-/* IntersectionObserver helper for lazy embeds — 400px rootMargin (§3). */
+/* IntersectionObserver helper for lazy embeds - 400px rootMargin (§3). */
 export const onIntersect = (target, cb, rootMargin = '400px') => {
   const io = new IntersectionObserver((entries) => {
     for (const e of entries) {

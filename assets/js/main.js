@@ -9,7 +9,7 @@
  *   6. background shader (dynamic import, after first paint)
  *
  * TUNE:
- *   Nothing here — every dial lives in the module it belongs to.
+ *   Nothing here - every dial lives in the module it belongs to.
  * ───────────────────────────────────────────────────────────── */
 import { CONFIG, isSet } from './config.js';
 import { el, setupCard } from './utils.js';
@@ -27,12 +27,12 @@ import { initWidgets } from './widgets.js';
 import { initBackground } from './background.js';
 
 /* ── Config-driven links, emails and text ────────────────────
- * <a data-config-link="PRIVACY_URL">…</a>  — href from CONFIG;
+ * <a data-config-link="PRIVACY_URL">…</a>  - href from CONFIG;
  *   unset → the link is replaced by a small setup note (never "#").
- * <a data-config-email="IR_EMAIL">        — mailto:
- * <span data-config-text="MIN_COHORT">    — text swap; unset keeps
+ * <a data-config-email="IR_EMAIL">        - mailto:
+ * <span data-config-text="MIN_COHORT">    - text swap; unset keeps
  *   the visible {{PLACEHOLDER}} so gaps are impossible to miss.
- * <div data-config-block="IR_PHONE">      — removed when unset.   */
+ * <div data-config-block="IR_PHONE">      - removed when unset.   */
 function applyConfig() {
   document.querySelectorAll('[data-config-link]').forEach((a) => {
     const key = a.dataset.configLink;
@@ -40,7 +40,7 @@ function applyConfig() {
       a.href = CONFIG[key];
       if (/^https?:/.test(CONFIG[key]) ) { a.rel = 'noopener'; }
     } else {
-      const note = el('span', { class: 'footer-setup-note', text: `${a.textContent.trim()} — setup required (${key})` });
+      const note = el('span', { class: 'footer-setup-note', text: `${a.textContent.trim()}: setup required (${key})` });
       a.replaceWith(note);
     }
   });
@@ -87,20 +87,20 @@ function seoLinks() {
   document.head.append(ogUrl);
 }
 
-/* ── Corporate information table — ONE shared partial rendered on
+/* ── Corporate information table - ONE shared partial rendered on
  * both Company and Investors so the two can never drift (§10.3).
  * Never invent a number: unknowns stay visible {{}} placeholders. */
 function corpInfo() {
   const mounts = document.querySelectorAll('[data-corp-info]');
   if (!mounts.length) return;
   const rows = [
-    ['Legal name', '<span class="ph">{{LEGAL_NAME — resulting issuer name is filing-specific}}</span>'],
+    ['Legal name', '<span class="ph">{{LEGAL_NAME - resulting issuer name is filing-specific}}</span>'],
     ['Exchange', CONFIG.EXCHANGE_LABEL],
-    ['Ticker', `${CONFIG.TICKER_LABEL} (expected — currently completing a going-public transaction via TSXV: AF.P)`],
+    ['Ticker', `${CONFIG.TICKER_LABEL} (expected - currently completing a going-public transaction via TSXV: AF.P)`],
     ['Transfer agent', '<span class="ph">{{TRANSFER_AGENT}}</span>'],
     ['Auditor', '<span class="ph">{{AUDITOR}}</span>'],
     ['Fiscal year end', '<span class="ph">{{FISCAL_YEAR_END}}</span>'],
-    ['Shares outstanding', '<span class="ph">{{SHARES_OUTSTANDING — as of {{DATE}}, per the referenced release}}</span>'],
+    ['Shares outstanding', '<span class="ph">{{SHARES_OUTSTANDING - as of {{DATE}}, per the referenced release}}</span>'],
   ];
   mounts.forEach((m) => {
     m.innerHTML = `<div class="overflow-guard"><table class="info-table">
@@ -108,12 +108,12 @@ function corpInfo() {
       <tbody>${rows.map(([k, v]) => `<tr><th scope="row">${k}</th><td>${v}</td></tr>`).join('')}</tbody>
     </table></div>
     <p class="notice" style="margin-top:1rem">Every value in this table must be quoted from a dated
-    public release or filing and verified before launch. Placeholders are shown deliberately —
-    nothing on this site is invented.</p>`;
+    public release or filing and verified before launch. Placeholders are shown deliberately.
+    Nothing on this site is invented.</p>`;
   });
 }
 
-/* ── Footer reduced-motion toggle (§6.8): persist + reload —
+/* ── Footer reduced-motion toggle (§6.8): persist + reload -
  * the only reliable version. */
 function motionToggle() {
   const btn = document.querySelector('[data-motion-toggle]');
@@ -149,7 +149,7 @@ initCounters();
 
 /* Deck, news and team render asynchronously and add real height to the
    page. Every ScrollTrigger measured before they finish (reveals, the
-   pinned sections) would keep stale positions — on Company, the pinned
+   pinned sections) would keep stale positions - on Company, the pinned
    "Insights Without Identities" section fired ~1500px early once the
    team grids landed. Re-measure as each renderer completes. */
 const refreshTriggers = () => { if (window.ScrollTrigger) ScrollTrigger.refresh(); };

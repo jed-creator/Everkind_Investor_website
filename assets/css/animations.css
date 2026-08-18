@@ -26,7 +26,7 @@ html.js [data-reveal="stagger"] { opacity: 1; }
 html.js [data-reveal="stagger"] > * { opacity: 0; }
 html.js [data-reveal="stagger"].is-revealed > * { opacity: 1; }
 
-/* ── CSS aurora fallback (§5.6) — what paints FIRST, always ──── */
+/* ── CSS aurora fallback (§5.6) - what paints FIRST, always ──── */
 #bg-fallback::before {
   content: ""; position: absolute; inset: -20%;
   /* everkind.com's pink-sky hero, as living gradients on a pale ground */

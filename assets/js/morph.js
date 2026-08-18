@@ -4,14 +4,14 @@
  * language. Each .blob-wrap svg's path loops through 5 hand-
  * authored blob shapes on a slow ~8s power1.inOut cycle, and a
  * ScrollTrigger offset nudges the morph forward as you scroll.
- * Blur is CSS filter:blur() on the wrapper (GPU-composited) —
+ * Blur is CSS filter:blur() on the wrapper (GPU-composited) -
  * NOT an SVG feGaussianBlur re-rasterising every frame.
  *
  * Exports: initMorph()
  *
  * TUNE:
- *   LOOP_S    8   — seconds per morph step
- *   OPACITY  .18  — blob fill opacity (12–22% band)
+ *   LOOP_S    8   - seconds per morph step
+ *   OPACITY  .18  - blob fill opacity (12–22% band)
  * ───────────────────────────────────────────────────────────── */
 import { prefersReducedMotion } from './utils.js';
 

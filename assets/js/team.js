@@ -2,7 +2,7 @@
  * ─────────────────────────────────────────────────────────────
  * Renders assets/data/team.json into [data-team="leadership|
  * board|advisors"] mounts. Missing headshots fall back to a
- * branded initials avatar — a rounded hexagon (the logo
+ * branded initials avatar - a rounded hexagon (the logo
  * geometry) filled violet→blush, initials in Crimson Pro, at the
  * exact dimensions a real photo will occupy (§7.3).
  * Click opens a <dialog> with the full bio.
@@ -60,7 +60,7 @@ function openBio(person) {
   const dlg = bioDialog();
   const body = dlg.querySelector('.bio-dialog__body');
   const bio = isSet(person.bio) ? escapeHTML(person.bio)
-    : 'Biography pending sign-off — add it in assets/data/team.json. ({{BIO}})';
+    : 'Biography pending sign-off. Add it in assets/data/team.json. ({{BIO}})';
   body.innerHTML = `
     ${portrait(person)}
     <h3>${escapeHTML(person.name)}</h3>

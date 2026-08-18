@@ -10,7 +10,7 @@
  * #7B2CBF, pink-sky/lavender hero, white + warm-cream sections.
  * ───────────────────────────────────────────────────────────── */
 :root {
-  /* ── Brand palette — from everkind.com computed styles ───── */
+  /* ── Brand palette - from everkind.com computed styles ───── */
   --ek-grad-deep:   #37214E;  /* heading gradient, dark end */
   --ek-grad-bright: #7A27B2;  /* heading gradient, bright end */
   --ek-purple:      #7B2CBF;  /* solid heading / accent purple */
@@ -36,7 +36,7 @@
   --ek-text:        var(--ek-body-ink);
   --ek-text-dim:    var(--ek-gray);
 
-  /* ── Semantic aliases — components use ONLY these ────────── */
+  /* ── Semantic aliases - components use ONLY these ────────── */
   --surface:        var(--ek-ink);      /* pale ground behind the aurora */
   --surface-raised: var(--ek-white);    /* cards */
   --surface-line:   var(--ek-ink-3);    /* hairlines */
@@ -57,7 +57,7 @@
   --light-text:     var(--ek-body-ink);
   --light-muted:    var(--ek-gray);
 
-  /* ── Type — everkind.com: Poppins + Crimson Pro ──────────── */
+  /* ── Type - everkind.com: Poppins + Crimson Pro ──────────── */
   --font-serif: "Crimson Pro", Georgia, "Times New Roman", serif;
   --font-sans:  "Poppins", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
 
@@ -94,7 +94,7 @@
 @view-transition { navigation: auto; }
 
 @media (prefers-reduced-motion: reduce) {
-  /* Browsers do NOT auto-suppress view transitions — disable explicitly. */
+  /* Browsers do NOT auto-suppress view transitions - disable explicitly. */
   @view-transition { navigation: none; }
 
   :root {

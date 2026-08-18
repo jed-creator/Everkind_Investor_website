@@ -2,15 +2,15 @@
  * ─────────────────────────────────────────────────────────────
  * Third-party embed loaders: TradingView, Pipedrive, Calendly.
  * Everything injects on IntersectionObserver at 400px rootMargin,
- * via document.createElement('script') — never innerHTML.
+ * via document.createElement('script') - never innerHTML.
  * Every widget handles the unset-config case with a setup card
  * (§11.1) and every load failure with a graceful fallback.
  *
  * Exports: initWidgets()
  *
  * TUNE:
- *   TV_TIMEOUT_MS  6000 — TradingView iframe poll budget (§8.3)
- *   PD_TIMEOUT_MS  8000 — Pipedrive form budget (§8.5)
+ *   TV_TIMEOUT_MS  6000 - TradingView iframe poll budget (§8.3)
+ *   PD_TIMEOUT_MS  8000 - Pipedrive form budget (§8.5)
  * ───────────────────────────────────────────────────────────── */
 import { CONFIG, isSet } from './config.js';
 import { el, setupCard, injectScript, onIntersect, hexSVG } from './utils.js';
@@ -34,7 +34,7 @@ function initTradingView() {
   if (!mount) return;
 
   if (!CONFIG.TRADING_LIVE) {
-    /* Guarded card — designed, not broken. Shown while the chart
+    /* Guarded card - designed, not broken. Shown while the chart
        provider does not yet carry the symbol. */
     mount.innerHTML = `
       <div class="listing-pending">
@@ -46,7 +46,7 @@ function initTradingView() {
         </dl>
         <p class="muted">Everkind's common shares are expected to begin trading on the
         ${CONFIG.EXCHANGE_LABEL} under the symbol ${CONFIG.TICKER_LABEL}. Trading has not
-        yet commenced — a live chart will appear here once it does and market data
+        yet commenced. A live chart will appear here once it does and market data
         becomes available.</p>
         <p style="margin-top:1rem"><a class="link-arrow" href="news.html">Read the company's news releases <span class="arr" aria-hidden="true">→</span></a></p>
       </div>`;
@@ -64,7 +64,7 @@ function initTradingView() {
       : '';
     mount.innerHTML = `
       ${context}
-      <!-- Advanced Real-Time Chart. Container needs explicit height —
+      <!-- Advanced Real-Time Chart. Container needs explicit height -
            "autosize" fills the parent, and a parent with no height
            collapses to zero. No transformed/filtered/pinned ancestor. -->
       <div class="tradingview-widget-container" id="tv-advanced"
@@ -87,11 +87,11 @@ function initTradingView() {
       autosize: true,
       interval: 'D',
       timezone: 'America/Toronto',
-      style: '3',                       // area — calmer than candles
+      style: '3',                       // area - calmer than candles
       locale: 'en',
       backgroundColor: cssVar('--ek-ink-2'),
       gridColor: cssVar('--ek-ink-3'),
-      range: 'ALL',                     // CPCs trade thinly (and halt pre-RTO) — show full history
+      range: 'ALL',                     // CPCs trade thinly (and halt pre-RTO) - show full history
       hide_side_toolbar: true,
       allow_symbol_change: false,
       save_image: false,
@@ -99,7 +99,7 @@ function initTradingView() {
     });
     container.appendChild(s);
 
-    /* The script swallows its own errors — poll for the iframe (§8.3). */
+    /* The script swallows its own errors - poll for the iframe (§8.3). */
     const deadline = performance.now() + TV_TIMEOUT_MS;
     (function poll() {
       if (mount.querySelector('iframe')) return;
@@ -161,7 +161,7 @@ function initPipedrive() {
 /* ── Calendly (§8.6) ────────────────────────────────────────── */
 let calendlyAssetsInjected = false;
 function calendlyUrl() {
-  /* new URL() + searchParams — string concat breaks if the event
+  /* new URL() + searchParams - string concat breaks if the event
      URL already carries a query string. */
   const url = new URL(CONFIG.CALENDLY_URL);
   url.searchParams.set('background_color', cssVar('--ek-ink-2').replace('#', ''));
@@ -174,7 +174,7 @@ function calendlyUrl() {
 function injectCalendlyAssets(cb) {
   if (calendlyAssetsInjected) { cb && cb(); return; }
   calendlyAssetsInjected = true;
-  /* BOTH widget.js and widget.css — without the stylesheet the
+  /* BOTH widget.js and widget.css - without the stylesheet the
      inline widget renders unstyled and the popup has no overlay. */
   const link = document.createElement('link');
   link.rel = 'stylesheet';

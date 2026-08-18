@@ -8,7 +8,7 @@
  * Exports: initCounters()
  *
  * TUNE:
- *   DURATION 1.6 — seconds for the count
+ *   DURATION 1.6 - seconds for the count
  * ───────────────────────────────────────────────────────────── */
 import { prefersReducedMotion } from './utils.js';
 

@@ -14,22 +14,22 @@ export const CONFIG = {
 
   /* ── Market data ────────────────────────────────────────── */
   // TradingView symbol format is EXCHANGE:TICKER. Note: TradingView's
-  // TSXV symbols carry no '.V' suffix — Everkind will be 'TSXV:EK'.
+  // TSXV symbols carry no '.V' suffix - Everkind will be 'TSXV:EK'.
   // As of 2026-08-18 TradingView does not carry the symbol yet (its
   // TSXV feed still lists the shell as TSXV:AF.P), so TRADING_LIVE
   // stays false. Flip it the day 'TSXV:EK' resolves on tradingview.com.
-  TRADINGVIEW_SYMBOL: 'TSXV:AF.P',      // the CPC vehicle — swap to 'TSXV:EK' on listing day
+  TRADINGVIEW_SYMBOL: 'TSXV:AF.P',      // the CPC vehicle - swap to 'TSXV:EK' on listing day
   EXCHANGE_LABEL:     'TSX Venture Exchange',
   TICKER_LABEL:       'EK.V',            // Everkind's expected ticker, per the company
 
   // Shown as a notice above the chart. REQUIRED while the chart shows
-  // the CPC vehicle rather than Everkind's own shares — presenting
+  // the CPC vehicle rather than Everkind's own shares - presenting
   // AF.P as "Everkind stock" without this would be misleading.
   CHART_CONTEXT: "This chart shows AF2 Capital Corp. (TSXV: AF.P), the capital pool company through which Everkind's going-public transaction is being completed. It is not a quotation for Everkind shares. Everkind's common shares are expected to begin trading under TSXV: EK.V, and this chart will be replaced when trading commences.",
 
   // MASTER SWITCH. false => the market-data module renders a designed
   // "chart coming soon" card instead of a chart. Only true once
-  // TradingView actually resolves TRADINGVIEW_SYMBOL — otherwise the
+  // TradingView actually resolves TRADINGVIEW_SYMBOL - otherwise the
   // embed renders "This symbol doesn't exist".
   TRADING_LIVE: true,
 
@@ -41,7 +41,7 @@ export const CONFIG = {
   /* ── Calendly ───────────────────────────────────────────── */
   // Full event URL, e.g. https://calendly.com/everkind-ir/30min
   // NOTE: background_color / text_color / primary_color are ignored
-  // on Calendly's free tier. On free, the embed renders light —
+  // on Calendly's free tier. On free, the embed renders light -
   // design the surrounding card so that still looks deliberate.
   CALENDLY_URL: '{{CALENDLY_URL}}',
 
@@ -63,7 +63,7 @@ export const CONFIG = {
 
   /* ── Privacy reporting threshold ────────────────────────── */
   // Minimum enrolled headcount before aggregate reporting is shown
-  // to an organization. Referenced in copy — see SETUP_CHECKLIST §6.
+  // to an organization. Referenced in copy - see SETUP_CHECKLIST §6.
   MIN_COHORT: '{{MIN_COHORT}}',              // e.g. 25
 
   /* ── App store & social ─────────────────────────────────── */
@@ -88,7 +88,7 @@ try {
     CONFIG.MOTION.intensity = 0;
     CONFIG.MOTION.forceCssBackground = true;
   }
-} catch (_) { /* private mode — ignore */ }
+} catch (_) { /* private mode - ignore */ }
 
 /* Every consumer calls this before rendering an embed or a link. */
 export const isSet = (v) =>
