@@ -44,9 +44,10 @@ function initTradingView() {
           <div><dt>Exchange</dt><dd>${CONFIG.EXCHANGE_LABEL}</dd></div>
           <div><dt>Ticker</dt><dd>${CONFIG.TICKER_LABEL}</dd></div>
         </dl>
-        <p class="muted">Everkind trades on the ${CONFIG.EXCHANGE_LABEL} under the symbol
-        ${CONFIG.TICKER_LABEL}. Delayed market data from our chart provider is not yet
-        available for this symbol — a live chart will appear here as soon as it is.</p>
+        <p class="muted">Everkind's common shares are expected to begin trading on the
+        ${CONFIG.EXCHANGE_LABEL} under the symbol ${CONFIG.TICKER_LABEL}. Trading has not
+        yet commenced — a live chart will appear here once it does and market data
+        becomes available.</p>
         <p style="margin-top:1rem"><a class="link-arrow" href="news.html">Read the company's news releases <span class="arr" aria-hidden="true">→</span></a></p>
       </div>`;
     return;

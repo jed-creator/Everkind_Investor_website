@@ -62,7 +62,7 @@ export const CONFIG = {
   MIN_COHORT: '{{MIN_COHORT}}',              // e.g. 25
 
   /* ── App store & social ─────────────────────────────────── */
-  APP_STORE_URL:  '{{APP_STORE_URL}}',
+  APP_STORE_URL:  'https://apps.apple.com/ca/app/everkind-wellness-journal-app/id6748688830',
   PLAY_STORE_URL: '{{PLAY_STORE_URL}}',
   LINKEDIN_URL:   '{{LINKEDIN_URL}}',
 
