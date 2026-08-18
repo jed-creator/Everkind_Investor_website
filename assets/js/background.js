@@ -159,17 +159,17 @@ const FRAG = /* glsl */`
 
     /* depth haze — slower, larger violet layer */
     float haze = fbm(p * 0.7 - t * 0.1 + 11.3, uOctaves) * 0.5 + 0.5;
-    col += VIOLD * haze * 0.16 * (1.0 - deep * 0.5);
+    col += VIOLD * haze * 0.10 * (1.0 - deep * 0.5);
 
-    /* the band itself */
-    col += mid * band * (0.55 + n * 0.35);
-    col += hi  * band * band * (0.5 + q.x * 0.3);
+    /* the band itself — kept soft: a breath, not a lava lamp */
+    col += mid * band * (0.32 + n * 0.18);
+    col += hi  * band * band * (0.30 + q.x * 0.18);
 
     /* bloom core — soft blush radial at the band's brightest point */
     vec2 bloomPos = vec2(0.5 * aspect + q.y * 0.2, bandCentre + 0.02);
     float d = distance(vec2(uv.x * aspect, uv.y), bloomPos);
     float core = exp(-d * d * 6.0);
-    col += BLUSH * core * (0.22 + uBloom * 0.5) * (1.0 - deep * 0.55);
+    col += BLUSH * core * (0.15 + uBloom * 0.4) * (1.0 - deep * 0.55);
 
     /* vignette floor */
     col = mix(col, INK, smoothstep(0.55, 0.05, uv.y) * 0.55);

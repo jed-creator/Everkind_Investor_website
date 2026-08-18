@@ -43,8 +43,11 @@ function revealAllInstantly() {
   // Static pinned sections: activate every beat.
   document.querySelectorAll('.hiw__beat, .hiw__shot, .pillars__pillar, .pillars__shot')
     .forEach((n) => n.classList.add('is-active'));
-  // Light scrims fully on.
-  document.querySelectorAll('.light-scrim').forEach((s) => { s.style.opacity = '1'; });
+  // Light scrims fully on, with their text tokens flipped to match.
+  document.querySelectorAll('.light-scrim').forEach((s) => {
+    s.style.opacity = '1';
+    s.closest('.section--light')?.classList.add('is-lit');
+  });
 }
 
 /* ── Split text (lines / words / chars) ─────────────────────── */
@@ -87,12 +90,12 @@ function lightSections() {
       onComplete: () => window.dispatchEvent(new CustomEvent('ek:occlusion', { detail: true })),
       onReverseComplete: () => window.dispatchEvent(new CustomEvent('ek:occlusion', { detail: false })),
     });
-    // Crossfade text tokens ~120ms ahead of the scrim.
-    gsap.fromTo(section, { color: 'inherit' }, {
-      duration: .9, ease: 'power2.inOut', delay: -0.12,
-      scrollTrigger: { trigger: section, start: 'top 64%', toggleActions: 'play none none reverse' },
-      onStart: () => section.classList.add('is-lit'),
-      onReverseComplete: () => section.classList.remove('is-lit'),
+    // Text tokens flip ~120ms AHEAD of the scrim (start: 64% vs 62%)
+    // so copy is never dark-on-dark or light-on-light mid-transition.
+    ScrollTrigger.create({
+      trigger: section, start: 'top 64%',
+      onEnter: () => section.classList.add('is-lit'),
+      onLeaveBack: () => section.classList.remove('is-lit'),
     });
   });
 }

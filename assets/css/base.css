@@ -90,7 +90,7 @@ button {
   outline-offset: 2px;
   border-radius: 4px;
 }
-.section--light :focus-visible { outline-color: var(--ek-violet-deep); }
+.section--light.is-lit :focus-visible { outline-color: var(--ek-violet-deep); }
 
 /* ── Skip link — first focusable element on every page ───────── */
 .skip-link {
@@ -127,15 +127,24 @@ button {
 .muted { color: var(--text-muted); }
 .serif-italic { font-family: var(--font-serif); font-style: italic; }
 
-/* ── Light sections (§5.5) — opaque cream scrim animated by JS ─ */
-.section--light { color: var(--light-text); }
+/* ── Light sections (§5.5) — opaque cream scrim animated by JS.
+ * Text colours are gated on .is-lit, toggled ~120ms AHEAD of the
+ * scrim so nothing ever flashes illegible: before the lights come
+ * up the section reads as a normal dark section. ─ */
 .section--light .light-scrim {
   position: absolute; inset: 0; z-index: -1;
   background: var(--light-surface); opacity: 0;
 }
-.section--light p { color: var(--light-text); }
-.section--light .muted { color: var(--light-muted); }
-.section--light .eyebrow { color: var(--ek-violet-deep); }
+.section--light,
+.section--light p,
+.section--light .muted,
+.section--light .eyebrow,
+.section--light .img-caption { transition: color var(--dur-md) var(--ease-soft); }
+.section--light.is-lit { color: var(--light-text); }
+.section--light.is-lit p { color: var(--light-text); }
+.section--light.is-lit .muted { color: var(--light-muted); }
+.section--light.is-lit .eyebrow { color: var(--ek-violet-deep); }
+.section--light.is-lit .img-caption { color: var(--light-muted); }
 
 /* ── A11y helpers ────────────────────────────────────────────── */
 .visually-hidden {

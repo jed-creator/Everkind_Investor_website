@@ -135,7 +135,7 @@
 }
 .btn--secondary:hover { box-shadow: inset 0 0 0 1px var(--accent-soft), 0 8px 40px -8px var(--ek-violet); }
 
-.section--light .btn--secondary { color: var(--light-text); box-shadow: inset 0 0 0 1px var(--ek-violet-deep); }
+.section--light.is-lit .btn--secondary { color: var(--light-text); box-shadow: inset 0 0 0 1px var(--ek-violet-deep); }
 
 .btn--ghost {
   padding: .5em .2em; border-radius: 4px;
@@ -155,7 +155,7 @@
 }
 .link-arrow .arr { transition: transform var(--dur-sm) var(--ease-out); }
 .link-arrow:hover .arr { transform: translateX(4px); }
-.section--light .link-arrow { color: var(--ek-violet-deep); }
+.section--light.is-lit .link-arrow { color: var(--ek-violet-deep); }
 
 /* ═══ Cards ══════════════════════════════════════════════════ */
 .card {
@@ -476,4 +476,4 @@ html.has-custom-cursor a, html.has-custom-cursor button { cursor: none; }
   font-size: var(--fs-xs); color: var(--text-muted);
   margin-top: var(--sp-3); text-align: center;
 }
-.section--light .img-caption { color: var(--light-muted); }
+
