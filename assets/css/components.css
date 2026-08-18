@@ -389,7 +389,7 @@
 
 /* ═══ Footer ═════════════════════════════════════════════════ */
 .site-footer {
-  margin-top: clamp(4rem, 8vw, 7rem);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
   border-top: 1px solid var(--border);
   background: var(--ek-cream);   /* everkind.com footer cream */
   padding-block: var(--sp-8) var(--sp-6);

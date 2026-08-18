@@ -121,8 +121,8 @@ button {
   width: min(var(--content-max), 100% - var(--gutter) * 2);
   margin-inline: auto;
 }
-.section { padding-block: clamp(4rem, 10vw, 8.5rem); position: relative; }
-.section--hero { padding-block-start: calc(var(--header-h) + clamp(3rem, 9vw, 7rem)); }
+.section { padding-block: clamp(2.75rem, 6vw, 5rem); position: relative; }
+.section--hero { padding-block-start: calc(var(--header-h) + clamp(1.5rem, 4vw, 3rem)); padding-block-end: clamp(2rem, 4vw, 3rem); }
 
 .grid-2 { display: grid; gap: var(--sp-7); align-items: center; }
 @media (min-width: 900px) { .grid-2 { grid-template-columns: 1fr 1fr; } }

@@ -80,8 +80,20 @@ export async function initNews() {
     const mode = mount.dataset.news;
 
     if (mode === 'recent') {
+      /* Compact vertical list — date + title only, newest first. */
       const top = dated(releases).slice(0, RECENT_COUNT);
-      top.forEach((r) => mount.append(releaseCard(r)));
+      top.forEach((r) => {
+        const hasUrl = isSet(r.url);
+        const row = el(hasUrl ? 'a' : 'article', {
+          class: 'news-row',
+          ...(hasUrl ? { href: r.url, target: '_blank', rel: 'noopener' } : {}),
+        });
+        row.innerHTML = `
+          <span class="news-row__date">${escapeHTML(formatDate(r.date) || '')}</span>
+          <span class="news-row__title">${escapeHTML(r.title)}</span>
+          ${hasUrl ? '<span class="arr" aria-hidden="true">→</span>' : ''}`;
+        mount.append(row);
+      });
       return;
     }
 
