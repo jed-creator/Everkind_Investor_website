@@ -189,8 +189,10 @@
 .news-card {
   display: flex; flex-direction: column; gap: var(--sp-2);
   text-decoration: none; color: inherit;
+  min-width: 0;   /* 1fr tracks must be allowed to shrink below min-content */
 }
-.news-card__meta { display: flex; align-items: center; gap: var(--sp-3); font-size: var(--fs-xs); }
+.news-grid > * { min-width: 0; }
+.news-card__meta { display: flex; align-items: center; flex-wrap: wrap; gap: var(--sp-2) var(--sp-3); font-size: var(--fs-xs); }
 .news-card__date { color: var(--text-muted); font-variant-numeric: tabular-nums; }
 .news-card__title { font-family: var(--font-serif); font-size: var(--fs-lg); line-height: 1.25; font-weight: 480; }
 .news-card__summary { color: var(--text-muted); font-size: var(--fs-sm); }
