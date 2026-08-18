@@ -37,9 +37,18 @@
   transition: opacity .55s var(--ease-soft), transform .55s var(--ease-soft), visibility 0s .55s; }
 .hiw__shot.is-active { opacity: 1; visibility: visible; transform: none;
   transition: opacity .55s var(--ease-soft), transform .55s var(--ease-soft), visibility 0s; }
-/* Static (reduced-motion / mobile) layout */
-html.no-pin .hiw__copy, html.no-pin .hiw__visual { min-height: 0; }
-html.no-pin .hiw__beat, html.no-pin .hiw__shot { position: static; opacity: 1; visibility: visible; margin-bottom: var(--sp-7); }
+/* Static (reduced-motion / mobile) layout — beats interleave with their
+   image (text 01, phone 1, text 02, phone 2 …) instead of all-text-then-
+   all-phones. display:contents lifts them into the stage grid; order
+   weaves them together. */
+html.no-pin .hiw__copy, html.no-pin .hiw__visual { min-height: 0; display: contents; }
+html.no-pin .hiw__beat, html.no-pin .hiw__shot { position: static; opacity: 1; visibility: visible; transform: none; margin-bottom: 0; }
+html.no-pin .hiw__copy > :nth-child(1) { order: 1; }
+html.no-pin .hiw__visual > :nth-child(1) { order: 2; }
+html.no-pin .hiw__copy > :nth-child(2) { order: 3; }
+html.no-pin .hiw__visual > :nth-child(2) { order: 4; }
+html.no-pin .hiw__copy > :nth-child(3) { order: 5; }
+html.no-pin .hiw__visual > :nth-child(3) { order: 6; }
 
 .two-ways { display: grid; gap: var(--sp-5); }
 @media (min-width: 820px) { .two-ways { grid-template-columns: 1fr 1fr; } }
@@ -83,8 +92,15 @@ html.no-pin .hiw__beat, html.no-pin .hiw__shot { position: static; opacity: 1; v
   transition: opacity .55s var(--ease-soft), transform .55s var(--ease-soft), visibility 0s .55s; }
 .pillars__pillar.is-active { opacity: 1; visibility: visible; transform: none;
   transition: opacity .55s var(--ease-soft), transform .55s var(--ease-soft), visibility 0s; }
-html.no-pin .pillars__copy, html.no-pin .pillars__visual { min-height: 0; }
-html.no-pin .pillars__pillar, html.no-pin .pillars__shot { position: static; opacity: 1; visibility: visible; margin-bottom: var(--sp-7); }
+html.no-pin .pillars__copy, html.no-pin .pillars__visual { min-height: 0; display: contents; }
+html.no-pin .pillars__pillar, html.no-pin .pillars__shot { position: static; opacity: 1; visibility: visible; transform: none; margin-bottom: 0; }
+html.no-pin .pillars__visual > .blob-wrap { display: none; }
+html.no-pin .pillars__copy > :nth-child(1) { order: 1; }
+html.no-pin .pillars__visual > :nth-child(2) { order: 2; }  /* child 1 is the blob */
+html.no-pin .pillars__copy > :nth-child(2) { order: 3; }
+html.no-pin .pillars__visual > :nth-child(3) { order: 4; }
+html.no-pin .pillars__copy > :nth-child(3) { order: 5; }
+html.no-pin .pillars__visual > :nth-child(4) { order: 6; }
 
 .waveform-visual {
   aspect-ratio: 4/5; max-width: min(420px, 80vw); margin-inline: auto;

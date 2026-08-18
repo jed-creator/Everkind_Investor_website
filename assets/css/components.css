@@ -97,6 +97,7 @@
   transition-delay: 0s;
 }
 .mobile-menu__link {
+  display: block;
   font-family: var(--font-serif); font-size: var(--fs-xl);
   color: var(--text); text-decoration: none;
   padding-block: .35em;

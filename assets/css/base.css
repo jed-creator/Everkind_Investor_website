@@ -26,9 +26,13 @@ body {
   line-height: 1.6;
   color: var(--text);
   min-height: 100svh;
-  overflow-x: hidden;
+  overflow-x: hidden;   /* fallback */
+  overflow-x: clip;     /* blobs/particle canvases bleed past the edge by design;
+                           clip stops them widening the page on phones without
+                           creating a scroll container (sticky keeps working) */
   -webkit-font-smoothing: antialiased;
 }
+html { overflow-x: clip; }
 
 /* ── Background stack (§5.1) ─────────────────────────────────── */
 #bg-fallback {
