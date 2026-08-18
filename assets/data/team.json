@@ -10,29 +10,133 @@
     "clinicians'); 'tech_advisors' render on the Company page only."
   ],
   "leadership": [
-    { "name": "Harrison Newlands", "title": "Chief Executive Officer",            "bio": "{{BIO}}", "photo": "", "note": "Hypercharge · Fire & Flower" },
-    { "name": "Supreet Pal Singh", "title": "Chief Technology Officer",           "bio": "{{BIO}}", "photo": "", "note": "PSL" },
-    { "name": "Brien Stelzer",     "title": "Chief Operating Officer",            "bio": "{{BIO}}", "photo": "", "note": "Expedia · Amazon" },
-    { "name": "Jonathan Held",     "title": "Chief Financial Officer",            "bio": "{{BIO}}", "photo": "", "note": "Aloe Finance · Also a director" },
-    { "name": "Matt Brudzynski",   "title": "Chief Strategy Officer",             "bio": "{{BIO}}", "photo": "", "note": "Google" },
-    { "name": "Amy Monier",        "title": "Chief Marketing Officer",            "bio": "{{BIO}}", "photo": "", "note": "Zynga" },
-    { "name": "Lee Clissett",      "title": "Head of Product",                    "bio": "{{BIO}}", "photo": "" },
-    { "name": "George Plytas",     "title": "Chief Information Security Officer", "bio": "{{BIO}}", "photo": "", "note": "Moneris · Toronto Star" }
+    {
+      "name": "Harrison Newlands",
+      "title": "Chief Executive Officer",
+      "bio": "{{BIO}}",
+      "photo": "",
+      "note": "Hypercharge · Fire & Flower"
+    },
+    {
+      "name": "Supreet Pal Singh",
+      "title": "Chief Technology Officer",
+      "bio": "{{BIO}}",
+      "photo": "",
+      "note": "PSL"
+    },
+    {
+      "name": "Brien Stelzer",
+      "title": "Chief Operating Officer",
+      "bio": "{{BIO}}",
+      "photo": "",
+      "note": "Expedia · Amazon"
+    },
+    {
+      "name": "Jonathan Held",
+      "title": "Chief Financial Officer",
+      "bio": "{{BIO}}",
+      "photo": "",
+      "note": "Aloe Finance · Also a director"
+    },
+    {
+      "name": "Matt Brudzynski",
+      "title": "Chief Strategy Officer",
+      "bio": "{{BIO}}",
+      "photo": "",
+      "note": "Google"
+    },
+    {
+      "name": "Amy Monier",
+      "title": "Chief Marketing Officer",
+      "bio": "{{BIO}}",
+      "photo": "",
+      "note": "Zynga"
+    },
+    {
+      "name": "Lee Clissett",
+      "title": "Head of Product",
+      "bio": "{{BIO}}",
+      "photo": ""
+    },
+    {
+      "name": "George Plytas",
+      "title": "Chief Information Security Officer",
+      "bio": "{{BIO}}",
+      "photo": "",
+      "note": "Moneris · Toronto Star"
+    }
   ],
   "board": [
-    { "name": "Mark Saunders",        "title": "Director", "bio": "{{BIO}}", "photo": "", "note": "Appointed July 2025" },
-    { "name": "Nagar Rahmani",        "title": "Director", "bio": "{{BIO}}", "photo": "", "note": "Appointed August 2025" },
-    { "name": "Dr. Hamilton Jeyaraj", "title": "Director", "bio": "{{BIO}}", "photo": "", "note": "Also a clinical advisor" },
-    { "name": "Jonathan Held",        "title": "Director", "bio": "{{BIO}}", "photo": "" }
+    {
+      "name": "Mark Saunders",
+      "title": "Director",
+      "bio": "{{BIO}}",
+      "photo": "",
+      "note": "Appointed July 2025"
+    },
+    {
+      "name": "Nagar Rahmani",
+      "title": "Director",
+      "bio": "{{BIO}}",
+      "photo": "",
+      "note": "Appointed August 2025"
+    },
+    {
+      "name": "Dr. Hamilton Jeyaraj",
+      "title": "Director",
+      "bio": "{{BIO}}",
+      "photo": "assets/img/team/dr-hamilton-jeyaraj.webp",
+      "note": "Also a clinical advisor"
+    },
+    {
+      "name": "Jonathan Held",
+      "title": "Director",
+      "bio": "{{BIO}}",
+      "photo": ""
+    }
   ],
   "advisors": [
-    { "name": "Dr. Hamilton Jeyaraj", "title": "MD, Family Medicine",                  "bio": "{{BIO}}", "photo": "", "note": "Queen's University · Also a director" },
-    { "name": "David Drapkin",        "title": "LCSW, Clinical Psychotherapist",       "bio": "{{BIO}}", "photo": "", "note": "Mount Sinai Hospital" },
-    { "name": "Dr. Niki Fitzgerald",  "title": "Ph.D., C.Psych., Clinical Psychologist", "bio": "{{BIO}}", "photo": "", "note": "CAMH" }
+    {
+      "name": "Dr. Hamilton Jeyaraj",
+      "title": "MD, Family Medicine",
+      "bio": "{{BIO}}",
+      "photo": "assets/img/team/dr-hamilton-jeyaraj.webp",
+      "note": "Queen's University · Also a director"
+    },
+    {
+      "name": "David Drapkin",
+      "title": "LCSW, Clinical Psychotherapist",
+      "bio": "{{BIO}}",
+      "photo": "assets/img/team/david-drapkin.webp",
+      "note": "Mount Sinai Hospital"
+    },
+    {
+      "name": "Dr. Niki Fitzgerald",
+      "title": "Ph.D., C.Psych., Clinical Psychologist",
+      "bio": "{{BIO}}",
+      "photo": "assets/img/team/dr-niki-fitzgerald.webp",
+      "note": "CAMH"
+    }
   ],
   "tech_advisors": [
-    { "name": "Angelo Valentini", "title": "VP Sales, Check Point Software Technologies", "bio": "{{BIO}}", "photo": "" },
-    { "name": "Sharim Chua",      "title": "Engineering & Technology Director",           "bio": "{{BIO}}", "photo": "", "note": "Expedia · Amazon · DoorDash" },
-    { "name": "Dave Marantz",     "title": "CEO, Mednow",                                 "bio": "{{BIO}}", "photo": "" }
+    {
+      "name": "Angelo Valentini",
+      "title": "VP Sales, Check Point Software Technologies",
+      "bio": "{{BIO}}",
+      "photo": ""
+    },
+    {
+      "name": "Sharim Chua",
+      "title": "Engineering & Technology Director",
+      "bio": "{{BIO}}",
+      "photo": "",
+      "note": "Expedia · Amazon · DoorDash"
+    },
+    {
+      "name": "Dave Marantz",
+      "title": "CEO, Mednow",
+      "bio": "{{BIO}}",
+      "photo": ""
+    }
   ]
 }

@@ -18,9 +18,16 @@ const initials = (name) =>
 let avatarSeq = 0;
 function portrait(person) {
   if (isSet(person.photo)) {
-    return `<img src="${escapeHTML(person.photo)}" alt="Portrait of ${escapeHTML(person.name)}"
-      width="108" height="118" loading="lazy" class="team-card__portrait"
-      style="object-fit:cover;clip-path:path('${HEX_PATH}')">`;
+    /* Photo inside the brand's soft-hexagon frame. SVG <image> with a
+       clipPath in the same 100×108 space as the initials avatar, so
+       the hex scales with the card instead of clipping in raw px. */
+    const cid = `photo-clip-${avatarSeq++}`;
+    return `<svg class="team-card__portrait" viewBox="0 0 100 108" role="img"
+        aria-label="Portrait of ${escapeHTML(person.name)}">
+      <defs><clipPath id="${cid}"><path d="${HEX_PATH}"/></clipPath></defs>
+      <image href="${escapeHTML(person.photo)}" x="-2" y="-2" width="104" height="112"
+        preserveAspectRatio="xMidYMid slice" clip-path="url(#${cid})"/>
+    </svg>`;
   }
   const gid = `av-grad-${avatarSeq++}`;
   return `<svg class="team-card__portrait" viewBox="0 0 100 108" role="img"

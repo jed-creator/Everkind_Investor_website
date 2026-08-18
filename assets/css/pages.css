@@ -104,6 +104,13 @@ html.no-pin .pillars__pillar, html.no-pin .pillars__shot { position: static; opa
 .proof-strip .label { color: var(--text-muted); margin-top: var(--sp-2); }
 .proof-footnote { text-align: center; font-size: var(--fs-sm); color: var(--text-muted); margin-top: var(--sp-5); }
 
+/* ═══ Reviews (Home) — mirrors everkind.com's review cards ═══ */
+.reviews-grid { display: grid; gap: var(--sp-4); grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); align-items: stretch; }
+.review-card { text-align: center; padding: var(--sp-5); display: flex; flex-direction: column; gap: var(--sp-3); margin: 0; }
+.review-card__title { font-weight: 600; font-size: var(--fs-sm); color: var(--ek-plum); }
+.review-card__stars { display: flex; gap: 3px; justify-content: center; }
+.review-card__quote { font-size: var(--fs-xs); color: var(--text-muted); margin: 0; }
+
 /* ═══ Investors ══════════════════════════════════════════════ */
 .investors-layout { display: grid; gap: var(--sp-7); }
 @media (min-width: 1024px) {
