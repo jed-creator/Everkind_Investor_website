@@ -91,6 +91,7 @@ function initTradingView() {
       locale: 'en',
       backgroundColor: cssVar('--ek-ink-2'),
       gridColor: cssVar('--ek-ink-3'),
+      range: 'ALL',                     // CPCs trade thinly (and halt pre-RTO) — show full history
       hide_side_toolbar: true,
       allow_symbol_change: false,
       save_image: false,
