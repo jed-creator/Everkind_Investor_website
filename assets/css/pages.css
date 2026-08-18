@@ -94,11 +94,16 @@ html.no-pin .pillars__pillar, html.no-pin .pillars__shot { position: static; opa
 /* ═══ Investors ══════════════════════════════════════════════ */
 .investors-layout { display: grid; gap: var(--sp-7); }
 @media (min-width: 1024px) {
-  .investors-layout { grid-template-columns: 62% 34%; column-gap: 4%; align-items: start; }
+  /* No align-items:start — the sidebar must stretch to the row height
+     so its sticky block can travel the full length of the main column. */
+  .investors-layout { grid-template-columns: 62% 34%; column-gap: 4%; }
 }
 .investors-main { display: grid; gap: var(--sp-8); min-width: 0; }
-.investors-sidebar { display: grid; gap: var(--sp-5); align-content: start; min-width: 0; }
-/* ONLY the top block is sticky (§8.1) */
+/* Flex, not grid: sticky children of a flex column get the whole parent
+   as their containing block in every browser. */
+.investors-sidebar { display: flex; flex-direction: column; gap: var(--sp-5); min-width: 0; align-items: stretch; }
+/* ONLY the form block is sticky, and it is the LAST sidebar child — a
+   top-sticky element travels over any siblings after it (§8.1). */
 @media (min-width: 1024px) {
   .sidebar-sticky { position: sticky; top: calc(var(--header-h) + 16px); }
 }

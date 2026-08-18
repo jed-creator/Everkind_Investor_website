@@ -216,6 +216,24 @@
 
         <!-- Sidebar: ONLY the top block is sticky (§8.1) -->
         <aside class="investors-sidebar" aria-label="Investor relations contact">
+
+          <div class="card card--flat stack-sm">
+            <h4>Investor relations</h4>
+            <p class="muted" style="font-size:var(--fs-sm)">Speak with Investor Relations — a 30-minute conversation with our IR team.</p>
+            <p><a data-config-email="IR_EMAIL" data-config-email-text></a></p>
+            <p data-config-block="IR_PHONE"><span data-config-text="IR_PHONE">{{IR_PHONE}}</span></p>
+            <p data-config-block="HQ_ADDRESS" class="muted" style="font-size:var(--fs-sm)"><span data-config-text="HQ_ADDRESS">{{HQ_ADDRESS}}</span></p>
+          </div>
+
+          <div class="card card--flat stack-sm">
+            <h4>The deck, to keep</h4>
+            <p class="muted" style="font-size:var(--fs-sm)">The same presentation as above, as a PDF.</p>
+            <a class="link-arrow" data-deck-download href="assets/docs/everkind-investor-deck.pdf" download>Download the deck <span class="arr" aria-hidden="true">→</span></a>
+          </div>
+          <!-- The sticky block is deliberately LAST in the column: a top-sticky
+               element travels over any siblings that follow it. With nothing after
+               it, it pins cleanly beside the long main column (§8.1). -->
+
           <div class="sidebar-sticky embed-card">
             <div class="blob-wrap" aria-hidden="true" style="z-index:0;inset:-20% -30%">
               <svg viewBox="0 0 480 480">
@@ -233,20 +251,6 @@
               <p style="font-size:var(--fs-xs)" class="muted">Your details are handled per our <a data-config-link="PRIVACY_URL">privacy policy</a>.</p>
               <button class="btn btn--secondary" type="button" data-widget="calendly-popup" style="width:100%"><span class="btn__bg" aria-hidden="true"></span><span class="btn__label">Book a meeting</span></button>
             </div>
-          </div>
-
-          <div class="card card--flat stack-sm">
-            <h4>Investor relations</h4>
-            <p class="muted" style="font-size:var(--fs-sm)">Speak with Investor Relations — a 30-minute conversation with our IR team.</p>
-            <p><a data-config-email="IR_EMAIL" data-config-email-text></a></p>
-            <p data-config-block="IR_PHONE"><span data-config-text="IR_PHONE">{{IR_PHONE}}</span></p>
-            <p data-config-block="HQ_ADDRESS" class="muted" style="font-size:var(--fs-sm)"><span data-config-text="HQ_ADDRESS">{{HQ_ADDRESS}}</span></p>
-          </div>
-
-          <div class="card card--flat stack-sm">
-            <h4>The deck, to keep</h4>
-            <p class="muted" style="font-size:var(--fs-sm)">The same presentation as above, as a PDF.</p>
-            <a class="link-arrow" data-deck-download href="assets/docs/everkind-investor-deck.pdf" download>Download the deck <span class="arr" aria-hidden="true">→</span></a>
           </div>
         </aside>
       </div>
