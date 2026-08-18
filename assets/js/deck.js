@@ -55,9 +55,11 @@ export async function initDeck() {
   const live = el('div', { class: 'visually-hidden', 'aria-live': 'polite' });
 
   const slideEls = slides.map((s, i) => {
-    const node = el('div', { class: 'deck__slide' + (s.variant === 'title' ? ' deck__slide--title' : ''), role: 'group', 'aria-roledescription': 'slide', 'aria-label': `Slide ${i + 1} of ${slides.length}: ${s.title}` });
-    // [DRAFT — PENDING SIGN-OFF] — every slide ships as draft; a named
-    // executive promotes copy, never the build.
+    const node = el('div', { class: 'deck__slide' + (s.image ? ' deck__slide--image' : '') + (s.variant === 'title' ? ' deck__slide--title' : ''), role: 'group', 'aria-roledescription': 'slide', 'aria-label': `Slide ${i + 1} of ${slides.length}: ${s.title}` });
+    // The transcription of each page. When the slide has an `image`
+    // (the exact rendered PDF page — what the download serves), the
+    // image is what's shown and the transcription becomes visually-
+    // hidden screen-reader content, so the deck stays accessible.
     let html = '';
     if (s.kicker) html += `<p class="deck__slide-kicker">${escapeHTML(s.kicker)}</p>`;
     html += `<h3>${escapeHTML(s.title)}</h3>`;
@@ -66,6 +68,13 @@ export async function initDeck() {
       html += '<ul>' + s.bullets.map((b) => `<li>${escapeHTML(b)}</li>`).join('') + '</ul>';
     }
     if (s.fine) html += `<p class="deck__fine muted">${escapeHTML(s.fine)}</p>`;
+    if (s.image) {
+      html = `
+        <img class="deck__slide-img" src="${escapeHTML(s.image)}"
+             alt="Slide ${i + 1}: ${escapeHTML(s.title)}"
+             width="1800" height="1013"${i === 0 ? ' fetchpriority="high"' : ' loading="lazy"'}>
+        <div class="visually-hidden">${html}</div>`;
+    }
     node.innerHTML = html;
     stage.append(node);
     return node;

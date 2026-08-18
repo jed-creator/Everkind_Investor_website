@@ -334,6 +334,13 @@
 .deck__slide--title { text-align: center; align-items: center; }
 .deck__slide--title h3 { font-size: clamp(1.6rem, 5.5cqw, 3.4rem); }
 
+/* Image slides: the exact PDF page fills the 16:9 stage edge to edge */
+.deck__slide--image { padding: 0; justify-content: stretch; }
+.deck__slide--image .deck__slide-img {
+  width: 100%; height: 100%; object-fit: contain;
+  display: block; background: var(--ek-white);
+}
+
 .deck__chrome {
   display: flex; align-items: center; gap: var(--sp-4); flex-wrap: wrap;
   padding: var(--sp-4) var(--sp-5);

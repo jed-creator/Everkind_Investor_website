@@ -1,10 +1,12 @@
 {
   "_readme": [
-    "The on-page investor deck. TRANSCRIBED FROM THE REAL DECK:",
+    "The on-page investor deck. Each slide displays the EXACT page of",
     "assets/docs/everkind-investor-deck.pdf ('everkind Deck June 2026',",
-    "24 pages). Slides render as live HTML mirroring the PDF's content;",
-    "figures are quoted from the deck itself. Slide 2 is the disclaimer.",
-    "NEVER reorder it. Edit this JSON to change a slide."
+    "24 pages), rendered to assets/img/deck/deck-NN.jpg. The text fields",
+    "are the transcription of each page and are kept as screen-reader",
+    "content (visually hidden), so the deck stays accessible. If the PDF",
+    "is replaced: re-render the images (pdftoppm -jpeg -scale-to-x 1800),",
+    "and update the transcription to match. Slide 2 is the disclaimer."
   ],
   "slides": [
     {
@@ -12,7 +14,8 @@
       "kicker": "everkind",
       "title": "A private space to feel understood everyday",
       "body": "Helping you take your moment through personalized, AI-powered experiences that create space to pause, reflect, and build mindful practices.",
-      "fine": "Investor Presentation · June 2026 · See the disclaimer on the next slide."
+      "fine": "Investor Presentation · June 2026 · See the disclaimer on the next slide.",
+      "image": "assets/img/deck/deck-01.jpg"
     },
     {
       "kicker": "Disclaimer",
@@ -25,7 +28,8 @@
         "Financial information is preliminary and subject to change. Past performance does not guarantee future results.",
         "No investment advice: this presentation does not constitute investment advice, a recommendation to buy or sell securities, or a solicitation of an offer to invest."
       ],
-      "fine": "Condensed from the deck's full disclaimer (effective June 2025) — see page 2 of the PDF for the complete text."
+      "fine": "Condensed from the deck's full disclaimer (effective June 2025) — see page 2 of the PDF for the complete text.",
+      "image": "assets/img/deck/deck-02.jpg"
     },
     {
       "kicker": "Who we are",
@@ -34,7 +38,8 @@
         "Mission: Everkind is your trusted guide. Always on, never judging — helping you take your moment through personalized, AI-powered experiences.",
         "Vision: a world where emotional well-being is woven into everyday life, with calm, compassionate technology that meets people where they are.",
         "\"I built this to be the support system I couldn't find: one that's here for you when you need it, understands your reality, and doesn't price you out of healing.\" — Harrison, Founder"
-      ]
+      ],
+      "image": "assets/img/deck/deck-03.jpg"
     },
     {
       "kicker": "The problem",
@@ -45,7 +50,8 @@
         "Economic cost: mental disorders drive ~$5 trillion/year in global economic losses, mainly from lost productivity.",
         "U.S. & Canada: mental disorders drive ~20% of all non-fatal disability — more than any other condition."
       ],
-      "fine": "everkind promotes mental wellness through a self-directed process of building resilience, fostering positive emotions, and improving coping skills."
+      "fine": "everkind promotes mental wellness through a self-directed process of building resilience, fostering positive emotions, and improving coping skills.",
+      "image": "assets/img/deck/deck-04.jpg"
     },
     {
       "kicker": "The problem",
@@ -56,7 +62,8 @@
         "Availability: in the U.S., fewer than 20% of psychiatrists are available to see new patients.",
         "Wait times: median waits are 67 days for in-person psychiatry and 43 days for tele-psychiatry.",
         "Efficacy: digital therapy reduces depression and anxiety symptoms by 30–50%, similar to in-person care."
-      ]
+      ],
+      "image": "assets/img/deck/deck-05.jpg"
     },
     {
       "kicker": "The market",
@@ -67,7 +74,8 @@
         "The \"Always-On\" companion market is valued at $34B in 2024.",
         "TAM: global $160B by 2030; North America $61B by 2030.",
         "\"As of July 2025, AI companion apps across the Apple App Store and Google Play have been downloaded 220 million times globally.\" — Tech Crunch"
-      ]
+      ],
+      "image": "assets/img/deck/deck-06.jpg"
     },
     {
       "kicker": "Traction",
@@ -78,7 +86,8 @@
         "Activated users: 52K+ (+537% vs. ~120–300%)",
         "Tokens processed: 15B+ — demonstrating strong adoption and repeat usage."
       ],
-      "fine": "Benchmarked vs. typical early-stage consumer health apps, per the deck."
+      "fine": "Benchmarked vs. typical early-stage consumer health apps, per the deck.",
+      "image": "assets/img/deck/deck-07.jpg"
     },
     {
       "kicker": "Product philosophy",
@@ -88,7 +97,8 @@
         "Empowerment through AI — emotional understanding and resilience that supports balanced decisions.",
         "A unified ecosystem — one multi-model platform across AI journaling and meditation.",
         "Continuous integration & development — proprietary architecture enabling rapid, safe feature development."
-      ]
+      ],
+      "image": "assets/img/deck/deck-08.jpg"
     },
     {
       "kicker": "Core products",
@@ -98,7 +108,8 @@
         "Captures patterns and emotional states to uncover personal themes, strengths and growth areas.",
         "Long-term memory supports personal evolution.",
         "AI journaling market is expected to grow 20–25% CAGR through 2033."
-      ]
+      ],
+      "image": "assets/img/deck/deck-09.jpg"
     },
     {
       "kicker": "Core products",
@@ -108,7 +119,8 @@
         "Hyper-personalized content generation: meditations are AI-generated from interactions with Journal — 100% unique to you. (Patent pending)",
         "Empathetic delivery: personalized to your mood using specific tone and pace of speech.",
         "New meditations are generated upon request in real time."
-      ]
+      ],
+      "image": "assets/img/deck/deck-10.jpg"
     },
     {
       "kicker": "Technology",
@@ -119,7 +131,8 @@
         "Cloud-agnostic infrastructure: deployable on any cloud.",
         "Dynamic knowledge graph: updates with every interaction.",
         "Automated CI/CD pipelines and multi-product AI coherence — the core engine is a platform, not a single app."
-      ]
+      ],
+      "image": "assets/img/deck/deck-11.jpg"
     },
     {
       "kicker": "Core technology",
@@ -128,7 +141,8 @@
       "bullets": [
         "Proprietary graph-based architecture: maps a user's life as an interconnected network of \"objects\" (e.g., 'Mom', 'New Job', 'Marathon Goal').",
         "Real-time relevance engine: instantly pulls all related objects and their histories from months or even years prior."
-      ]
+      ],
+      "image": "assets/img/deck/deck-12.jpg"
     },
     {
       "kicker": "Core technology",
@@ -138,7 +152,8 @@
         "Proprietary system prompt architecture refined through millions of user interactions.",
         "Real-world refinement at scale: iterated for over two years, processing over 1 billion tokens in 2025 alone.",
         "Infinite context and memory: dynamically fetches all relevant details from the user's entire history."
-      ]
+      ],
+      "image": "assets/img/deck/deck-13.jpg"
     },
     {
       "kicker": "Core technology",
@@ -147,7 +162,8 @@
       "bullets": [
         "Temporal pattern extraction: analyzes messages over calendar-based intervals, extracting themes and sentiment markers.",
         "Hierarchical insights: organizes patterns — e.g., a weekly 'Sunday anxiety' pattern feeding a monthly 'procrastination on major goals' pattern."
-      ]
+      ],
+      "image": "assets/img/deck/deck-14.jpg"
     },
     {
       "kicker": "Business model",
@@ -157,7 +173,8 @@
         "Freemium → subscription model driven by habit formation, trust, and contextual feature unlocks.",
         "Strategic paywall placements + 7-day free trial to maximize conversion ($4.16/mo billed at $65.99/year, per the in-app offer shown).",
         "Content-led acquisition + lifecycle engagement to maximize retention and LTV while keeping CAC low."
-      ]
+      ],
+      "image": "assets/img/deck/deck-15.jpg"
     },
     {
       "kicker": "Business model",
@@ -167,7 +184,8 @@
         "Co-branded deployments integrated into existing wellness, HR, or benefits ecosystems.",
         "Predictable recurring revenue through per-seat or per-member pricing with low marginal cost.",
         "Aggregate team-level insights to proactively mitigate burnout."
-      ]
+      ],
+      "image": "assets/img/deck/deck-16.jpg"
     },
     {
       "kicker": "Behind everkind",
@@ -181,7 +199,8 @@
         "Amy Monier — Chief Marketing Officer (Zynga)",
         "Lee Clissett — Head of Product",
         "George Plytas — Chief Information Security Officer (Moneris, Toronto Star)"
-      ]
+      ],
+      "image": "assets/img/deck/deck-17.jpg"
     },
     {
       "kicker": "Behind everkind",
@@ -189,7 +208,8 @@
       "bullets": [
         "Clinical: Dr. Hamilton Jeyaraj, MD Family Medicine (Queen's) · David Drapkin, LCSW, Clinical Psychotherapist (Mount Sinai Hospital) · Dr. Niki Fitzgerald, Ph.D., C.Psych., Clinical Psychologist (CAMH)",
         "Technology: Angelo Valentini, VP Sales, Check Point Software Technologies · Sharim Chua, Engineering & Technology Director (Expedia, Amazon, DoorDash) · Dave Marantz, CEO, Mednow"
-      ]
+      ],
+      "image": "assets/img/deck/deck-18.jpg"
     },
     {
       "kicker": "Execution",
@@ -198,7 +218,8 @@
         "Headspace: 24-month V1 app release. Calm: 6 months (MVP), 12 months (V1). Ash AI Therapy: 18-month public launch.",
         "everkind: 4 months to V1.",
         "We move quickly from idea to launch with an in-house team."
-      ]
+      ],
+      "image": "assets/img/deck/deck-19.jpg"
     },
     {
       "kicker": "Execution",
@@ -209,7 +230,8 @@
         "Nov: V1 launch, re-branded",
         "Dec: raised $3M, filed 2 patents, formed the Everkind Foundation",
         "Built in-house engineering, marketing, product, creative and operations teams."
-      ]
+      ],
+      "image": "assets/img/deck/deck-20.jpg"
     },
     {
       "kicker": "Partnerships",
@@ -218,7 +240,8 @@
         "Connected Care: combines Everkind's 24/7 mental wellness platform with Connected Care's mental health practitioner booking; a proving ground for serving a consented youth population.",
         "CanPR: Everkind is visible and available to the over 1,000,000 users where CanPR is installed — resources tailored for newcomers to Canada.",
         "Brampton Fire & Emergency Services: extends Everkind's 24/7 wellness platform to all BFES personnel and eligible family members as a formal employee benefit."
-      ]
+      ],
+      "image": "assets/img/deck/deck-21.jpg"
     },
     {
       "kicker": "Execution",
@@ -230,7 +253,8 @@
         "Apr–May: user journey v2, dashboard v1, home experience",
         "June: guest meditations, journal locking, streaks, daily goals"
       ],
-      "fine": "Rapid iteration across core product, onboarding, and infrastructure — while scaling marketing, user acquisition, and business development."
+      "fine": "Rapid iteration across core product, onboarding, and infrastructure — while scaling marketing, user acquisition, and business development.",
+      "image": "assets/img/deck/deck-22.jpg"
     },
     {
       "kicker": "Roadmap",
@@ -242,14 +266,16 @@
         "Proactive check-ins: engagement layer, timely nudges, ongoing user support.",
         "Gamification & features: retention systems, badges & achievements, progress tracking."
       ],
-      "fine": "Focused on monetization, personalization, and engagement."
+      "fine": "Focused on monetization, personalization, and engagement.",
+      "image": "assets/img/deck/deck-23.jpg"
     },
     {
       "variant": "title",
       "kicker": "everkind",
       "title": "Private, personalized, and always evolving",
       "body": "Join us in redefining what it means to feel supported.",
-      "fine": "harrison@everkind.com · investors@everkind.com"
+      "fine": "harrison@everkind.com · investors@everkind.com",
+      "image": "assets/img/deck/deck-24.jpg"
     }
   ]
 }
