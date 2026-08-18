@@ -51,6 +51,30 @@ function revealAllInstantly() {
 }
 
 /* ── Split text (lines / words / chars) ─────────────────────── */
+
+/* Gradient-clipped headings (h1/h2) break the moment SplitText's
+ * fragments animate: a transformed descendant stops the parent's
+ * background-clip:text from painting, leaving transparent glyphs
+ * over nothing. So on split, the parent's gradient is removed and
+ * repainted PER FRAGMENT with a measured offset — each piece
+ * carries its own slice of the same 92deg plum→purple sweep. */
+function paintGradientFragments(elm, fragments) {
+  if (!/^h[12]$/i.test(elm.tagName)) return;
+  const rect = elm.getBoundingClientRect();
+  if (!rect.width) return;
+  elm.style.background = 'none';
+  elm.style.color = 'var(--ek-purple)';   // safe inherit if inline styles fail
+  fragments.forEach((f) => {
+    const r = f.getBoundingClientRect();
+    f.style.backgroundImage = 'var(--heading-gradient)';
+    f.style.backgroundSize = `${Math.max(1, Math.round(rect.width))}px 100%`;
+    f.style.backgroundPosition = `${Math.round(rect.left - r.left)}px 0`;
+    f.style.webkitBackgroundClip = 'text';
+    f.style.backgroundClip = 'text';
+    f.style.color = 'transparent';
+  });
+}
+
 function splitReveal(elm, type) {
   const delay = parseFloat(elm.dataset.revealDelay || 0);
   const split = SplitText.create(elm, {
@@ -62,6 +86,7 @@ function splitReveal(elm, type) {
     onSplit(self) {
       elm.classList.add('is-split');
       const targets = type === 'lines' ? self.lines : (type === 'words' ? self.words : self.chars);
+      paintGradientFragments(elm, targets);   // measured BEFORE any transform
       return gsap.from(targets, {
         yPercent: 110,
         duration: type === 'chars' ? .8 : 1,
