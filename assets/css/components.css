@@ -23,7 +23,7 @@
 
 .site-header__inner {
   height: 100%;
-  display: flex; align-items: center; gap: var(--sp-5);
+  display: flex; align-items: center; gap: var(--sp-4);
 }
 .site-logo {
   display: inline-flex; align-items: center; gap: .6rem;
@@ -33,10 +33,11 @@
 
 .site-nav { display: none; }
 @media (min-width: 900px) {
-  .site-nav { display: flex; gap: clamp(.8rem, 1.8vw, 1.8rem); align-items: center; }
+  .site-nav { display: flex; gap: clamp(.5rem, 1.1vw, 1.4rem); align-items: center; }
 }
 .nav-link {
   position: relative; display: inline-block; overflow: hidden;
+  white-space: nowrap;
   font-size: var(--fs-sm); font-weight: 600;   /* everkind.com nav weight */
   color: var(--ek-plum); text-decoration: none;
   padding-block: .3em;
@@ -107,8 +108,9 @@
 
 /* ═══ Header social icons ════════════════════════════════════ */
 .header-social { display: none; }
-@media (min-width: 900px) {
-  .header-social { display: flex; align-items: center; gap: 2px; margin-right: var(--sp-2); }
+@media (min-width: 1140px) {
+  /* icons join the bar only when there is honest room for them */
+  .header-social { display: flex; align-items: center; gap: 2px; }
 }
 .social-link {
   display: grid; place-items: center;

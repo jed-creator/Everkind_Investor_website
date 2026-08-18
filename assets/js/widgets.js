@@ -68,8 +68,8 @@ function initTradingView() {
            "autosize" fills the parent, and a parent with no height
            collapses to zero. No transformed/filtered/pinned ancestor. -->
       <div class="tradingview-widget-container" id="tv-advanced"
-           style="min-height:480px; aspect-ratio:16/10;">
-        <div class="tradingview-widget-container__widget"></div>
+           style="height:480px; min-height:480px;">
+        <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%"></div>
         <div class="tradingview-widget-copyright">
           <!-- TradingView attribution is required by their terms. Do not remove. -->
           <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
