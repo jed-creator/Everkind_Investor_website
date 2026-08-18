@@ -147,9 +147,13 @@ initMagnetic();
 initMorph();
 initCounters();
 
-initDeck();
-initNews();
-initTeam();
+/* Deck, news and team render asynchronously and add real height to the
+   page. Every ScrollTrigger measured before they finish (reveals, the
+   pinned sections) would keep stale positions — on Company, the pinned
+   "Insights Without Identities" section fired ~1500px early once the
+   team grids landed. Re-measure as each renderer completes. */
+const refreshTriggers = () => { if (window.ScrollTrigger) ScrollTrigger.refresh(); };
+Promise.allSettled([initDeck(), initNews(), initTeam()]).then(refreshTriggers);
 initWidgets();
 
 /* Background: after first paint, so the CSS aurora always wins
