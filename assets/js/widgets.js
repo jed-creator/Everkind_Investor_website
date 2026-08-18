@@ -41,7 +41,7 @@ function initTradingView() {
         <h3>Listing pending</h3>
         <dl class="listing-pending__row">
           <div><dt>Exchange</dt><dd>${CONFIG.EXCHANGE_LABEL}</dd></div>
-          <div><dt>Proposed ticker</dt><dd>${CONFIG.TICKER_LABEL} <span class="ph">{{VERIFY}}</span></dd></div>
+          <div><dt>Ticker</dt><dd>${CONFIG.TICKER_LABEL}</dd></div>
         </dl>
         <p class="muted">Trading has not commenced under the resulting issuer's own symbol.
         The proposed transaction with AF2 Capital Corp. remains subject to exchange approval

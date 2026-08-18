@@ -1,16 +1,23 @@
 {
   "_readme": [
-    "VERIFY every title against the most recent filing before launch —",
-    "these come from the definitive-agreement release and titles shift",
-    "between announcement and closing. Bios are {{NEEDS SIGN-OFF}}.",
-    "Headshots optional: leave photo empty and a branded initials",
-    "avatar renders at the exact dimensions a real photo will take."
+    "Leadership and advisors are synced to the June 2026 investor deck",
+    "(pages 17-18); 'note' fields carry the prior-company affiliations",
+    "shown in the deck. The board comes from the definitive-agreement",
+    "release — the deck does not list a board. Bios remain {{BIO}}",
+    "placeholders. Headshots optional: leave photo empty and a branded",
+    "initials avatar renders at the exact dimensions a photo will take.",
+    "'advisors' = clinical advisors (also shown on Home under 'Guided by",
+    "clinicians'); 'tech_advisors' render on the Company page only."
   ],
   "leadership": [
-    { "name": "Harrison Newlands", "title": "Chief Executive Officer",            "bio": "{{BIO}}", "photo": "" },
-    { "name": "Supreet Pal Singh", "title": "Chief Technology Officer",           "bio": "{{BIO}}", "photo": "" },
-    { "name": "Brien Stelzer",     "title": "Chief Operating Officer",            "bio": "{{BIO}}", "photo": "" },
-    { "name": "Jonathan Held",     "title": "Chief Financial Officer & Director", "bio": "{{BIO}}", "photo": "" }
+    { "name": "Harrison Newlands", "title": "Chief Executive Officer",            "bio": "{{BIO}}", "photo": "", "note": "Hypercharge · Fire & Flower" },
+    { "name": "Supreet Pal Singh", "title": "Chief Technology Officer",           "bio": "{{BIO}}", "photo": "", "note": "PSL" },
+    { "name": "Brien Stelzer",     "title": "Chief Operating Officer",            "bio": "{{BIO}}", "photo": "", "note": "Expedia · Amazon" },
+    { "name": "Jonathan Held",     "title": "Chief Financial Officer",            "bio": "{{BIO}}", "photo": "", "note": "Aloe Finance · Also a director" },
+    { "name": "Matt Brudzynski",   "title": "Chief Strategy Officer",             "bio": "{{BIO}}", "photo": "", "note": "Google" },
+    { "name": "Amy Monier",        "title": "Chief Marketing Officer",            "bio": "{{BIO}}", "photo": "", "note": "Zynga" },
+    { "name": "Lee Clissett",      "title": "Head of Product",                    "bio": "{{BIO}}", "photo": "" },
+    { "name": "George Plytas",     "title": "Chief Information Security Officer", "bio": "{{BIO}}", "photo": "", "note": "Moneris · Toronto Star" }
   ],
   "board": [
     { "name": "Mark Saunders",        "title": "Director", "bio": "{{BIO}}", "photo": "", "note": "Appointed July 2025" },
@@ -19,8 +26,13 @@
     { "name": "Jonathan Held",        "title": "Director", "bio": "{{BIO}}", "photo": "" }
   ],
   "advisors": [
-    { "name": "Dr. Hamilton Jeyaraj", "title": "MD, Family Medicine",                  "bio": "{{BIO}}", "photo": "", "note": "Also a director" },
-    { "name": "David Drapkin",        "title": "LCSW, Clinical Psychotherapist",       "bio": "{{BIO}}", "photo": "", "note": "{{VERIFY designation & jurisdiction}}" },
-    { "name": "Dr. Niki Fitzgerald",  "title": "PhD, C.Psych., Clinical Psychologist", "bio": "{{BIO}}", "photo": "", "note": "{{VERIFY registration is current}}" }
+    { "name": "Dr. Hamilton Jeyaraj", "title": "MD, Family Medicine",                  "bio": "{{BIO}}", "photo": "", "note": "Queen's University · Also a director" },
+    { "name": "David Drapkin",        "title": "LCSW, Clinical Psychotherapist",       "bio": "{{BIO}}", "photo": "", "note": "Mount Sinai Hospital" },
+    { "name": "Dr. Niki Fitzgerald",  "title": "Ph.D., C.Psych., Clinical Psychologist", "bio": "{{BIO}}", "photo": "", "note": "CAMH" }
+  ],
+  "tech_advisors": [
+    { "name": "Angelo Valentini", "title": "VP Sales, Check Point Software Technologies", "bio": "{{BIO}}", "photo": "" },
+    { "name": "Sharim Chua",      "title": "Engineering & Technology Director",           "bio": "{{BIO}}", "photo": "", "note": "Expedia · Amazon · DoorDash" },
+    { "name": "Dave Marantz",     "title": "CEO, Mednow",                                 "bio": "{{BIO}}", "photo": "" }
   ]
 }

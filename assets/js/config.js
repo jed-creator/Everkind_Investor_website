@@ -13,19 +13,15 @@ export const CONFIG = {
   ACCESSIBILITY_URL: '{{ACCESSIBILITY_URL}}',
 
   /* ── Market data ────────────────────────────────────────── */
-  // TradingView symbol format is EXCHANGE:TICKER. Confirm the exact
-  // string on tradingview.com — CPC tickers do not always resolve
-  // the way you'd guess.
-  TRADINGVIEW_SYMBOL: 'TSXV:AF.P',      // {{VERIFY}}
+  // TradingView symbol format is EXCHANGE:TICKER.
+  TRADINGVIEW_SYMBOL: 'TSXV:EK.V',      // per the company, 2026-08-18
   EXCHANGE_LABEL:     'TSX Venture Exchange',
-  TICKER_LABEL:       'AF.P',            // {{VERIFY}}
+  TICKER_LABEL:       'EK.V',
 
   // MASTER SWITCH. false => the market-data module renders a
-  // "Listing pending" card instead of a chart. Keep it false until
-  // the resulting issuer is actually trading under its own symbol.
-  // Presenting a capital pool company's chart as "Everkind stock"
-  // is misleading and is a compliance problem. Default false.
-  TRADING_LIVE: false,
+  // "Listing pending" card instead of a chart. Only true while the
+  // resulting issuer is actually trading under its own symbol.
+  TRADING_LIVE: true,
 
   /* ── Pipedrive ──────────────────────────────────────────── */
   // Pipedrive > Leads > Web forms > Share > Embed. Public URL only:
