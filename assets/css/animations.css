@@ -29,11 +29,12 @@ html.js [data-reveal="stagger"].is-revealed > * { opacity: 1; }
 /* ── CSS aurora fallback (§5.6) — what paints FIRST, always ──── */
 #bg-fallback::before {
   content: ""; position: absolute; inset: -20%;
+  /* everkind.com's pink-sky hero, as living gradients on a pale ground */
   background:
-    radial-gradient(55% 42% at 50% 12%, rgba(242, 198, 220, .34), transparent 62%),
-    radial-gradient(70% 55% at 32% 20%, rgba(116, 48, 161, .5), transparent 65%),
-    radial-gradient(85% 70% at 72% 30%, rgba(94, 26, 163, .38), transparent 70%),
-    radial-gradient(60% 50% at 55% 85%, rgba(77, 56, 100, .25), transparent 75%);
+    radial-gradient(60% 45% at 50% 14%, rgba(242, 198, 220, .85), transparent 65%),
+    radial-gradient(75% 55% at 30% 24%, rgba(232, 213, 245, .9), transparent 68%),
+    radial-gradient(85% 70% at 74% 32%, rgba(201, 167, 230, .55), transparent 70%),
+    radial-gradient(70% 55% at 55% 88%, rgba(246, 242, 238, .9), transparent 80%);
   background-repeat: no-repeat;
   animation: aurora-drift 45s ease-in-out infinite alternate;
 }

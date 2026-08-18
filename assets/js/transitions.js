@@ -36,9 +36,9 @@ function buildCurtain() {
     <svg viewBox="0 0 100 110" preserveAspectRatio="none">
       <defs>
         <linearGradient id="curtain-edge" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#F2C6DC" stop-opacity=".55"/>
-          <stop offset=".12" stop-color="#0C0710"/>
-          <stop offset="1" stop-color="#0C0710"/>
+          <stop offset="0" stop-color="#F2C6DC" stop-opacity=".8"/>
+          <stop offset=".12" stop-color="#37214E"/>
+          <stop offset="1" stop-color="#37214E"/>
         </linearGradient>
       </defs>
       <path class="curtain-path" d="M0,10 Q50,0 100,10 L100,110 L0,110 Z" fill="url(#curtain-edge)"/>

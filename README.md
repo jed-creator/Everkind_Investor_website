@@ -11,6 +11,13 @@ no bundler.** Open a file, change a line, refresh.
 > client's logo pack and product renders were not supplied, so brand-styled
 > placeholders stand in for them (each labelled on its face). See
 > `assets/img/SOURCE-MAP.md` for the complete swap list.
+>
+> **Theme note (2026-08-18):** fonts and colours were re-extracted from the
+> live everkind.com site — Poppins body, Crimson Pro 500 headings with the
+> `#37214E→#7A27B2` gradient, purple accent `#7B2CBF`, pink-sky/lavender
+> background, white + warm-cream sections. The palette table in
+> SETUP_CHECKLIST.md §11 describes the earlier dark app-style palette and is
+> superseded by `assets/css/tokens.css`.
 
 ## Run it locally
 

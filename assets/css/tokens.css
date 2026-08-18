@@ -3,43 +3,63 @@
  * DESIGN TOKENS ONLY. Colour, type, space, motion. No selectors
  * beyond :root and the reduced-motion override. Components read
  * the semantic aliases, never the raw --ek-* colours.
+ *
+ * Palette + type extracted from the LIVE everkind.com site
+ * (computed styles, 2026-08-18): Poppins body, Crimson Pro 500
+ * headings with the #37214E→#7A27B2 gradient, purple accent
+ * #7B2CBF, pink-sky/lavender hero, white + warm-cream sections.
  * ───────────────────────────────────────────────────────────── */
 :root {
-  /* ── Brand palette — extracted from the real logo files ──── */
-  --ek-plum:        #4D3864;  /* wordmark; primary text on light surfaces */
-  --ek-violet-deep: #5E1AA3;  /* logo mark gradient, dark end */
-  --ek-violet:      #7430A1;  /* logo mark gradient, mid — primary accent (GLOW ONLY on dark; 2.4:1) */
-  --ek-orchid:      #A96BAD;  /* logo mark gradient, light end — meaningful borders (≈4.4:1) */
-  --ek-lilac:       #C9A7E6;  /* in-app light purple */
-  --ek-blush:       #F2C6DC;  /* in-app pink; the bloom colour */
-  --ek-cream:       #FDF6F4;  /* in-app warm off-white; light sections */
-  --ek-ink:         #0C0710;  /* near-black plum; the site's ground */
-  --ek-ink-2:       #17101F;  /* raised dark surface */
-  --ek-ink-3:       #241A2E;  /* hairlines on dark */
-  --ek-text:        #F6F1F7;
-  --ek-text-dim:    #B9AEC4;
+  /* ── Brand palette — from everkind.com computed styles ───── */
+  --ek-grad-deep:   #37214E;  /* heading gradient, dark end */
+  --ek-grad-bright: #7A27B2;  /* heading gradient, bright end */
+  --ek-purple:      #7B2CBF;  /* solid heading / accent purple */
+  --ek-plum:        #392B47;  /* nav links, strong text */
+  --ek-body-ink:    #2D1B3D;  /* body copy base (site uses it at 80%) */
+  --ek-gray:        #706E78;  /* muted / footer links */
+  --ek-lav-1:       #F5E5FF;  /* hero gradient, top */
+  --ek-lav-2:       #F0E0FA;  /* hero gradient, mid */
+  --ek-lav-3:       #E8D5F5;  /* hero gradient, low */
+  --ek-lilac:       #C9A7E6;  /* decorative light purple */
+  --ek-blush:       #F2C6DC;  /* the pink-sky bloom */
+  --ek-cream:       #F6F2EE;  /* footer / warm section */
+  --ek-cream-2:     #F3F0ED;  /* alternate warm section */
+  --ek-white:       #FFFFFF;
+
+  /* Legacy aliases kept so older references stay valid */
+  --ek-violet-deep: var(--ek-grad-deep);
+  --ek-violet:      var(--ek-purple);
+  --ek-orchid:      #9D5FD3;  /* decorative borders (≈3.2:1 on white) */
+  --ek-ink:         #FBF7FB;  /* the page GROUND is now pale */
+  --ek-ink-2:       var(--ek-white);
+  --ek-ink-3:       #E9DFF2;
+  --ek-text:        var(--ek-body-ink);
+  --ek-text-dim:    var(--ek-gray);
 
   /* ── Semantic aliases — components use ONLY these ────────── */
-  --surface:        var(--ek-ink);
-  --surface-raised: var(--ek-ink-2);
-  --surface-line:   var(--ek-ink-3);
-  --text:           var(--ek-text);
-  --text-muted:     var(--ek-text-dim);
-  --accent:         var(--ek-violet);   /* decoration + glow only */
-  --accent-soft:    var(--ek-lilac);
-  --accent-strong:  var(--ek-orchid);   /* meaningful borders, chips, focus */
+  --surface:        var(--ek-ink);      /* pale ground behind the aurora */
+  --surface-raised: var(--ek-white);    /* cards */
+  --surface-line:   var(--ek-ink-3);    /* hairlines */
+  --text:           rgba(45, 27, 61, .92);
+  --text-muted:     var(--ek-gray);
+  --accent:         var(--ek-purple);
+  --accent-soft:    var(--ek-purple);   /* on light, soft accents stay purple for contrast */
+  --accent-strong:  var(--ek-purple);   /* meaningful borders / chips */
   --border:         var(--ek-ink-3);
-  --border-meaning: var(--ek-orchid);   /* WCAG 1.4.11 — never --ek-violet */
-  --focus-ring:     var(--ek-blush);
+  --border-meaning: var(--ek-purple);   /* WCAG 1.4.11-safe on white */
+  --focus-ring:     var(--ek-purple);
 
-  /* Light-section aliases (applied by .section--light) */
+  /* Heading gradient (everkind.com uses 92.04deg) */
+  --heading-gradient: linear-gradient(92deg, var(--ek-grad-deep), var(--ek-grad-bright));
+
+  /* Warm-section aliases (applied by .section--light scrim) */
   --light-surface:  var(--ek-cream);
-  --light-text:     #2A1E38;
-  --light-muted:    #5C4A6E;
+  --light-text:     var(--ek-body-ink);
+  --light-muted:    var(--ek-gray);
 
-  /* ── Type ─────────────────────────────────────────────────── */
+  /* ── Type — everkind.com: Poppins + Crimson Pro ──────────── */
   --font-serif: "Crimson Pro", Georgia, "Times New Roman", serif;
-  --font-sans:  "Figtree", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-sans:  "Poppins", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
 
   /* Fluid type scale. Floor is 14px sitewide (§9). */
   --fs-xs:  clamp(0.875rem, 0.85rem + 0.15vw, 0.9375rem); /* 14–15px */

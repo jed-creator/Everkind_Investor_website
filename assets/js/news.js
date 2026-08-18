@@ -44,7 +44,7 @@ function releaseCard(r) {
   });
   card.dataset.category = r.category || 'Corporate';
 
-  const bullet = `<svg class="hex-bullet" viewBox="0 0 100 108" aria-hidden="true"><path d="${HEX_PATH}" fill="#A96BAD"/></svg>`;
+  const bullet = `<svg class="hex-bullet" viewBox="0 0 100 108" aria-hidden="true"><path d="${HEX_PATH}" fill="#7B2CBF"/></svg>`;
   const dateText = pending ? 'Date pending — add release' : formatDate(r.date);
   const summary = isSet(r.summary) ? r.summary
     : 'Summary pending sign-off — quote figures verbatim from the release. See assets/data/news.json.';

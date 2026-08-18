@@ -26,8 +26,8 @@
     <rect x="120" y="30" width="90" height="20" rx="10" fill="#0C0710"/>
   </g></g>
   <g font-family="Figtree, -apple-system, Helvetica, sans-serif" text-anchor="middle">
-    <text x="540" y="1210" font-size="34" fill="#B9AEC4" letter-spacing="6" font-weight="700">PLACEHOLDER RENDER</text>
-    <text x="540" y="1262" font-size="40" fill="#F6F1F7" font-weight="600">Intentional Breathing player (angled)</text>
-    <text x="540" y="1310" font-size="28" fill="#B9AEC4">Angled hero render of the breathing player</text>
+    <text x="540" y="1210" font-size="34" fill="#706E78" letter-spacing="6" font-weight="700">PLACEHOLDER RENDER</text>
+    <text x="540" y="1262" font-size="40" fill="#392B47" font-weight="600">Intentional Breathing player (angled)</text>
+    <text x="540" y="1310" font-size="28" fill="#706E78">Angled hero render of the breathing player</text>
   </g>
 </svg>

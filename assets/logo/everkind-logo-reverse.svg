@@ -4,8 +4,8 @@
        from the client's logo pack. See assets/img/SOURCE-MAP.md. -->
   <defs>
     <linearGradient id="lr-g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#5E1AA3"/>
-      <stop offset="1" stop-color="#A96BAD"/>
+      <stop offset="0" stop-color="#37214E"/>
+      <stop offset="1" stop-color="#7A27B2"/>
     </linearGradient>
   </defs>
   <g transform="translate(10,8) scale(.96)">

@@ -71,13 +71,14 @@ const FRAG = /* glsl */`
   uniform float uBloom;       // pulse, decays outside
   uniform float uOctaves;     // 3.0 → governor may drop to 2.0
 
-  /* Everkind ramp */
-  const vec3 INK    = vec3(0.047, 0.027, 0.063);  // #0C0710
-  const vec3 VIOLD  = vec3(0.369, 0.102, 0.639);  // #5E1AA3
-  const vec3 VIOLET = vec3(0.455, 0.188, 0.631);  // #7430A1
-  const vec3 ORCHID = vec3(0.663, 0.420, 0.678);  // #A96BAD
+  /* Everkind ramp — matched to everkind.com's pink-sky hero */
+  const vec3 PALE   = vec3(0.984, 0.969, 0.984);  // #FBF7FB page ground
+  const vec3 LAV    = vec3(0.910, 0.835, 0.961);  // #E8D5F5
+  const vec3 LAV2   = vec3(0.851, 0.737, 0.941);  // deeper lavender
+  const vec3 LILAC  = vec3(0.788, 0.655, 0.902);  // #C9A7E6
   const vec3 BLUSH  = vec3(0.949, 0.776, 0.863);  // #F2C6DC
-  const vec3 PLUM   = vec3(0.302, 0.220, 0.392);  // #4D3864
+  const vec3 PINK   = vec3(0.957, 0.667, 0.792);  // sunset pink core
+  const vec3 CREAM  = vec3(0.965, 0.949, 0.933);  // #F6F2EE
 
   /* simplex noise (Ashima / IQ derivative, public domain) */
   vec3 permute(vec3 x) { return mod(((x*34.0)+1.0)*x, 289.0); }
@@ -143,38 +144,36 @@ const FRAG = /* glsl */`
     float bandCentre = 0.78 + sin(t * 0.157) * 0.08;
     float band = smoothstep(0.42, 0.02, abs(uv.y - bandCentre) - n * 0.16);
 
-    /* scroll drift: violet top → blush middle → deep plum + ember foot */
-    vec3 hi  = mix(VIOLET, BLUSH,  smoothstep(0.15, 0.55, uScroll));
-    hi       = mix(hi,     PLUM,   smoothstep(0.72, 1.0, uScroll));
-    vec3 mid = mix(VIOLD,  ORCHID, smoothstep(0.3, 0.9, uScroll) * 0.5);
+    /* scroll drift: lavender-led top → pink-led middle → soft cream foot */
+    vec3 hi  = mix(LAV2, PINK,  smoothstep(0.15, 0.55, uScroll));
+    hi       = mix(hi,   LILAC, smoothstep(0.72, 1.0, uScroll) * 0.7);
+    vec3 mid = mix(LAV,  BLUSH, smoothstep(0.3, 0.9, uScroll) * 0.6);
 
-    /* mood: 0 calm · .5 warm · 1 deep (desaturated, lower bloom) */
+    /* mood: 0 calm · .5 warm · 1 deep (quieter, greyer) */
     float warm = 1.0 - abs(uMood - 0.5) * 2.0;
-    hi = mix(hi, BLUSH, warm * 0.25);
+    hi = mix(hi, PINK, warm * 0.25);
     float deep = smoothstep(0.5, 1.0, uMood);
-    hi  = mix(hi,  PLUM * 1.2, deep * 0.5);
-    mid = mix(mid, PLUM,       deep * 0.4);
 
-    vec3 col = INK;
+    vec3 col = PALE;
 
-    /* depth haze — slower, larger violet layer */
+    /* depth haze — a broad lavender wash */
     float haze = fbm(p * 0.7 - t * 0.1 + 11.3, uOctaves) * 0.5 + 0.5;
-    col += VIOLD * haze * 0.10 * (1.0 - deep * 0.5);
+    col = mix(col, LAV, haze * 0.4 * (1.0 - deep * 0.4));
 
-    /* the band itself — kept soft: a breath, not a lava lamp */
-    col += mid * band * (0.32 + n * 0.18);
-    col += hi  * band * band * (0.30 + q.x * 0.18);
+    /* the sky band — soft sunset colour, never loud */
+    col = mix(col, mid, band * (0.55 + n * 0.2) * (1.0 - deep * 0.35));
+    col = mix(col, hi,  band * band * (0.45 + q.x * 0.2) * (1.0 - deep * 0.35));
 
-    /* bloom core — soft blush radial at the band's brightest point */
+    /* bloom core — warm pink glow at the band's brightest point */
     vec2 bloomPos = vec2(0.5 * aspect + q.y * 0.2, bandCentre + 0.02);
     float d = distance(vec2(uv.x * aspect, uv.y), bloomPos);
     float core = exp(-d * d * 6.0);
-    col += BLUSH * core * (0.15 + uBloom * 0.4) * (1.0 - deep * 0.55);
+    col = mix(col, BLUSH, core * (0.35 + uBloom * 0.3) * (1.0 - deep * 0.4));
 
-    /* vignette floor */
-    col = mix(col, INK, smoothstep(0.55, 0.05, uv.y) * 0.55);
+    /* settle to warm cream toward the page foot */
+    col = mix(col, CREAM, smoothstep(0.45, 0.02, uv.y) * 0.5);
 
-    col *= mix(0.9, 1.0, uIntensity);
+    col = mix(col, PALE, (1.0 - uIntensity) * 0.4);
     col += dither(gl_FragCoord.xy);
 
     outColor = vec4(col, 1.0);

@@ -77,7 +77,7 @@ function initTradingView() {
     s.async = true;
     s.textContent = JSON.stringify({
       symbol: CONFIG.TRADINGVIEW_SYMBOL,
-      theme: 'dark',
+      theme: 'light',
       autosize: true,
       interval: 'D',
       timezone: 'America/Toronto',

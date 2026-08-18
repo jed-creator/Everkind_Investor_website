@@ -26,7 +26,7 @@ function portrait(person) {
   return `<svg class="team-card__portrait" viewBox="0 0 100 108" role="img"
       aria-label="Placeholder avatar for ${escapeHTML(person.name)}">
     <defs><linearGradient id="${gid}" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#7430A1"/><stop offset="1" stop-color="#F2C6DC"/>
+      <stop offset="0" stop-color="#7A27B2"/><stop offset="1" stop-color="#C9A7E6"/>
     </linearGradient></defs>
     <path d="${HEX_PATH}" fill="url(#${gid})" opacity=".9"/>
     <text x="50" y="60" text-anchor="middle" font-family="Crimson Pro, Georgia, serif"

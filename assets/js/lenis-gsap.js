@@ -8,14 +8,14 @@
  * passing all three silently ignores the lerp (§6.2).
  *
  * TUNE:
- *   LERP             0.085  — lower = heavier, more momentum
+ *   LERP             0.07   — lower = heavier, more momentum
  *   WHEEL_MULTIPLIER 0.95
  *   TOUCH_MULTIPLIER 1.6
  * ───────────────────────────────────────────────────────────── */
 import { prefersReducedMotion } from './utils.js';
 
-const LERP = 0.085;
-const WHEEL_MULTIPLIER = 0.95;
+const LERP = 0.07;               // lower = longer, more fluid glide
+const WHEEL_MULTIPLIER = 1.0;
 const TOUCH_MULTIPLIER = 1.6;
 
 export let lenis = null;

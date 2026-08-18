@@ -119,7 +119,8 @@ function pinnedBeats(rootSel, beatSel, shotSel) {
     start: 'top top',
     end: `+=${beats.length * 85}%`,   // ~250vh for three beats
     pin: true,
-    scrub: true,
+    scrub: 0.5,          // smoothed progress — beat switches never feel snapped
+    anticipatePin: 1,    // pre-locks the pin so there is no jump on entry
     onUpdate(self) {
       const i = Math.min(beats.length - 1, Math.floor(self.progress * beats.length));
       setActive(i);
@@ -169,7 +170,8 @@ function insightsDots() {
       const near = Math.min(1, p * 1.2);
       ctx.beginPath();
       ctx.arc(x, y, d.r * devicePixelRatio, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${Math.round(169 + (242 - 169) * near)}, ${Math.round(107 + (198 - 107) * near)}, ${Math.round(173 + (220 - 173) * near)}, ${.35 + near * .5})`;
+      // scattered: light lilac → aggregated: brand purple (visible on light)
+      ctx.fillStyle = `rgba(${Math.round(201 + (123 - 201) * near)}, ${Math.round(167 + (44 - 167) * near)}, ${Math.round(230 + (191 - 230) * near)}, ${.45 + near * .45})`;
       ctx.fill();
     }
   };
@@ -182,7 +184,8 @@ function insightsDots() {
     start: 'top top',
     end: '+=160%',
     pin: true,
-    scrub: true,
+    scrub: 0.5,
+    anticipatePin: 1,
     onUpdate: (self) => draw(gsap.parseEase('power2.inOut')(self.progress)),
   });
 }

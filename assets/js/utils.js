@@ -74,8 +74,8 @@ export const hexSVG = (cls = '', gradientId = 'ek-hex-grad') => `
   <svg class="${cls}" viewBox="0 0 100 108" aria-hidden="true" focusable="false">
     <defs>
       <linearGradient id="${gradientId}" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#5E1AA3"/>
-        <stop offset="1" stop-color="#A96BAD"/>
+        <stop offset="0" stop-color="#37214E"/>
+        <stop offset="1" stop-color="#7A27B2"/>
       </linearGradient>
     </defs>
     <path d="${HEX_PATH}" fill="url(#${gradientId})"/>
